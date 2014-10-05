@@ -5,7 +5,6 @@ body {
 }
 
 #player {
-	position: relative;
 	width: 99%;
 	height: 99%;
 	background-color: white;
