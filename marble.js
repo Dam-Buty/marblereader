@@ -1,50 +1,54 @@
-function timeConverter(UNIX_timestamp){
-	var a = new Date(UNIX_timestamp*1000);
-	var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-	var year = a.getFullYear();
-	var month = months[a.getMonth() - 1];
-	var date = a.getDate();
-	var hour = a.getHours();
-	var min = a.getMinutes();
-	var sec = a.getSeconds();
-	var time = date + ',' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-	return time;
-}
-
-(function() {
-	
-		// this.twitter = $("<i></i>").addClass("fa").addClass("fa-twitter");
-		// this.youtube = $("<i></i>").addClass("fa").addClass("fa-youtube");
-	
-	angular.module("player", [ ])
-	.controller("PlayerController", function(){
-		var self = this;
-		this.title = "";
-		this.chapters = [];
-		this.timeline = $("#timeline");
-		this.min = 0;
-		this.max = 0;
-		this.interval = 0;
-		this.minReadable = "";
-		this.maxReadable = "";
-		this.text = "mlk";
+(function() {	
+	angular.module("player", ['angular-carousel'])
+	.controller("PlayerController", [ "$scope", "$http", function($scope, $http) {	
+		$scope.story = 1;
+		$scope.accounts = [];
+		$scope.title = "";
+		$scope.chapters = [];
+		$scope.min = 0;
+		$scope.max = 0;
+		$scope.interval = 0;
+		$scope.minReadable = "";
+		$scope.maxReadable = "";
 		
-		$.ajax({
-			type: "GET",
-			url: "json/story.php",
-			data: {
-				story: 1
-			},
-			statusCode: {
-				200: function(data) {
-					self.story = data;
-					self.interval = data.max - data.min;
-					self.minReadable = timeConverter(data.min);
-					self.maxReadable = timeConverter(data.max);
-				}
+		$scope.timeConverter = function(UNIX_timestamp){
+			var a = new Date(UNIX_timestamp*1000);
+			var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+			var year = a.getFullYear();
+			var month = months[a.getMonth() - 1];
+			var date = a.getDate();
+			var hour = a.getHours();
+			var min = a.getMinutes();
+			var sec = a.getSeconds();
+			var time = date + ',' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+			return time;
+		};
+		
+		$scope.type = function(chapter) {
+			if (chapter.type == 1) {
+				return "twitter";
+			} else {
+				return "youtube";
 			}
-		});	
-	});
+		};
+		
+		$http({
+			method: "GET",
+			url: "json/story.php",
+			params: { story: $scope.story }
+		}).success(function(data) {
+			$scope.accounts = data.accounts;
+			$scope.title = data.title;
+			$scope.chapters = data.chapters;
+			$scope.min = data.min;
+			$scope.max = data.max;
+			$scope.interval = data.max - data.min;
+			$scope.minReadable = $scope.timeConverter(data.min);
+			$scope.maxReadable = $scope.timeConverter(data.max);
+		});
+		
+		
+	}]);
 	
 })();
 

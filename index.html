@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="player">
+<html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/marble.css" media="screen" type="text/css"/>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="css/angular-carousel.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/marble.css" media="screen" type="text/css"/>
 </head>
-<body>
-	<div id="player" ng-controller="PlayerController as player">
-		<div id="content"></div>
+<body ng-app="player">
+	<section id="player" ng-controller="PlayerController as player">
+		<header><h1>{{title}}</h1></header>
+		<ul rn-carousel rn-carousel-buffered rn-carousel-indicator rn-carousel-control id="content">
+			<li class="chapter" ng-class="type(chapter)" ng-repeat="chapter in chapters">
+				<h3><u>{{timeConverter(chapter.time)}}</u></h3>
+				<div>{{accounts[chapter.account]}}</div>
+				<div ng-show="type(chapter)=='youtube'">VIDEO</div>
+				<div>{{chapter.content}}</div>
+			</li>
+		</ul>
 		<div id="timeline">
-			<div>{{player.interval}}</div>
-			<div>{{player.story.title}}</div>
+			<div class="borne" id="min">{{minReadable}}</div>
+			<div class="borne" id="max">{{maxReadable}}</div>
 		</div>
-	</div>	
+	</section>	
 	
 	<script src="angular.min.js"></script>
-	<script src="jquery-2.1.1.min.js"></script>
+	<script src="angular-touch.min.js"></script>
+	<script src="angular-carousel.min.js"></script>
 	<script src="marble.js"></script>
 </body>
 </html>
