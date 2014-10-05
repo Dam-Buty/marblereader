@@ -1,0 +1,41 @@
+
+body {
+	background-color: black;
+	margin: 1%;
+}
+
+#player {
+	position: relative;
+	width: 99%;
+	height: 99%;
+	background-color: white;
+}
+
+#timeline {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 20%;
+	width: 100%;
+	background-color: yellow;
+}
+
+#timeline i {
+	position: absolute;
+}
+
+.borne {
+	position: absolute;
+	bottom: 0;
+}
+
+#min {
+	left: 0;
+	text-align: left;
+}
+
+#max {
+	right: 0;
+	text-align: right;
+}

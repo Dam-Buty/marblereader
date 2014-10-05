@@ -1,0 +1,21 @@
+<html ng-app="player">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/marble.css" media="screen" type="text/css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+	<div id="player" ng-controller="PlayerController as player">
+		<div id="content"></div>
+		<div id="timeline">
+			<div>{{player.interval}}</div>
+			<div class="borne" id="max">{{player.story.title}}</div>
+		</div>
+	</div>	
+	
+	<script src="angular.min.js"></script>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script src="marble.js"></script>
+</body>
+</html>
