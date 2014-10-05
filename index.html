@@ -3,30 +3,32 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Cutive+Mono|Special+Elite' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link href="css/angular-carousel.min.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/marble.css" media="screen" type="text/css"/>
 </head>
 <body ng-app="player">
-	<section id="player" ng-controller="PlayerController as player">
+	<section id="player" ng-controller="PlayerController">
 		<header><h1>{{title}}</h1></header>
-		<ul rn-carousel rn-carousel-buffered rn-carousel-indicator rn-carousel-control id="content">
-			<li class="chapter" ng-class="type(chapter)" ng-repeat="chapter in chapters">
+		<div id="content">
+			<div class="chapter" ng-class="type(chapter)" ng-repeat="chapter in chapters">
 				<h3><u>{{timeConverter(chapter.time)}}</u></h3>
 				<div>{{accounts[chapter.account]}}</div>
 				<div ng-show="type(chapter)=='youtube'">VIDEO</div>
 				<div>{{chapter.content}}</div>
-			</li>
-		</ul>
-		<div id="timeline">
+			</div>
+			<div style='clear: both'></div>
+		</div>
+		<div id="timeline" ng-click="next()">
 			<div class="borne" id="min">{{minReadable}}</div>
+			<i class="fa fa-step-forward fa-3x" id="next"></i>
 			<div class="borne" id="max">{{maxReadable}}</div>
 		</div>
 	</section>	
 	
 	<script src="angular.min.js"></script>
-	<script src="angular-touch.min.js"></script>
-	<script src="angular-carousel.min.js"></script>
+	<!--<script src="angular-youtube-embed.min.js"></script>-->
 	<script src="marble.js"></script>
 </body>
 </html>

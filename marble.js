@@ -1,5 +1,5 @@
 (function() {	
-	angular.module("player", ['angular-carousel'])
+	angular.module("player", [])
 	.controller("PlayerController", [ "$scope", "$http", function($scope, $http) {	
 		$scope.story = 1;
 		$scope.accounts = [];
@@ -10,6 +10,8 @@
 		$scope.interval = 0;
 		$scope.minReadable = "";
 		$scope.maxReadable = "";
+		$scope.current = 0;
+		$scope.timer = undefined;
 		
 		$scope.timeConverter = function(UNIX_timestamp){
 			var a = new Date(UNIX_timestamp*1000);
@@ -32,6 +34,14 @@
 			}
 		};
 		
+		$scope.next = function() {
+			if ($scope.current == $scope.chapters.length - 1) {
+				clearInterval($scope.timer);
+			} else {
+				$scope.current++;
+			}
+		},
+		
 		$http({
 			method: "GET",
 			url: "json/story.php",
@@ -47,31 +57,9 @@
 			$scope.maxReadable = $scope.timeConverter(data.max);
 		});
 		
-		
+		$scope.timer = setInterval(function() {
+			$scope.next();
+		}, 2000);
 	}]);
 	
 })();
-
-
-			
-			// 
-			// $.each(data.chapters, function(i, chapter) {
-				// var offset = (chapter.time - min) / interval;
-				// var x = offset * timeline.innerWidth();
-				// var y = Math.random() * timeline.innerHeight();
-				// var icon = undefined;
-				
-				// switch(chapter.type) {
-					// case "1":
-						// icon = twitter.clone();
-						// break;
-					// case "2":
-						// icon = youtube.clone();
-						// break;
-				// }
-				
-				// timeline.append(icon.css({
-					// left: x + "px",
-					// top: y + "px"
-				// }));
-			// });
