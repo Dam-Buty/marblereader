@@ -9,14 +9,20 @@ h1 {
 	font-family: 'Special Elite', cursive;
 }
 
+h3 {
+	margin-top: 5px;
+}
+
 #player {
 	width: 99%;
 	height: 99%;
 }
 
 .chapter {
-	border: 1px solid black;
+	border: 1px solid white;
 	font-family: 'Cutive Mono', courrier;
+	padding: 5px;
+	margin-bottom: 10px;
 }
 
 .youtube {
@@ -40,6 +46,14 @@ h1 {
 	background-color: yellow;
 }
 
+#litterature {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 95%;
+	overflow-y: scroll;
+}
+
 #timeline i {
 	position: absolute;
 	color: black;
@@ -58,4 +72,12 @@ h1 {
 #max {
 	right: 0;
 	text-align: right;
+}
+
+.author {
+	color: #DEDEDE;
+}
+
+.content {
+	text-align: justify
 }

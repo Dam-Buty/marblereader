@@ -1,5 +1,5 @@
 (function() {	
-	angular.module("player", [])
+	angular.module("player", ['youtube-embed'])
 	.controller("PlayerController", [ "$scope", "$http", function($scope, $http) {	
 		$scope.story = 1;
 		$scope.accounts = [];
@@ -12,6 +12,10 @@
 		$scope.maxReadable = "";
 		$scope.current = 0;
 		$scope.timer = undefined;
+		
+		$scope.playerVars = {
+			autoplay: 1
+		};
 		
 		$scope.timeConverter = function(UNIX_timestamp){
 			var a = new Date(UNIX_timestamp*1000);
@@ -35,10 +39,20 @@
 		};
 		
 		$scope.next = function() {
-			if ($scope.current == $scope.chapters.length - 1) {
-				clearInterval($scope.timer);
+			var currentChapter;
+			var nextChapter;
+			
+			if ($scope.current === undefined) {
+				nextChapter = $scope.chapters[0];
 			} else {
-				$scope.current++;
+				currentChapter = $scope.chapters[$scope.current];
+				nextChapter = $scope.chapters[$scope.current + 1];
+				
+				if (currentChapter.type == 2 && nextChapter.type == 2) {
+					
+				} else {
+				
+				}
 			}
 		},
 		
