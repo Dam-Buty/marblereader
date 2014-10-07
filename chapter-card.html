@@ -1,4 +1,4 @@
-<div class="chapter" ng-repeat="chapter in displayedChapters" ng-show="current>=$index">
+<div class="chapter" ng-repeat="chapter in displayedChapters">
 	<h3><u>{{timeConverter(chapter.time)}}</u></h3>
 	<i ng-show="chapter.type==2" class="fa fa-youtube-square"></i>
 	<div class="content">{{chapter.content}}</div>

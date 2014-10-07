@@ -14,6 +14,7 @@
 		$scope.current = -1;
 		$scope.timer = undefined;
 		$scope.currentVideo = "";
+		$scope.litterature = angular.element(document.getElementById("litterature"));
 		
 		$scope.playerVars = {
 			autoplay: 1
@@ -47,8 +48,6 @@
 					$scope.go();
 			    });
 			}
-				
-			// $scope.$apply();
 		},
 		
 		$scope.go = function() {
@@ -83,8 +82,22 @@
 		
 		
 	}]).directive("chapterCard", function() {
-		return {
+		var link = function(scope, element, attrs) {
+			console.log(litterature);
+			litterature.css({
+				top: (-1 * (element.css("height") / 2))
+			});
+		};
 		
+		return {
+			templateUrl: "chapter-card.html",
+			link: link,
+			controller: function(scope, element, attrs) {
+				console.log(litterature);
+				litterature.css({
+					top: (-1 * (element.css("height") / 2))
+				});
+			}
 		};
 	});;
 	

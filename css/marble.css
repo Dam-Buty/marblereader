@@ -27,9 +27,7 @@ h3 {
 
 #litterature {
 	position: absolute;
-	top: 50%;
 	right: 0;
-	height: 95%;
 	overflow-y: hidden;
 	width: calc(100% - 690px);
 }
