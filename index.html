@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='http://fonts.googleapis.com/css?family=Cutive+Mono|Special+Elite' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link href="css/angular-carousel.min.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/marble.css" media="screen" type="text/css"/>
 </head>
 <body ng-app="player">
 	<section id="player" ng-controller="PlayerController">
 		<header><h1>{{title}}</h1></header>
-		<div id="cinema">
-			<youtube-video id="best-vid" video-id="currentVideo" player-vars="playerVars"></youtube-video>
-		</div>
 		<div id="litterature">
-			<div class="chapter" ng-class="type(chapter)" ng-repeat="chapter in chapters" ng-if="chapter.type==1" ng-show="current>=$index">
+			<div class="chapter" ng-repeat="chapter in displayedChapters" ng-show="current>=$index">
 				<h3><u>{{timeConverter(chapter.time)}}</u></h3>
-				<div ng-show="type(chapter)=='youtube'">VIDEO</div>
+				<i ng-show="chapter.type==2" class="fa fa-youtube-square"></i>
 				<div class="content">{{chapter.content}}</div>
 				<div class="author">-- {{accounts[chapter.account]}}</div>
 			</div>
 			<div style='clear: both'></div>
+		</div>
+		<div id="cinema">
+			<youtube-video id="video-player" video-id="currentVideo" player-vars="playerVars"></youtube-video>
 		</div>
 		<div id="timeline" ng-click="next()">
 			<div class="borne" id="min">{{minReadable}}</div>

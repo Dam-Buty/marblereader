@@ -7,6 +7,7 @@ body {
 
 h1 {
 	font-family: 'Special Elite', cursive;
+	text-align: center;
 }
 
 h3 {
@@ -18,22 +19,30 @@ h3 {
 	height: 99%;
 }
 
+#cinema {
+	position: absolute;
+	top: calc(50% - 195px);
+	left: 0;
+}
+
+#litterature {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	height: 95%;
+	overflow-y: hidden;
+	width: calc(100% - 690px);
+}
+
 .chapter {
 	border: 1px solid white;
 	font-family: 'Cutive Mono', courrier;
 	padding: 5px;
 	margin-bottom: 10px;
-}
-
-.youtube {
-	float: left;
-	width: 60%;
-}
-
-.twitter {
 	float: right;
-	width: 30%;
-	margin-left: 60%;
+	width: 50%;
+	margin-right: 25%;
+	box-sizing: border-box;
 }
 
 #timeline {
@@ -44,14 +53,6 @@ h3 {
 	height: 5%;
 	width: 100%;
 	background-color: yellow;
-}
-
-#litterature {
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 95%;
-	overflow-y: scroll;
 }
 
 #timeline i {

@@ -1,17 +1,19 @@
 (function() {	
 	angular.module("player", ['youtube-embed'])
-	.controller("PlayerController", [ "$scope", "$http", function($scope, $http) {	
+	.controller("PlayerController", [ "$scope", "$http", "$interval", function($scope, $http, $interval) {	
 		$scope.story = 1;
 		$scope.accounts = [];
 		$scope.title = "";
 		$scope.chapters = [];
+		$scope.displayedChapters = [];
 		$scope.min = 0;
 		$scope.max = 0;
 		$scope.interval = 0;
 		$scope.minReadable = "";
 		$scope.maxReadable = "";
-		$scope.current = 0;
+		$scope.current = -1;
 		$scope.timer = undefined;
+		$scope.currentVideo = "";
 		
 		$scope.playerVars = {
 			autoplay: 1
@@ -30,30 +32,36 @@
 			return time;
 		};
 		
-		$scope.type = function(chapter) {
-			if (chapter.type == 1) {
-				return "twitter";
-			} else {
-				return "youtube";
-			}
-		};
-		
 		$scope.next = function() {
-			var currentChapter;
-			var nextChapter;
+			$scope.current++;
 			
-			if ($scope.current === undefined) {
-				nextChapter = $scope.chapters[0];
-			} else {
-				currentChapter = $scope.chapters[$scope.current];
-				nextChapter = $scope.chapters[$scope.current + 1];
+			var currentChapter = $scope.chapters[$scope.current];
+			
+			$scope.displayedChapters.push(currentChapter);
+			
+			if (currentChapter.type == 2) {
+				$scope.stop();
+				$scope.currentVideo = currentChapter.id;
 				
-				if (currentChapter.type == 2 && nextChapter.type == 2) {
-					
-				} else {
-				
-				}
+			    $scope.$on('youtube.player.ended', function ($event, player) {
+					$scope.go();
+			    });
 			}
+				
+			// $scope.$apply();
+		},
+		
+		$scope.go = function() {
+			if ($scope.timer === undefined) {
+				$scope.timer = $interval(function() {
+					$scope.next();
+				}, 2000);
+			}
+		},
+		
+		$scope.stop = function() {
+			$interval.cancel($scope.timer);
+			$scope.timer = undefined;
 		},
 		
 		$http({
@@ -69,11 +77,15 @@
 			$scope.interval = data.max - data.min;
 			$scope.minReadable = $scope.timeConverter(data.min);
 			$scope.maxReadable = $scope.timeConverter(data.max);
+			
+			$scope.go();
 		});
 		
-		$scope.timer = setInterval(function() {
-			$scope.next();
-		}, 2000);
-	}]);
+		
+	}]).directive("chapterCard", function() {
+		return {
+		
+		};
+	});;
 	
 })();
