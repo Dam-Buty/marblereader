@@ -35,6 +35,7 @@
 		
 		$scope.next = function() {
 			$scope.current++;
+			$scope.litterature.css({ top: -55 });
 			
 			var currentChapter = $scope.chapters[$scope.current];
 			
@@ -82,7 +83,8 @@
 		
 		
 	}]).directive("chapterCard", function() {
-		var link = function(scope, element, attrs) {
+		function link(scope, element, attrs) {
+			console.log("lklk");
 			console.log(litterature);
 			litterature.css({
 				top: (-1 * (element.css("height") / 2))
@@ -91,13 +93,14 @@
 		
 		return {
 			templateUrl: "chapter-card.html",
-			link: link,
-			controller: function(scope, element, attrs) {
+			link: link/*,
+			controller: function($scope, element, attrs) {
+				console.log("lklk");
 				console.log(litterature);
 				litterature.css({
 					top: (-1 * (element.css("height") / 2))
 				});
-			}
+			}*/
 		};
 	});;
 	
