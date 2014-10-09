@@ -30,6 +30,7 @@ h3 {
 	right: 0;
 	overflow-y: hidden;
 	width: calc(100% - 690px);
+	top: 50%;
 }
 
 .chapter {

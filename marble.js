@@ -35,7 +35,7 @@
 		
 		$scope.next = function() {
 			$scope.current++;
-			$scope.litterature.css({ top: -55 });
+			$scope.litterature.css("top", "-=55px");
 			
 			var currentChapter = $scope.chapters[$scope.current];
 			
