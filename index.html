@@ -17,8 +17,9 @@
 		<div id="cinema">
 			<youtube-video id="video-player" video-id="currentVideo" player-vars="playerVars"></youtube-video>
 		</div>
-		<div id="timeline" ng-click="stop()">
+		<div id="timeline">
 			<div class="borne" id="min">{{minReadable}}</div>
+			<i class="fa fa-stop fa-3x" ng-click="stop()"></i>
 			<i class="fa fa-step-forward fa-3x" id="next" ng-click="next()"></i>
 			<div class="borne" id="max">{{current}}</div>
 		</div>

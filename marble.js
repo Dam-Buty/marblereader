@@ -43,7 +43,7 @@
 			
 			$scope.displayedChapters.push(currentChapter);
 			
-			if (currentChapter.type == 2) {
+			if (currentChapter.type == "media") {
 				$scope.stop();
 				$scope.currentVideo = currentChapter.id;
 				

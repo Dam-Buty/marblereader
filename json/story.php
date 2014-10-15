@@ -3,6 +3,11 @@ include("../includes/PDO.php");
 
 $marble = new MARBLESQL();
 
+$types = [
+   "1" => "text",
+   "2" => "media" 
+];
+
 $params = [
 	"story" => $_GET["story"]
 ];
@@ -32,6 +37,7 @@ $chapters_final = [];
 
 foreach($chapters as $chapter) {
 	$chapter["time"] = strtotime($chapter["time"]);
+	$chapter["type"] = $types[$chapter["type"]];
 	array_push($chapters_final, $chapter);
 }
 
