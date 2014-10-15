@@ -50,6 +50,7 @@ h3 {
 	position: absolute;
 	
 	transition: all 400ms ease-in 0;
+	transition: -webkit-filter none;
 }
 
 /* Positionnements cartes */
@@ -58,12 +59,14 @@ h3 {
     top: 0;
     font-size: 0.7em;
     -webkit-filter: blur(1.2px);
+    z-index: 1;
 }
 
 .latest {
     top: 25%;
     font-size: 0.9em;
     transform: translateY(-50%);
+    z-index: 1000;
 }
 
 .current {
@@ -71,6 +74,7 @@ h3 {
     font-size: 1em;
     transform: translateY(-50%);
     box-shadow: 0 0 5px 5px #575757;
+    z-index: 1;
 }
 
 .next {
