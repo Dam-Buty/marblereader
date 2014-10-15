@@ -3,26 +3,21 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='http://fonts.googleapis.com/css?family=Cutive+Mono|Special+Elite' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/webfonts.css" media="screen" type="text/css"/>
 	<link rel="stylesheet" href="css/marble.css" media="screen" type="text/css"/>
 </head>
 <body ng-app="player">
 	<section id="player" ng-controller="PlayerController">
 		<header><h1>{{title}}</h1></header>
 		<div id="litterature">
-			<div class="chapter" ng-repeat="chapter in displayedChapters" ng-show="current>=$index">
-				<h3><u>{{timeConverter(chapter.time)}}</u></h3>
-				<i ng-show="chapter.type==2" class="fa fa-youtube-square"></i>
-				<div class="content">{{chapter.content}}</div>
-				<div class="author">-- {{accounts[chapter.account]}}</div>
-			</div>
+			<chapter-card></chapter-card>
 			<div style='clear: both'></div>
 		</div>
 		<div id="cinema">
 			<youtube-video id="video-player" video-id="currentVideo" player-vars="playerVars"></youtube-video>
 		</div>
-		<div id="timeline" ng-click="next()">
+		<div id="timeline" ng-click="stop()">
 			<div class="borne" id="min">{{minReadable}}</div>
 			<i class="fa fa-step-forward fa-3x" id="next" ng-click="next()"></i>
 			<div class="borne" id="max">{{current}}</div>

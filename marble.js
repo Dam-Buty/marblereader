@@ -13,6 +13,7 @@
 		$scope.maxReadable = "";
 		$scope.current = -1;
 		$scope.timer = undefined;
+		$scope.tick = 4000;
 		$scope.currentVideo = "";
 		$scope.litterature = angular.element(document.getElementById("litterature"));
 		
@@ -35,6 +36,7 @@
 		
 		$scope.next = function() {
 			$scope.current++;
+			var top = $scope.litterature.css("top");
 			$scope.litterature.css("top", "-=55px");
 			
 			var currentChapter = $scope.chapters[$scope.current];
@@ -55,7 +57,7 @@
 			if ($scope.timer === undefined) {
 				$scope.timer = $interval(function() {
 					$scope.next();
-				}, 2000);
+				}, $scope.tick);
 			}
 		},
 		
@@ -82,25 +84,33 @@
 		});
 		
 		
-	}]).directive("chapterCard", function() {
-		function link(scope, element, attrs) {
-			console.log("lklk");
-			console.log(litterature);
-			litterature.css({
-				top: (-1 * (element.css("height") / 2))
-			});
-		};
-		
+	}]).directive("chapterCard", function() {		
 		return {
+		    restrict: "E",
 			templateUrl: "chapter-card.html",
-			link: link/*,
-			controller: function($scope, element, attrs) {
-				console.log("lklk");
-				console.log(litterature);
-				litterature.css({
-					top: (-1 * (element.css("height") / 2))
-				});
-			}*/
+			controller: function($scope) {
+			    $scope.chapterClass = function(idx) {
+			        var current = $scope.current;
+			        
+		            if (idx == current) {
+		                return "current";
+		            } else {
+			            if (idx < current) {
+			                if (idx == current - 1) {
+			                    return "latest";
+			                } else {
+			                    return "old";
+			                }
+			            } else {
+			                if (idx == current + 1) {
+			                    return "next";
+			                } else {
+			                    return "new";
+			                }
+			            }
+		            }
+			    };
+			}
 		};
 	});;
 	
