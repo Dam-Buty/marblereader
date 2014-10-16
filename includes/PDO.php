@@ -4,20 +4,16 @@
 //////////////////////////
 
 class MARBLESQL {
-#    private $hostname = "127.0.0.1";
-#    private $username = "dino_prod_root";
-#    private $dbname = "dino_prod";
-#    private $password = "G00D_2-e4t-1000_yrz!"; 
-#####################
-#    private $hostname = "127.0.0.1";
-#    private $username = "dino_baby_root";
-#    private $dbname = "dino_baby";
-#    private $password = "C4dillac5"; 
-#####################
     private $hostname = "localhost";
     private $username = "root";
     private $dbname = "marble";
-    private $password = "C4dillac5";
+    private $password = "";
+	############################################
+	############################################
+    // private $hostname = "localhost";
+    // private $username = "root";
+    // private $dbname = "marble";
+    // private $password = "C4dillac5";
     
     private $options = [
         PDO::ATTR_PERSISTENT         => true,

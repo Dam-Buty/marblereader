@@ -1,0 +1,7 @@
+<div class="day">
+	<div class="chapter" ng-class="chapterClass($index)" ng-repeat="chapter in day.chapters">
+		<i ng-show="chapter.type==2" class="fa fa-youtube-square"></i>
+		<div class="content">{{chapter.content}}</div>
+		<div class="author">-- {{accounts[chapter.account]}}</div>
+	</div>
+</div>

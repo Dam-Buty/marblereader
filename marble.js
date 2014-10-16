@@ -5,12 +5,9 @@
 		$scope.accounts = [];
 		$scope.title = "";
 		$scope.chapters = [];
-		$scope.displayedChapters = [];
+		$scope.story = [];
 		$scope.min = 0;
 		$scope.max = 0;
-		$scope.interval = 0;
-		$scope.minReadable = "";
-		$scope.maxReadable = "";
 		$scope.current = -1;
 		$scope.timer = undefined;
 		$scope.tick = 4000;
@@ -24,14 +21,20 @@
 		$scope.timeConverter = function(UNIX_timestamp){
 			var a = new Date(UNIX_timestamp*1000);
 			var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-			var year = a.getFullYear();
-			var month = months[a.getMonth() - 1];
-			var date = a.getDate();
-			var hour = a.getHours();
-			var min = a.getMinutes();
-			var sec = a.getSeconds();
-			var time = date + ',' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-			return time;
+			return {
+				year: a.getFullYear(),
+				month: months[a.getMonth() - 1],
+				date: a.getDate(),
+				hour: a.getHours(),
+				min: a.getMinutes(),
+				sec: a.getSeconds(),
+				getDate: function() {
+					return this.date + ' ' + this.month + ' ' + this.year;
+				},
+				getTime: function() {
+					return this.hour + ":" + this.min + "," + this.sec;
+				}
+			};
 		};
 		
 		$scope.next = function() {
@@ -76,40 +79,60 @@
 			$scope.chapters = data.chapters;
 			$scope.min = data.min;
 			$scope.max = data.max;
-			$scope.interval = data.max - data.min;
-			$scope.minReadable = $scope.timeConverter(data.min);
-			$scope.maxReadable = $scope.timeConverter(data.max);
+			
+			var lastDate = "";
+			var currentDay = {
+				date: "",
+				chapters: []
+			};
+			
+			for(var i = 0;i <= $scope.chapters.length - 1;i++) {
+				var chapter = $scope.chapters[i];
+				
+				var time = $scope.timeConverter(chapter.time);
+				
+				if (time.getDate() != lastDate) {
+					if (lastDate != "") { scope.story.push(currentDay); }
+					currentDay = {
+						date: time.getDate(),
+						chapters: [chapter]
+					};
+				} else {
+					chapter.time = time;
+					currentDay.chapters.push(chapter);
+				}
+			}
 			
 			$scope.go();
 		});
 		
 		
-	}]).directive("chapterCard", function() {		
+	}]).directive("dayCard", function() {
 		return {
 		    restrict: "E",
-			templateUrl: "chapter-card.html",
+			templateUrl: "day-card.html",
 			controller: function($scope) {
-			    $scope.chapterClass = function(idx) {
-			        var current = $scope.current;
+			    // $scope.chapterClass = function(idx) {
+			        // var current = $scope.current;
 			        
-		            if (idx == current) {
-		                return "current";
-		            } else {
-			            if (idx < current) {
-			                if (idx == current - 1) {
-			                    return "latest";
-			                } else {
-			                    return "old";
-			                }
-			            } else {
-			                if (idx == current + 1) {
-			                    return "next";
-			                } else {
-			                    return "new";
-			                }
-			            }
-		            }
-			    };
+		            // if (idx == current) {
+		                // return "current";
+		            // } else {
+			            // if (idx < current) {
+			                // if (idx == current - 1) {
+			                    // return "latest";
+			                // } else {
+			                    // return "old";
+			                // }
+			            // } else {
+			                // if (idx == current + 1) {
+			                    // return "next";
+			                // } else {
+			                    // return "new";
+			                // }
+			            // }
+		            // }
+			    // };
 			}
 		};
 	});;
