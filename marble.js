@@ -13,6 +13,7 @@ function($scope, $http, $timeout, $log, $animate) {
 	$scope.currentChapter = 0;
 	$scope.tick = 2000;
 	$scope.currentVideo = "";
+	$scope.handle = undefined;
 	
 	$scope.playerVars = {
 		autoplay: 1
@@ -37,28 +38,57 @@ function($scope, $http, $timeout, $log, $animate) {
 		};
 	};
 	
+	$scope.previous = function() {
+		if ($scope.currentChapter > 0) {
+			$scope.currentChapter--;	
+		} else {
+			if ($scope.currentDay > 0) {
+				$scope.currentDay--;
+				$scope.currentChapter = 0;	
+			}		
+		}				
+		$scope.go();
+	};
+	
 	$scope.next = function() {
-		if ($scope.currentDay < $scope.days.length - 1) {
-			if ($scope.currentChapter < $scope.days[$scope.currentDay].chapters.length - 1) {
-				$scope.currentChapter++;	
-			} else {
+		if ($scope.currentChapter < $scope.days[$scope.currentDay].chapters.length - 1) {
+			$scope.currentChapter++;	
+		} else {
+			if ($scope.currentDay < $scope.days.length - 1) {
 				$scope.currentDay++;
 				$scope.currentChapter = 0;	
-			}				
-		}		
+			}		
+		}				
 		$scope.go();
 	};
 	
 	$scope.go = function() {			
 		var currentChapter = $scope.days[$scope.currentDay].chapters[$scope.currentChapter];
 		
-		if (currentChapter.type == "media") {
+		if (currentChapter.category == "media") {
 			$scope.currentVideo = currentChapter.id;				
 		} else {
-			$timeout(function() {
+			$scope.currentVideo = "";
+			$scope.handle = $timeout(function() {
 				$scope.next();
 			}, $scope.tick);
 		}
+	};
+	
+	$scope.isTwitter = function() {
+		return ($scope.getCurrent().type == 1);
+	};
+	
+	$scope.isYoutube = function() {
+		return ($scope.getCurrent().type == 2);
+	};
+	
+	$scope.getCurrent = function() {
+		return $scope.days[$scope.currentDay].chapters[$scope.currentChapter];
+	};
+	
+	$scope.stop = function() {
+		$timeout.cancel($scope.handle);
 	};
 	
 	$http({
@@ -100,26 +130,55 @@ function($scope, $http, $timeout, $log, $animate) {
 		$scope.$on('youtube.player.ended', function ($event, player) {
 			$scope.next();
 		});
+		
+		window.onmousewheel = function(event) {
+			if (event.deltaY == 100) {
+				$scope.next(true);
+			} else {
+				$scope.previous(true);
+			}
+		};
 
 		$scope.go();	
 	});
 	
 	
-}]).directive("dayCard", ['$animate', function($animate) {
+}]).directive("dayCard", function() {
 	return {
 		restrict: "E",
 		templateUrl: "day-card.html",
 		controller: function($scope) {
 			$scope.isCurrent = function(parent, idx) {
-				if ($scope.currentDay == parent && $scope.currentChapter == idx) {
-					return true;
-				} else {
-					return false;
-				}
+				return ($scope.currentDay == parent && $scope.currentChapter == idx);
 			};
 		}
 	};
-}]).animation(".chapter", function() {
+}).directive("twitterCard", function() {
+	return {
+		restrict: "E",
+		templateUrl: "twitter-card.html",
+		controller: function($scope) {
+		}
+	};
+}).directive("youtubeCard", function() {
+	return {
+		restrict: "E",
+		templateUrl: "youtube-card.html",
+		controller: function($scope) {
+		}
+	};
+})/*.directive("scrollTo", function() {
+	return {
+		restrict: "A",
+		link: function(scope, element, attr) {
+			var litterature = document.getElementById("litterature");
+			var middle = litterature.offsetHeight / 2;
+			
+			element.addClass("current");
+			angular.element(litterature).scrollToElementAnimated(element, middle);
+		}
+	};
+})*/.animation(".chapter", function() {
 	return {
 		addClass: function(element, classname) {
 			var litterature = angular.element(document.getElementById("litterature"));
@@ -128,7 +187,8 @@ function($scope, $http, $timeout, $log, $animate) {
 			litterature.scrollToElementAnimated(element, middle);
 		}
 	};
-});
+})
+;
 	
 	
 })();

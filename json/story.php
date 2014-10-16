@@ -37,7 +37,7 @@ $chapters_final = [];
 
 foreach($chapters as $chapter) {
 	$chapter["time"] = strtotime($chapter["time"]);
-	$chapter["type"] = $types[$chapter["type"]];
+	$chapter["category"] = $types[$chapter["type"]];
 	array_push($chapters_final, $chapter);
 }
 

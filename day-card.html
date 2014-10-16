@@ -2,8 +2,8 @@
 	<h3>{{day.date}}</h3>
 	<div class="chapter" ng-class="{ current: isCurrent($parent.$index, $index) }" ng-repeat="chapter in day.chapters">
 		<span class="time"><u>{{chapter.time.getTime()}}</u> : </span>
-		<i ng-show="chapter.type=='media'" class="fa fa-youtube-square marron"></i>
-		<i ng-show="chapter.type=='text'" class="fa fa-twitter-square marron"></i>
+		<i ng-show="chapter.category=='media'" class="fa fa-youtube-square marron"></i>
+		<i ng-show="chapter.category=='text'" class="fa fa-twitter-square marron"></i>
 		&nbsp;{{chapter.content}}
 		<span class="author marron">&nbsp;--&nbsp;{{accounts[chapter.account]}}</span>
 	</div>
