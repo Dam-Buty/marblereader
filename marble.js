@@ -93,8 +93,7 @@ function($scope, $http, $timeout, $log, $animate) {
 	
 	$http({
 		method: "GET",
-		url: "json/story.php",
-		params: { story: $scope.story }
+		url: "json/" + $scope.story + ".json"
 	}).success(function(data) {
 		$scope.accounts = data.accounts;
 		$scope.title = data.title;
