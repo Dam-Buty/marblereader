@@ -37,7 +37,7 @@ h4 {
 	right: 0;
 	width: calc(100% - 690px);
 	top: 0;
-	overflow-y: auto;
+	overflow-y: hidden;
 	height: 100%;
 }
 
@@ -50,10 +50,6 @@ h4 {
 	border-image-slice: 109 104 126 104;
 	border-image-width: 10%;
 	border-image-repeat: stretch;
-}
-
-.padding-day {
-	height: 10%;
 }
 
 .time {
