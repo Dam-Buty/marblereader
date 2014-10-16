@@ -1,15 +1,13 @@
 (function() {	
 	angular.module("player", ['youtube-embed'])
-	.controller("PlayerController", [ "$scope", "$http", "$interval", function($scope, $http, $interval) {	
+	.controller("PlayerController", [ "$scope", "$http", "$timeout", function($scope, $http, $timeout) {	
 		$scope.story = 1;
 		$scope.accounts = [];
 		$scope.title = "";
 		$scope.chapters = [];
-		$scope.story = [];
-		$scope.min = 0;
-		$scope.max = 0;
-		$scope.current = -1;
-		$scope.timer = undefined;
+		$scope.days = [];
+		$scope.currentDay = 0;
+		$scope.currentChapter = 0;
 		$scope.tick = 4000;
 		$scope.currentVideo = "";
 		$scope.litterature = angular.element(document.getElementById("litterature"));
@@ -25,49 +23,41 @@
 				year: a.getFullYear(),
 				month: months[a.getMonth() - 1],
 				date: a.getDate(),
-				hour: a.getHours(),
-				min: a.getMinutes(),
-				sec: a.getSeconds(),
+				hour: ('0' + a.getHours()).slice(-2),
+				min: ('0' + a.getMinutes()).slice(-2),
+				sec: ('0' + a.getSeconds()).slice(-2),
 				getDate: function() {
 					return this.date + ' ' + this.month + ' ' + this.year;
 				},
 				getTime: function() {
-					return this.hour + ":" + this.min + "," + this.sec;
+					return this.hour + ":" + this.min;
 				}
 			};
 		};
 		
 		$scope.next = function() {
-			$scope.current++;
-			var top = $scope.litterature.css("top");
-			$scope.litterature.css("top", "-=55px");
-			
-			var currentChapter = $scope.chapters[$scope.current];
-			
-			$scope.displayedChapters.push(currentChapter);
+			if ($scope.currentDay < $scope.days.length - 1) {
+				if ($scope.currentChapter < $scope.days[$scope.currentDay].chapters.length - 1) {
+					$scope.currentChapter++;	
+				} else {
+					$scope.currentDay++;
+					$scope.currentChapter = 0;	
+				}				
+			}		
+			$scope.go();
+		};
+		
+		$scope.go = function() {			
+			var currentChapter = $scope.days[$scope.currentDay].chapters[$scope.currentChapter];
 			
 			if (currentChapter.type == "media") {
-				$scope.stop();
-				$scope.currentVideo = currentChapter.id;
-				
-			    $scope.$on('youtube.player.ended', function ($event, player) {
-					$scope.go();
-			    });
-			}
-		},
-		
-		$scope.go = function() {
-			if ($scope.timer === undefined) {
-				$scope.timer = $interval(function() {
+				$scope.currentVideo = currentChapter.id;				
+			} else {
+				$timeout(function() {
 					$scope.next();
 				}, $scope.tick);
 			}
-		},
-		
-		$scope.stop = function() {
-			$interval.cancel($scope.timer);
-			$scope.timer = undefined;
-		},
+		};
 		
 		$http({
 			method: "GET",
@@ -77,8 +67,6 @@
 			$scope.accounts = data.accounts;
 			$scope.title = data.title;
 			$scope.chapters = data.chapters;
-			$scope.min = data.min;
-			$scope.max = data.max;
 			
 			var lastDate = "";
 			var currentDay = {
@@ -92,7 +80,10 @@
 				var time = $scope.timeConverter(chapter.time);
 				
 				if (time.getDate() != lastDate) {
-					if (lastDate != "") { scope.story.push(currentDay); }
+					if (lastDate != "") { $scope.days.push(currentDay); }
+					
+					chapter.time = time;
+					
 					currentDay = {
 						date: time.getDate(),
 						chapters: [chapter]
@@ -101,40 +92,39 @@
 					chapter.time = time;
 					currentDay.chapters.push(chapter);
 				}
+				lastDate = time.getDate();
 			}
 			
-			$scope.go();
+			$scope.$on('youtube.player.ended', function ($event, player) {
+				$scope.next();
+			});
+
+			$scope.go();	
 		});
 		
 		
-	}]).directive("dayCard", function() {
+	}]).directive("dayCard", ['$animate', function($animate) {
 		return {
 		    restrict: "E",
 			templateUrl: "day-card.html",
 			controller: function($scope) {
-			    // $scope.chapterClass = function(idx) {
-			        // var current = $scope.current;
-			        
-		            // if (idx == current) {
-		                // return "current";
-		            // } else {
-			            // if (idx < current) {
-			                // if (idx == current - 1) {
-			                    // return "latest";
-			                // } else {
-			                    // return "old";
-			                // }
-			            // } else {
-			                // if (idx == current + 1) {
-			                    // return "next";
-			                // } else {
-			                    // return "new";
-			                // }
-			            // }
-		            // }
-			    // };
+			    $scope.isCurrent = function(parent, idx) {
+					if ($scope.currentDay == parent && $scope.currentChapter == idx) {
+						return true;
+					} else {
+						return false;
+					}
+				};
 			}
 		};
-	});;
+	}]).animation(".chapter", function() {
+		return {
+			addClass: function(element, classname, done) {
+				console.log(element);
+				console.log(classname);
+				console.log(done);
+			}
+		};
+	});
 	
 })();

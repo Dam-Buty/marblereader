@@ -1,7 +1,12 @@
 <div class="day">
-	<div class="chapter" ng-class="chapterClass($index)" ng-repeat="chapter in day.chapters">
-		<i ng-show="chapter.type==2" class="fa fa-youtube-square"></i>
-		<div class="content">{{chapter.content}}</div>
-		<div class="author">-- {{accounts[chapter.account]}}</div>
+	<div class="container-day">
+		<h3>{{day.date}}</h3>
+		<div class="chapter" ng-class="{ current: isCurrent($parent.$index, $index) }" ng-repeat="chapter in day.chapters">
+			<span class="time">{{chapter.time.getTime()}} : </span>
+			<i ng-show="chapter.type=='media'" class="fa fa-youtube-square marron"></i>
+			<i ng-show="chapter.type=='text'" class="fa fa-twitter-square marron"></i>
+			&nbsp;{{chapter.content}}
+			<span class="author marron">&nbsp;--&nbsp;{{accounts[chapter.account]}}</span>
+		</div>
 	</div>
 </div>

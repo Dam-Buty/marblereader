@@ -1,11 +1,11 @@
 
 body {
 	background-color: black;
-	color: white;
 	margin: 1%;
 }
 
 h1 {
+	color: white;
 	font-family: '1942', cursive;
 	text-align: left;
 	font-size: 3em;
@@ -14,7 +14,11 @@ h1 {
 h3 {
 	margin-top: 5px;
 	font-family: "impact_reversed", courrier;
-    color: #CFC59B;
+    /*color: #CFC59B;*/
+}
+
+h4 {
+	margin: 5px;
 }
 
 #player {
@@ -29,64 +33,57 @@ h3 {
 }
 
 #litterature {
-	float: right;
-	overflow-y: hidden;
+	position: absolute;
+	right: 0;
 	width: calc(100% - 690px);
 	top: 0;
+	overflow-y: auto;
+	height: 100%;
+}
+
+.day {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10%;
+	background-color: white;
+	border-image-source: url(http://localhost/marble/marblereader/img/frame.jpg);
+	border-image-slice: 109 104 126 104;
+	border-image-width: 10%;
+	border-image-repeat: stretch;
+}
+
+.padding-day {
+	height: 10%;
+}
+
+.time {
+	font-family: "impact_reversed", courrier;
 }
 
 .chapter {
-	border: 1px solid white;
-	font-family: "impact_reversed", courrier;
-	background-color: black;
-	padding: 5px;
-	margin-bottom: 10px;
-	float: right;
-	width: 30%;
-	margin-right: 25%;
+	font-family: "texgyre_regular", courrier;
+	margin: 5px;
 	box-sizing: border-box;
-	border-radius: 3px;
-	
-	position: absolute;
+	border-radius: 5px;
+	padding: 2px;
 	
 	transition: all 400ms ease-in 0;
 	transition: -webkit-filter none;
 }
 
-/* Positionnements cartes */
-
-.old {
-    top: 0;
-    font-size: 0.7em;
-    -webkit-filter: blur(1.2px);
-    z-index: 1;
-}
-
-.latest {
-    top: 25%;
-    font-size: 0.9em;
-    transform: translateY(-50%);
-    z-index: 1000;
-}
-
 .current {
-    top: 50%;
-    font-size: 1em;
-    transform: translateY(-50%);
+	background-color: #FFDFEC;
     box-shadow: 0 0 5px 5px #575757;
-    z-index: 1;
 }
 
-.next {
-    top: 75%;
-    font-size: 0.9em;
-    transform: translateY(-50%);
+.author {
+	font-family: "impact_reversed", courrier;
+	white-space: pre;
+	font-weight: bold;
 }
 
-.new {
-    bottom: 0;
-    font-size: 0.7em;
-    -webkit-filter: blur(1.2px);
+.marron {
+	color: #5A4B0A;
 }
 
 #timeline {
@@ -116,14 +113,6 @@ h3 {
 #max {
 	right: 0;
 	text-align: right;
-}
-
-.author {
-	color: #DEDEDE;
-}
-
-.content {
-	text-align: justify
 }
 
 
