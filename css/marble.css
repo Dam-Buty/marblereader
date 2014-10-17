@@ -12,9 +12,7 @@ h1 {
 }
 
 h3 {
-	margin-top: 5px;
 	font-family: "impact_reversed", courrier;
-    /*color: #CFC59B;*/
 }
 
 h4 {
@@ -33,27 +31,35 @@ h4 {
 }
 
 .big-chapter {
+    position: relative;
+    display: table-row;
 	width: 640px;
 	height: 390px;
-	font-size: 2em;
+	font-size: 1.7em;
 }
 
-.big-chapter .author {
-	text-align: right;
-	margin-top: 15px;
+.big-chapter .time {
+    position: absolute;
+    top: 0;
+    text-align: center;
+	color: white;
 }
 
-.big-content {
+.big-chapter .content {
+    display: table-cell;
+    width: 640px;
 	font-family: "Verdana";
 	font-weight: bold;
 	color: white;
 	text-align: center;
+	vertical-align: middle;
 }
 
-.big-time {
-	font-family: "impact_reversed";
-	text-align: center;
-	color: white;
+.big-chapter .author {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+	text-align: right;
 }
 
 #litterature {
@@ -90,6 +96,12 @@ h4 {
 	
 	transition: all 400ms ease-in 0;
 	transition: -webkit-filter none;
+}
+
+.chapter:hover {
+    background-color: #F1DFE7;
+    box-shadow: 0 0 2px 2px #575757;
+    cursor: pointer;
 }
 
 .current {

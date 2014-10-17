@@ -88,8 +88,22 @@ function($scope, $http, $timeout, $log, $animate) {
 		return $scope.days[$scope.currentDay].chapters[$scope.currentChapter];
 	};
 	
+	$scope.setCurrent = function(parent, idx) {
+	    $scope.currentDay = parent;
+	    $scope.currentChapter = idx;
+	    $scope.go();
+	};
+	
 	$scope.stop = function() {
 		$timeout.cancel($scope.handle);
+	};
+	
+	$scope.startScroll = function(direction) {
+	
+	};
+	
+	$scope.stopScroll = function() {
+	
 	};
 	
 	$http({
@@ -132,10 +146,10 @@ function($scope, $http, $timeout, $log, $animate) {
 		});
 		
 		window.onmousewheel = function(event) {
-			if (event.deltaY == 100) {
-				startScroll("next");
+			if (event.deltaY > 0) {
+				$scope.startScroll("next");
 			} else {
-				startScroll("prev");
+				$scope.startScroll("prev");
 			}
 		};
 

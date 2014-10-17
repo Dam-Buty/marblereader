@@ -4,16 +4,16 @@
 //////////////////////////
 
 class MARBLESQL {
+#    private $hostname = "localhost";
+#    private $username = "root";
+#    private $dbname = "marble";
+#    private $password = "";
+	############################################
+	############################################
     private $hostname = "localhost";
     private $username = "root";
     private $dbname = "marble";
-    private $password = "";
-	############################################
-	############################################
-    // private $hostname = "localhost";
-    // private $username = "root";
-    // private $dbname = "marble";
-    // private $password = "C4dillac5";
+    private $password = "C4dillac5";
     
     private $options = [
         PDO::ATTR_PERSISTENT         => true,
