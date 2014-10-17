@@ -70,7 +70,7 @@ h4 {
 	margin-bottom: 20px;
 	padding: 10%;
 	background-color: white;
-	border-image-source: url(http://localhost/marble/marblereader/img/frame.jpg);
+	border-image-source: url(../img/frame.jpg);
 	border-image-slice: 109 104 126 104;
 	border-image-width: 10%;
 	border-image-repeat: stretch;
