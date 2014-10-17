@@ -21,7 +21,6 @@ h4 {
 }
 
 .operator.autoplay {
-    -webkit-filter: sepia(100%) saturate(100%);
     content: url(../img/operator-true.png);
 }
 

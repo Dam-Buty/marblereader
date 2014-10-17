@@ -2,8 +2,8 @@
 
 angular.module("player", ['youtube-embed', "ngAnimate", "duScroll"])
 .controller("PlayerController", 
-[ "$scope", "$http", "$timeout", "$log", "$animate", 
-function($scope, $http, $timeout, $log, $animate) {
+[ "$window", "$scope", "$http", "$timeout", "$log", "$animate", 
+function($window, $scope, $http, $timeout, $log, $animate) {
 	$scope.story = 1;
 	$scope.accounts = [];
 	$scope.title = "";
@@ -16,9 +16,11 @@ function($scope, $http, $timeout, $log, $animate) {
 	$scope.currentVideo = "";
 	$scope.handle = undefined;
 	$scope.scrolling = 0;
+	$scope.player = undefined;
 	
 	$scope.playerVars = {
-		autoplay: 1
+		autoplay: 1,
+		enablejsapi: 1
 	};
 	
 	/*#####################################
@@ -132,6 +134,9 @@ function($scope, $http, $timeout, $log, $animate) {
 	
 	$scope.stopPlay = function() {
 		$scope.autoplay = !$scope.autoplay;
+		if ($scope.autoplay && $scope.getCurrent().type != 2) {
+		    $scope.next();
+		}
 	};
 	
 	$scope.next = function() {
@@ -183,6 +188,9 @@ function($scope, $http, $timeout, $log, $animate) {
 			$scope.currentVideo = currentChapter.id;				
 		} else {
 			$scope.currentVideo = "";
+			if ($scope.player !== undefined) {
+			    $scope.player.stopVideo()
+			}
 			if ($scope.autoplay) {
 			    $scope.handle = $timeout(function() {
 			        if ($scope.autoplay) {
@@ -246,7 +254,7 @@ function($scope, $http, $timeout, $log, $animate) {
                 if (event.ctrlKey) {
                     $scope.prevVideo();
                 } else {
-                    if (event.altKey) {
+                    if (event.shiftKey) {
                         $scope.setCurrent(0, 0);
                     } else {
                         $scope.prev();
@@ -258,7 +266,7 @@ function($scope, $http, $timeout, $log, $animate) {
                 if (event.ctrlKey) {
                     $scope.nextVideo();
                 } else {
-                    if (event.altKey) {
+                    if (event.shiftKey) {
                         var day = $scope.days.length - 1;
                         var chapter = $scope.days[day].chapters.length - 1
                         $scope.setCurrent(day, chapter);
@@ -273,7 +281,7 @@ function($scope, $http, $timeout, $log, $animate) {
                 break;
         }
         
-        $scope.apply();
+        $scope.$apply()
     };
 	
 	/*#####################################
