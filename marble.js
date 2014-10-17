@@ -14,6 +14,7 @@ function($scope, $http, $timeout, $log, $animate) {
 	$scope.tick = 2000;
 	$scope.currentVideo = "";
 	$scope.handle = undefined;
+	$scope.scrolling = 0;
 	
 	$scope.playerVars = {
 		autoplay: 1
@@ -132,9 +133,9 @@ function($scope, $http, $timeout, $log, $animate) {
 		
 		window.onmousewheel = function(event) {
 			if (event.deltaY == 100) {
-				$scope.next(true);
+				startScroll("next");
 			} else {
-				$scope.previous(true);
+				startScroll("prev");
 			}
 		};
 
