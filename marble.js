@@ -21,6 +21,10 @@ function($scope, $http, $timeout, $log, $animate) {
 		autoplay: 1
 	};
 	
+	/*#####################################
+	## Convertit un timestamp UNIX en objet date utilisable
+	#######################################*/
+	
 	$scope.timeConverter = function(UNIX_timestamp){
 		var a = new Date(UNIX_timestamp*1000);
 		var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -39,6 +43,54 @@ function($scope, $http, $timeout, $log, $animate) {
 			}
 		};
 	};
+	
+	/*#####################################
+	## Chargement des données
+	#######################################*/
+	
+	$scope.load = function() {
+	    $http({
+		    method: "GET",
+		    url: "json/" + $scope.story + ".json"
+	    }).success(function(data) {
+		    $scope.accounts = data.accounts;
+		    $scope.title = data.title;
+		    $scope.chapters = data.chapters;
+		
+		    var lastDate = "";
+		    var currentDay = {
+			    date: "",
+			    chapters: []
+		    };
+		
+		    for(var i = 0;i <= $scope.chapters.length - 1;i++) {
+			    var chapter = $scope.chapters[i];
+			
+			    var time = $scope.timeConverter(chapter.time);
+			
+			    if (time.getDate() != lastDate) {
+				    if (lastDate != "") { $scope.days.push(currentDay); }
+				
+				    chapter.time = time;
+				
+				    currentDay = {
+					    date: time.getDate(),
+					    chapters: [chapter]
+				    };
+			    } else {
+				    chapter.time = time;
+				    currentDay.chapters.push(chapter);
+			    }
+			    lastDate = time.getDate();
+		    }
+
+		    $scope.go();	
+	    });
+	};	
+	
+	/*#####################################
+	## Navigation
+	#######################################*/
 	
 	$scope.prevVideo = function() {
 	    var searching = true;
@@ -120,6 +172,10 @@ function($scope, $http, $timeout, $log, $animate) {
 	    }
 	};
 	
+	/*#####################################
+	## Affichage du chapitre en cours
+	#######################################*/
+	
 	$scope.go = function() {			
 		var currentChapter = $scope.days[$scope.currentDay].chapters[$scope.currentChapter];
 		
@@ -136,6 +192,10 @@ function($scope, $http, $timeout, $log, $animate) {
 			}
 		}
 	};
+	
+	/*#####################################
+	## Helpers pour le modèle
+	#######################################*/
 	
 	$scope.isTwitter = function() {
 		return ($scope.getCurrent().type == 1);
@@ -155,6 +215,10 @@ function($scope, $http, $timeout, $log, $animate) {
 	    $scope.go();
 	};
 	
+	/*#####################################
+	## Gestion du scroll
+	#######################################*/
+	
 	$scope.startScroll = function(direction) {
 	
 	};
@@ -162,52 +226,6 @@ function($scope, $http, $timeout, $log, $animate) {
 	$scope.stopScroll = function() {
 	
 	};
-	
-	$scope.load = function() {
-	    $http({
-		    method: "GET",
-		    url: "json/" + $scope.story + ".json"
-	    }).success(function(data) {
-		    $scope.accounts = data.accounts;
-		    $scope.title = data.title;
-		    $scope.chapters = data.chapters;
-		
-		    var lastDate = "";
-		    var currentDay = {
-			    date: "",
-			    chapters: []
-		    };
-		
-		    for(var i = 0;i <= $scope.chapters.length - 1;i++) {
-			    var chapter = $scope.chapters[i];
-			
-			    var time = $scope.timeConverter(chapter.time);
-			
-			    if (time.getDate() != lastDate) {
-				    if (lastDate != "") { $scope.days.push(currentDay); }
-				
-				    chapter.time = time;
-				
-				    currentDay = {
-					    date: time.getDate(),
-					    chapters: [chapter]
-				    };
-			    } else {
-				    chapter.time = time;
-				    currentDay.chapters.push(chapter);
-			    }
-			    lastDate = time.getDate();
-		    }
-
-		    $scope.go();	
-	    });
-	};	
-		
-    $scope.$on('youtube.player.ended', function ($event, player) {
-        if ($scope.autoplay) {
-	        $scope.next();
-        }
-    });
 
     window.onmousewheel = function(event) {
 	    if (event.deltaY > 0) {
@@ -216,6 +234,61 @@ function($scope, $http, $timeout, $log, $animate) {
 		    $scope.startScroll("prev");
 	    }
     };
+	
+	/*#####################################
+	## Gestion des raccourcis clavier
+	#######################################*/
+    
+    window.onkeyup = function(event) {
+        switch(event.which) {
+            case 38: // UP
+            case 37: // LEFT
+                if (event.ctrlKey) {
+                    $scope.prevVideo();
+                } else {
+                    if (event.altKey) {
+                        $scope.setCurrent(0, 0);
+                    } else {
+                        $scope.prev();
+                    }
+                }
+                break;
+            case 39: // RIGHT
+            case 40: // DOWN
+                if (event.ctrlKey) {
+                    $scope.nextVideo();
+                } else {
+                    if (event.altKey) {
+                        var day = $scope.days.length - 1;
+                        var chapter = $scope.days[day].chapters.length - 1
+                        $scope.setCurrent(day, chapter);
+                    } else {
+                        $scope.next();
+                    }
+                }
+                break;
+                
+            case 32 : //SPACE
+                $scope.stopPlay();
+                break;
+        }
+        
+        $scope.apply();
+    };
+	
+	/*#####################################
+	## Events binding
+	#######################################*/
+	
+    $scope.$on('youtube.player.ended', function ($event, player) {
+        if ($scope.autoplay) {
+	        $scope.next();
+        }
+    });
+	
+	/*#####################################
+	## SHOOT
+	#######################################*/
 	
 	$scope.load();
 }]).directive("dayCard", function() {

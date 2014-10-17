@@ -20,6 +20,11 @@ h4 {
 	margin: 5px;
 }
 
+.operator.autoplay {
+    -webkit-filter: sepia(100%) saturate(100%);
+    content: url(../img/operator-true.png);
+}
+
 .operator:hover {
     -webkit-animation: totheark 5s linear 0 infinite alternate;
 }
@@ -29,9 +34,14 @@ h4 {
     25% { transform-origin: 23 23; transform: rotate(-38deg) }
     47% { transform: rotate(7deg); }
     48% { transform: rotate(-3deg); }
-    68% { transition: all 800ms ease-in 0; transform: rotate(-7deg); -webkit-filter: blur(5px); }
+    68% { transition: all 800ms linear 0; transform: rotate(-7deg); -webkit-filter: blur(5px); }
     88% { transform: rotate(4deg); }
     90% { transition: all 400ms ease-in 0; transform: rotate(18deg); }
+}
+
+body {
+  background: black;
+  font-family: 'Varela', sans-serif;
 }
 
 #player {
