@@ -1,4 +1,4 @@
-<div class="big-chapter">
+<div class="big-chapter" ng-class="{ fullscreen: fullScreen }">
 	<h3 class="time">{{getCurrent().time.getDate() + " - - " + getCurrent().time.getTime()}}</h3>
 	<div class="content">&nbsp;{{getCurrent().content}}</div>
 	<h3 class="author marron"><img src="img/twitter-grunge.png"/>&nbsp;--&nbsp;{{accounts[getCurrent().account]}}</h3>

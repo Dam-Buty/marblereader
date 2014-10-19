@@ -17,10 +17,22 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 	$scope.handle = undefined;
 	$scope.scrolling = 0;
 	$scope.player = undefined;
+	$scope.fullScreen = false;
+	$scope.cinema = document.getElementById("player");
 	
 	$scope.playerVars = {
+		/*autoplay: 1,*/
+		modestbranding: 1,
+		enablejsapi: 1,
+		rel: 0
+	};
+	
+	$scope.fullScreenVars = {
 		autoplay: 1,
-		enablejsapi: 1
+		modestbranding: 1,
+		enablejsapi: 1,
+		rel: 0,
+		controls: 0
 	};
 	
 	/*#####################################
@@ -205,6 +217,10 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 	## Helpers pour le modèle
 	#######################################*/
 	
+	$scope.isDisplayed = function(idx) {
+		return (Math.max(idx, $scope.currentDay) - Math.min(idx, $scope.currentDay) <= 3);
+	};
+	
 	$scope.isTwitter = function() {
 		return ($scope.getCurrent().type == 1);
 	};
@@ -221,6 +237,30 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 	    $scope.currentDay = parent;
 	    $scope.currentChapter = idx;
 	    $scope.go();
+	};
+	
+	$scope.setFullScreen = function() {
+	    $scope.fullScreen = !$scope.fullScreen;
+		
+		if($scope.cinema.requestFullScreen) {
+			if ($scope.fullScreen) {
+				$scope.cinema.requestFullScreen;
+			} else {
+				document.cancelFullScreen;
+			}
+        } else if($scope.cinema.webkitRequestFullScreen) {
+			if ($scope.fullScreen) {
+				$scope.cinema.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+			} else {
+                document.webkitCancelFullScreen();
+			}
+        } else if($scope.cinema.mozRequestFullScreen){
+			if ($scope.fullScreen) {
+				$scope.cinema.mozRequestFullScreen();
+			} else {
+                document.mozCancelFullScreen();
+			}
+        }
 	};
 	
 	/*#####################################
@@ -316,13 +356,6 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 		controller: function($scope) {
 		}
 	};
-}).directive("youtubeCard", function() {
-	return {
-		restrict: "E",
-		templateUrl: "youtube-card.html",
-		controller: function($scope) {
-		}
-	};
 })/*.directive("scrollTo", function() {
 	return {
 		restrict: "A",
@@ -337,8 +370,9 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 })*/.animation(".chapter", function() {
 	return {
 		addClass: function(element, classname) {
-			var litterature = angular.element(document.getElementById("litterature"));
-			var middle = litterature[0].offsetHeight / 2;
+			var litterature = document.getElementById("litterature");
+			var middle = litterature.offsetHeight / 2;
+			var litterature = angular.element(litterature);
 			
 			litterature.scrollToElementAnimated(element, middle);
 		}

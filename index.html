@@ -9,20 +9,26 @@
 </head>
 <body ng-controller="PlayerController">
 	<section id="player">
-		<div id="litterature">
-			<day-card ng-repeat="day in days"></day-card>
+		<div id="litterature" ng-if="!fullScreen">
+			<day-card ng-repeat="day in days" ng-if="isDisplayed($index)"></day-card>
 			<div style='clear: both'></div>
 		</div>
-		<div id="cinema">
+		<div id="cinema" ng-class="{ fullscreen: fullScreen }">
 			<twitter-card ng-show="isTwitter()"></twitter-card>
-			<youtube-card ng-show="isYoutube()"></youtube-card>
+			<div ng-show="isYoutube()">
+				<youtube-video ng-if="!fullScreen" id="video-player" video-id="currentVideo" player="player" player-vars="playerVars"></youtube-video>
+			</div>
+			<div ng-show="isYoutube()" class="big-screen">
+				<youtube-video ng-if="fullScreen" id="fullscreen-player" video-id="currentVideo" player="player" player-vars="fullScreenVars" player-width="'100%'" player-height="'100%'"></youtube-video>
+			</div>
 		</div>
-		<footer>
+		<footer ng-class="{ fullscreen: fullScreen }">
 			<img src="img/prev-video.png" width="100" height="100" ng-click="prevVideo()" title="Previous video"/>
 			<img src="img/prev-grunge.png" width="100" height="100" ng-click="prev()" title="Previous"/>
 			<img src="img/operator-false.png" width="100" height="100" ng-click="stopPlay()" class="operator" title="Toggle autoplay" ng-class="{ autoplay: autoplay }"/>
 			<img src="img/next-grunge.png" width="100" height="100" ng-click="next()" title="Next"/>
 			<img src="img/next-video.png" width="100" height="100" ng-click="nextVideo()" title="Next video"/>
+			<img src="img/fullscreen.png" width="100" height="100" ng-click="setFullScreen()" title="Next video"/>
 		</footer>
 	</section>
 	
