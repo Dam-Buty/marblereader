@@ -4,7 +4,7 @@ angular.module("player", ['youtube-embed', "ngAnimate", "duScroll"])
 .controller("PlayerController", 
 [ "$window", "$scope", "$http", "$timeout", "$log", "$animate", 
 function($window, $scope, $http, $timeout, $log, $animate) {
-	$scope.story = 1;
+	$scope.story = "marble-hornets";
 	$scope.accounts = [];
 	$scope.title = "";
 	$scope.chapters = [];
@@ -65,7 +65,7 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 	$scope.load = function() {
 	    $http({
 		    method: "GET",
-		    url: "json/" + $scope.story + ".json"
+		    url: "stories/" + $scope.story + ".json"
 	    }).success(function(data) {
 		    $scope.accounts = data.accounts;
 		    $scope.title = data.title;
@@ -356,18 +356,7 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 		controller: function($scope) {
 		}
 	};
-})/*.directive("scrollTo", function() {
-	return {
-		restrict: "A",
-		link: function(scope, element, attr) {
-			var litterature = document.getElementById("litterature");
-			var middle = litterature.offsetHeight / 2;
-			
-			element.addClass("current");
-			angular.element(litterature).scrollToElementAnimated(element, middle);
-		}
-	};
-})*/.animation(".chapter", function() {
+}).animation(".chapter", function() {
 	return {
 		addClass: function(element, classname) {
 			var litterature = document.getElementById("litterature");

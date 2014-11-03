@@ -1,0 +1,13 @@
+{
+    "title":"Marble Hornets",
+    "accounts": [{
+        "type": "twitter",
+        "handle": "marblehornets"   
+    }, {
+        "type": "youtube",
+        "handle": "MarbleHornets"
+    }, {
+        "type": "youtube",
+        "handle": "totheark"
+    }]
+}

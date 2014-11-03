@@ -1,13 +1,11 @@
 <?php
-require_once('../includes/TwitterAPIExchange.php');
-
 function fetch_twitter($screen_name) {
 	/** Set access tokens here - see: https://dev.twitter.com/apps/ **/
 	$settings = array(
-		'oauth_access_token' => "1389371203-ZQ591J8RwThAALr0J4ry6dDCxxrmcSeGRhYs4II",
-		'oauth_access_token_secret' => "vt4YeorZcwN1HmgT8gyClvgeZpitA2y8Vwdm7GDjYZuP7",
-		'consumer_key' => "v45fb9zmGQgkJOLqwBmwNJqPa",
-		'consumer_secret' => "0aCcSC12xu7WQCHNB3RMDqFAhoVFVscRsfLi9T3F1k5WD60r7H"
+		'oauth_access_token' => "1389371203-E2IgGpoILJKZ3zPFr694dWw30hakJoSgrRcVEa0",
+		'oauth_access_token_secret' => "idSMnpfyabdCt6hIDBW6dtKlxvhZaBFtGE8vQF578Svi6",
+		'consumer_key' => "c5oOF23gqEO4spRw2PY5dbjbf",
+		'consumer_secret' => "FC1QlPlBAOfP7anGgjfZo7RS7tZDyjmkIt64aofXDfPIH5I5pC"
 	);
 
 	/** URL for REST request, see: https://dev.twitter.com/docs/api/1.1/ **/
@@ -32,6 +30,8 @@ function fetch_twitter($screen_name) {
 						 ->performRequest(true);
 						 
 			 $tweets = json_decode($response);
+			 
+			 var_dump($tweets);
 			
 			foreach($tweets as $tweet) {
 				$time = date(DATE_RFC3339, strtotime($tweet->created_at));
@@ -57,7 +57,4 @@ function fetch_twitter($screen_name) {
 		echo 'Exception reçue : ',  $e->getMessage(), "\n";
 	}
 }
-
-// header('Content-Type: application/json');
-// echo json_encode(json_decode($test), true);; 
- ?>
+?>
