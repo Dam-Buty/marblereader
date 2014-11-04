@@ -9,7 +9,7 @@ function fetch_youtube($account) {
 	* {{ Google Cloud Console }} <{{ https://cloud.google.com/console }}>
 	* Please ensure that you have enabled the YouTube Data API for your project.
 	*/
-	$DEVELOPER_KEY = 'AIzaSyAgKz40w_lm3FUaB8kpwnNV0V-8SdEbfv8';
+	$DEVELOPER_KEY = 'x';
 
 	$client = new Google_Client();
 	$client->setDeveloperKey($DEVELOPER_KEY);

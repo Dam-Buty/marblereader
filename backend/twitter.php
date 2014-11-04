@@ -2,10 +2,10 @@
 function fetch_twitter($screen_name) {
 	/** Set access tokens here - see: https://dev.twitter.com/apps/ **/
 	$settings = array(
-		'oauth_access_token' => "1389371203-E2IgGpoILJKZ3zPFr694dWw30hakJoSgrRcVEa0",
-		'oauth_access_token_secret' => "idSMnpfyabdCt6hIDBW6dtKlxvhZaBFtGE8vQF578Svi6",
-		'consumer_key' => "c5oOF23gqEO4spRw2PY5dbjbf",
-		'consumer_secret' => "FC1QlPlBAOfP7anGgjfZo7RS7tZDyjmkIt64aofXDfPIH5I5pC"
+		'oauth_access_token' => "x",
+		'oauth_access_token_secret' => "x",
+		'consumer_key' => "x",
+		'consumer_secret' => "x"
 	);
 
 	/** URL for REST request, see: https://dev.twitter.com/docs/api/1.1/ **/
