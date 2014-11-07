@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="player" >
+<html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,19 @@
 	<link rel="stylesheet" href="css/webfonts.css" media="screen" type="text/css"/>
 	<link rel="stylesheet" href="css/marble.css" media="screen" type="text/css"/>
 </head>
-<body ng-controller="PlayerController">
+<body>
 	<section id="player">
-		<div id="litterature" ng-if="!fullScreen">
-			<day-card ng-repeat="day in days" ng-if="isDisplayed($index)"></day-card>
+		<div id="litterature" v-if="!fullScreen">
+            <div class="day" v-repeat="day in days" v-if="isDisplayed($index)">
+                <h3>{{day.date}}</h3>
+                <div class="chapter" ng-class="{ current: isCurrent($parent.$index, $index) }" ng-repeat="chapter in day.chapters" ng-click="setCurrent($parent.$index, $index)">
+                    <span class="time"><u>{{chapter.time.getTime()}}</u> : </span>
+                    <i ng-show="chapter.category=='media'" class="fa fa-youtube-square marron"></i>
+                    <i ng-show="chapter.category=='text'" class="fa fa-twitter-square marron"></i>
+                    &nbsp;{{chapter.content}}
+                    <span class="author marron">&nbsp;--&nbsp;{{accounts[chapter.account]}}</span>
+                </div>
+            </div>
 			<div style='clear: both'></div>
 		</div>
 		<div id="cinema" ng-class="{ fullscreen: fullScreen }">
@@ -32,6 +41,7 @@
 		</footer>
 	</section>
 	
+	<script src="vendor/vue.js"></script>
 	<script src="marble.js"></script>
 </body>
 </html>

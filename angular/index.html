@@ -9,7 +9,7 @@
 </head>
 <body ng-controller="PlayerController">
 	<section id="player">
-		<div id="litterature" ng-if="!fullScreen">
+        <div id="litterature" ng-if="!fullScreen">
 			<day-card ng-repeat="day in days" ng-if="isDisplayed($index)"></day-card>
 			<div style='clear: both'></div>
 		</div>

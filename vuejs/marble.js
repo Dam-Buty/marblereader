@@ -1,5 +1,50 @@
 (function() {	
 
+var tick = 2000;
+var story = "marble-hornets";
+    
+var player = new Vue({
+    el: "#player",
+    data: {
+        title: "",        
+        seasons: [],
+        
+        currentSeason: 0,
+        currentDay: 0,
+        currentChapter: 0,
+        currentVideo: 0,
+        
+        autoplay: false,
+        
+        handle: undefined,
+        youtube: undefined,
+        
+    }
+});
+    
+    
+		    for(var i = 0;i <= $scope.chapters.length - 1;i++) {
+			    var chapter = $scope.chapters[i];
+			
+			    var time = $scope.timeConverter(chapter.time);
+			
+			    if (time.getDate() != lastDate) {
+				    if (lastDate != "") { $scope.days.push(currentDay); }
+				
+				    chapter.time = time;
+				
+				    currentDay = {
+					    date: time.getDate(),
+					    chapters: [chapter]
+				    };
+			    } else {
+				    chapter.time = time;
+				    currentDay.chapters.push(chapter);
+			    }
+			    lastDate = time.getDate();
+		    }
+    
+    
 angular.module("player", ['youtube-embed', "ngAnimate", "duScroll"])
 .controller("PlayerController", 
 [ "$window", "$scope", "$http", "$timeout", "$log", "$animate", 

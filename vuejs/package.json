@@ -1,0 +1,8 @@
+{
+    "name": "marblereader",
+    "version": "0.0.1",
+    "description": "An immersive webfiction reader",
+    "devDependencies": {
+        "grunt": "0.4.5"
+    }
+}

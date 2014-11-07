@@ -1,5 +1,4 @@
-(function() {	
-
+(function () { 
 angular.module("player", ['youtube-embed', "ngAnimate", "duScroll"])
 .controller("PlayerController", 
 [ "$window", "$scope", "$http", "$timeout", "$log", "$animate", 
