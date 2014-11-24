@@ -1,37 +1,135 @@
 (function () { 
 angular.module("player", ['youtube-embed', "ngAnimate", "duScroll"])
 .controller("PlayerController", 
-[ "$window", "$scope", "$http", "$timeout", "$log", "$animate", 
-function($window, $scope, $http, $timeout, $log, $animate) {
-	$scope.story = "marble-hornets";
-	$scope.accounts = [];
-	$scope.title = "";
-	$scope.chapters = [];
-	$scope.days = [];
-	$scope.currentDay = 0;
-	$scope.currentChapter = 0;
-	$scope.tick = 2000;
-	$scope.autoplay = false;
-	$scope.currentVideo = "";
-	$scope.handle = undefined;
-	$scope.scrolling = 0;
-	$scope.player = undefined;
-	$scope.fullScreen = false;
-	$scope.cinema = document.getElementById("player");
+[ "$window", "$scope", "$http", "$timeout", "$animate", 
+function($window, $scope, $http, $timeout, $animate) {
+    
+    // Paramètres de lecture
+    $scope.params = {
+        story: "marble-hornets",
+        tick: 2000,
+        handle: undefined,
+        cinema: document.getElementById("player"),
+        loaded: false,
+        
+        autoPlay: false,
+        fullScreen: false,
+        
+	    stopPlay: function() {
+		    this.autoPlay = !this.autoPlay;
+		    if (this.autoPlay && $scope.current.get().type != 2) {
+		        $scope.current.next();
+		    }
+	    }
+    };
+    
+	// Données de l'histoire
+    $scope.story = {
+        title: "",
+        min: 0,
+        max: 0,  
+        accounts: [],
+        seasons: []
+    };
 	
-	$scope.playerVars = {
-		/*autoplay: 1,*/
-		modestbranding: 1,
-		enablejsapi: 1,
-		rel: 0
+	// Données du chapitre en cours
+	$scope.current = {
+	    season: 0,
+	    day: 0,
+	    chapter: 0,
+	    
+	    // Helpers
+	    get: function() {
+	        if (this.season != -1) {
+	            var day = $scope.story.seasons[this.season][this.day];
+	            var chapter = day.chapters[this.chapter];
+	            
+	            chapter["date"] = day.date;
+	            
+	            return chapter;
+	        } else {
+	            return { };
+	        }
+	    },
+	    set: function(day, chapter) {
+	        this.day = day;
+	        this.chapter = chapter;
+	    },
+	    is: function(day, chapter) {
+	        return (this.day == day && this.chapter == chapter);
+	    },
+	    displayed: function(day) {
+	        return (Math.max(day, this.day) - Math.min(day, this.day) <= 3);
+	    },	    
+	    isTwitter: function() {
+	        return (this.get().type == 1);
+	    },	    
+	    isYoutube: function() {
+	        return (this.get().type == 2);
+	    },
+	    
+	    // Navigation
+	    prev: function() {
+		    if (this.chapter > 0) {
+			    this.chapter--;	
+		    } else {
+			    if (this.day > 0) {
+				    this.day--;
+				    this.chapter = $scope.story.seasons[this.season][this.day].chapters.length - 1;
+			    }		
+		    }			
+	    },
+	    next: function() {
+		    if (this.chapter < $scope.story.seasons[this.season][this.day].chapters.length - 1) {
+			    this.chapter++;	
+		    } else {
+			    if (this.day <$scope.story.seasons[this.season].length - 1) {
+				    this.day++;
+				    this.chapter = 0;	
+			    }		
+		    }			
+	    },
+	    go: function() {
+		    var currentChapter = this.get();
+		
+		    if (currentChapter.category == "media") {
+			    $scope.youtube.video = currentChapter.id;				
+		    } else {
+			    $scope.youtube.video = "";
+			    if ($scope.youtube.player !== undefined) {
+			        $scope.youtube.player.stopVideo()
+			    }
+			    if ($scope.params.autoPlay) {
+			        $scope.params.handle = $timeout(function() {
+			            if ($scope.params.autoPlay) {
+				            $scope.current.next();
+			            }
+			        }, $scope.params.tick);
+			    }
+		    }
+	    }
 	};
 	
-	$scope.fullScreenVars = {
-		autoplay: 1,
-		modestbranding: 1,
-		enablejsapi: 1,
-		rel: 0,
-		controls: 0
+	// Paramètres du player Youtube
+	$scope.youtube = {
+	    video: "",
+	    player: undefined,
+	    
+	    params: {
+	        normal: {
+		        /*autoplay: 1,*/
+		        modestbranding: 1,
+		        enablejsapi: 1,
+		        rel: 0
+	        },
+	        full: {
+		        autoplay: 1,
+		        modestbranding: 1,
+		        enablejsapi: 1,
+		        rel: 0,
+		        controls: 0
+	        }
+	    }
 	};
 	
 	/*#####################################
@@ -64,198 +162,88 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 	$scope.load = function() {
 	    $http({
 		    method: "GET",
-		    url: "stories/" + $scope.story + ".json"
+		    url: "stories/" + $scope.params.story + ".json"
 	    }).success(function(data) {
-		    $scope.accounts = data.accounts;
-		    $scope.title = data.title;
-		    $scope.chapters = data.chapters;
-		
-		    var lastDate = "";
-		    var currentDay = {
-			    date: "",
-			    chapters: []
-		    };
-		
-		    for(var i = 0;i <= $scope.chapters.length - 1;i++) {
-			    var chapter = $scope.chapters[i];
-			
-			    var time = $scope.timeConverter(chapter.time);
-			
-			    if (time.getDate() != lastDate) {
-				    if (lastDate != "") { $scope.days.push(currentDay); }
-				
-				    chapter.time = time;
-				
-				    currentDay = {
-					    date: time.getDate(),
-					    chapters: [chapter]
-				    };
-			    } else {
-				    chapter.time = time;
-				    currentDay.chapters.push(chapter);
-			    }
-			    lastDate = time.getDate();
-		    }
-
-		    $scope.go();	
+		    $scope.story = data;
+		    $scope.params.loaded = true;
+		    $scope.current.go();
 	    });
-	};	
-	
-	/*#####################################
-	## Navigation
-	#######################################*/
-	
-	$scope.prevVideo = function() {
-	    var searching = true;
-	    var i = $scope.currentDay;
-	    var j = $scope.currentChapter;
-	
-	    while(searching) {
-	        if (j == 0) {                       // Si c'est le premier chapitre d'un jour
-	            if (i == 0) {                   // si c'est le premier jour
-	                searching = false;             // c'est mort on se barre
-	            } else {
-                    i--;                        // sinon on va au jour précédent, chapitre n
-	                j = $scope.days[i].chapters.length - 1;
-	            }	          
-	        } else {
-	            j--; // sinon on décrémente juste le chapitre
-	        }
-	        
-	        if ($scope.days[i].chapters[j].type == 2) {
-	            $scope.currentDay = i;
-	            $scope.currentChapter = j;
-	            searching = false;
-	            $scope.go();
-	        }
-	    }
 	};
 	
-	$scope.prev = function() {
-		if ($scope.currentChapter > 0) {
-			$scope.currentChapter--;	
-		} else {
-			if ($scope.currentDay > 0) {
-				$scope.currentDay--;
-				$scope.currentChapter = $scope.days[$scope.currentDay].chapters.length - 1;	
-			}		
-		}				
-		$scope.go();
-	};
+//	$scope.prevVideo = function() {
+//	    var searching = true;
+//	    var i = $scope.currentDay;
+//	    var j = $scope.currentChapter;
+//	
+//	    while(searching) {
+//	        if (j == 0) {                       // Si c'est le premier chapitre d'un jour
+//	            if (i == 0) {                   // si c'est le premier jour
+//	                searching = false;             // c'est mort on se barre
+//	            } else {
+//                    i--;                        // sinon on va au jour précédent, chapitre n
+//	                j = $scope.days[i].chapters.length - 1;
+//	            }	          
+//	        } else {
+//	            j--; // sinon on décrémente juste le chapitre
+//	        }
+//	        
+//	        if ($scope.days[i].chapters[j].type == 2) {
+//	            $scope.currentDay = i;
+//	            $scope.currentChapter = j;
+//	            searching = false;
+//	            $scope.go();
+//	        }
+//	    }
+//	};
 	
-	$scope.stopPlay = function() {
-		$scope.autoplay = !$scope.autoplay;
-		if ($scope.autoplay && $scope.getCurrent().type != 2) {
-		    $scope.next();
-		}
-	};
-	
-	$scope.next = function() {
-		if ($scope.currentChapter < $scope.days[$scope.currentDay].chapters.length - 1) {
-			$scope.currentChapter++;	
-		} else {
-			if ($scope.currentDay < $scope.days.length - 1) {
-				$scope.currentDay++;
-				$scope.currentChapter = 0;	
-			}		
-		}				
-		$scope.go();
-	};
-	
-	$scope.nextVideo = function() {
-	    var searching = true;
-	    var i = $scope.currentDay;
-	    var j = $scope.currentChapter;
-	
-	    while(searching) {
-	        if (j == $scope.days[i].chapters.length - 1) { // Si c'est le dernier chapitre d'un jour
-	            if (i == $scope.days.length - 1) { // si c'est le dernier jour
-	                searching = false;             // c'est mort on se barre
-	            } else {
-	                i++;                            // sinon on va au jour suivant, chapitre 0
-	                j = 0;
-	            }	          
-	        } else {
-	            j++; // sinon on incrémente juste le chapitre
-	        }
-	        
-	        if ($scope.days[i].chapters[j].type == 2) {
-	            $scope.currentDay = i;
-	            $scope.currentChapter = j;
-	            searching = false;
-	            $scope.go();
-	        }
-	    }
-	};
-	
-	/*#####################################
-	## Affichage du chapitre en cours
-	#######################################*/
-	
-	$scope.go = function() {			
-		var currentChapter = $scope.days[$scope.currentDay].chapters[$scope.currentChapter];
-		
-		if (currentChapter.category == "media") {
-			$scope.currentVideo = currentChapter.id;				
-		} else {
-			$scope.currentVideo = "";
-			if ($scope.player !== undefined) {
-			    $scope.player.stopVideo()
-			}
-			if ($scope.autoplay) {
-			    $scope.handle = $timeout(function() {
-			        if ($scope.autoplay) {
-				        $scope.next();
-			        }
-			    }, $scope.tick);
-			}
-		}
-	};
+//	$scope.nextVideo = function() {
+//	    var searching = true;
+//	    var i = $scope.currentDay;
+//	    var j = $scope.currentChapter;
+//	
+//	    while(searching) {
+//	        if (j == $scope.days[i].chapters.length - 1) { // Si c'est le dernier chapitre d'un jour
+//	            if (i == $scope.days.length - 1) { // si c'est le dernier jour
+//	                searching = false;             // c'est mort on se barre
+//	            } else {
+//	                i++;                            // sinon on va au jour suivant, chapitre 0
+//	                j = 0;
+//	            }	          
+//	        } else {
+//	            j++; // sinon on incrémente juste le chapitre
+//	        }
+//	        
+//	        if ($scope.days[i].chapters[j].type == 2) {
+//	            $scope.currentDay = i;
+//	            $scope.currentChapter = j;
+//	            searching = false;
+//	            $scope.go();
+//	        }
+//	    }
+//	};
 	
 	/*#####################################
 	## Helpers pour le modèle
 	#######################################*/
 	
-	$scope.isDisplayed = function(idx) {
-		return (Math.max(idx, $scope.currentDay) - Math.min(idx, $scope.currentDay) <= 3);
-	};
-	
-	$scope.isTwitter = function() {
-		return ($scope.getCurrent().type == 1);
-	};
-	
-	$scope.isYoutube = function() {
-		return ($scope.getCurrent().type == 2);
-	};
-	
-	$scope.getCurrent = function() {
-		return (($scope.days[$scope.currentDay] || { chapters: [] }).chapters[$scope.currentChapter] || { });
-	};
-	
-	$scope.setCurrent = function(parent, idx) {
-	    $scope.currentDay = parent;
-	    $scope.currentChapter = idx;
-	    $scope.go();
-	};
-	
 	$scope.setFullScreen = function() {
-	    $scope.fullScreen = !$scope.fullScreen;
+	    $scope.params.fullScreen = !$scope.params.fullScreen;
 		
-		if($scope.cinema.requestFullScreen) {
-			if ($scope.fullScreen) {
+		if($scope.params.cinema.requestFullScreen) {
+			if ($scope.params.fullScreen) {
 				$scope.cinema.requestFullScreen;
 			} else {
 				document.cancelFullScreen;
 			}
-        } else if($scope.cinema.webkitRequestFullScreen) {
-			if ($scope.fullScreen) {
-				$scope.cinema.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if($scope.params.cinema.webkitRequestFullScreen) {
+			if ($scope.params.fullScreen) {
+				$scope.params.cinema.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
 			} else {
                 document.webkitCancelFullScreen();
 			}
-        } else if($scope.cinema.mozRequestFullScreen){
-			if ($scope.fullScreen) {
-				$scope.cinema.mozRequestFullScreen();
+        } else if($scope.params.cinema.mozRequestFullScreen){
+			if ($scope.params.fullScreen) {
+				$scope.params.cinema.mozRequestFullScreen();
 			} else {
                 document.mozCancelFullScreen();
 			}
@@ -328,8 +316,8 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 	#######################################*/
 	
     $scope.$on('youtube.player.ended', function ($event, player) {
-        if ($scope.autoplay) {
-	        $scope.next();
+        if ($scope.params.autoPlay) {
+	        $scope.current.next();
         }
     });
 	
@@ -344,16 +332,14 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 		templateUrl: "day-card.html",
 		controller: function($scope) {
 			$scope.isCurrent = function(parent, idx) {
-				return ($scope.currentDay == parent && $scope.currentChapter == idx);
+				return $scope.current.is(parent, idx);
 			};
 		}
 	};
 }).directive("twitterCard", function() {
 	return {
 		restrict: "E",
-		templateUrl: "twitter-card.html",
-		controller: function($scope) {
-		}
+		templateUrl: "twitter-card.html"
 	};
 }).animation(".chapter", function() {
 	return {
@@ -363,6 +349,8 @@ function($window, $scope, $http, $timeout, $log, $animate) {
 			var litterature = angular.element(litterature);
 			
 			litterature.scrollToElementAnimated(element, middle);
+			
+			$scope.current.go();
 		}
 	};
 })
