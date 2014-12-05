@@ -54,12 +54,29 @@ function($window, $scope, $http, $timeout, $animate) {
 	    set: function(day, chapter) {
 	        this.day = day;
 	        this.chapter = chapter;
+	        
+	        var currentChapter = this.get();
+		
+	        if (currentChapter.category != "media" && $scope.params.autoPlay) {
+	            $scope.params.handle = $timeout(function() {
+	                if ($scope.params.autoPlay) {
+		                $scope.current.next();
+	                }
+	            }, $scope.params.tick);
+	        } 
 	    },
 	    is: function(day, chapter) {
 	        return (this.day == day && this.chapter == chapter);
 	    },
-	    displayed: function(day) {
-	        return (Math.max(day, this.day) - Math.min(day, this.day) <= 3);
+	    displayed: function() {
+	        var first = Math.max(this.day - 3, 0);
+	        var displayed = [];
+	        
+	        for(var i = first;i < first + 3;i++) {
+	            displayed.push($scope.story.seasons[this.season][i]);
+	        }
+	        
+	        return displayed;
 	    },	    
 	    isTwitter: function() {
 	        return (this.get().type == 1);
@@ -70,49 +87,39 @@ function($window, $scope, $http, $timeout, $animate) {
 	    
 	    // Navigation
 	    prev: function() {
-		    if (this.chapter > 0) {
-			    this.chapter--;	
+	        var day = this.day;
+	        var chapter = this.chapter;
+	        	        
+		    if (chapter > 0) {
+			    chapter--;	
 		    } else {
-			    if (this.day > 0) {
-				    this.day--;
-				    this.chapter = $scope.story.seasons[this.season][this.day].chapters.length - 1;
+			    if (day > 0) {
+				    day--;
+				    chapter = $scope.story.seasons[this.season][day].chapters.length - 1;
 			    }		
-		    }			
+		    }
+		    
+		    this.set(day, chapter);	
 	    },
 	    next: function() {
-		    if (this.chapter < $scope.story.seasons[this.season][this.day].chapters.length - 1) {
-			    this.chapter++;	
+	        var day = this.day;
+	        var chapter = this.chapter;
+	        
+		    if (chapter < $scope.story.seasons[this.season][day].chapters.length - 1) {
+			    chapter++;	
 		    } else {
-			    if (this.day <$scope.story.seasons[this.season].length - 1) {
-				    this.day++;
-				    this.chapter = 0;	
+			    if (day <$scope.story.seasons[this.season].length - 1) {
+				    day++;
+				    chapter = 0;	
 			    }		
-		    }			
-	    },
-	    go: function() {
-		    var currentChapter = this.get();
-		
-		    if (currentChapter.category == "media") {
-			    $scope.youtube.video = currentChapter.id;				
-		    } else {
-			    $scope.youtube.video = "";
-			    if ($scope.youtube.player !== undefined) {
-			        $scope.youtube.player.stopVideo()
-			    }
-			    if ($scope.params.autoPlay) {
-			        $scope.params.handle = $timeout(function() {
-			            if ($scope.params.autoPlay) {
-				            $scope.current.next();
-			            }
-			        }, $scope.params.tick);
-			    }
-		    }
+		    }		
+		    
+		    this.set(day, chapter);		
 	    }
 	};
 	
 	// Paramètres du player Youtube
 	$scope.youtube = {
-	    video: "",
 	    player: undefined,
 	    
 	    params: {
@@ -166,7 +173,6 @@ function($window, $scope, $http, $timeout, $animate) {
 	    }).success(function(data) {
 		    $scope.story = data;
 		    $scope.params.loaded = true;
-		    $scope.current.go();
 	    });
 	};
 	
@@ -350,7 +356,7 @@ function($window, $scope, $http, $timeout, $animate) {
 			
 			litterature.scrollToElementAnimated(element, middle);
 			
-			$scope.current.go();
+			//$scope.current.go();
 		}
 	};
 })

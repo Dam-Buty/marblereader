@@ -10,17 +10,17 @@
 <body ng-controller="PlayerController">
 	<section id="player" ng-if="params.loaded">
         <div id="litterature">
-			<day-card ng-repeat="day in story.seasons[current.season]" ng-if="true || current.displayed($index)"></day-card>
+			<day-card ng-repeat="day in story.seasons[current.season]"></day-card>
 			<div style='clear: both'></div>
 		</div>
 		<div id="cinema" ng-class="{ fullscreen: params.fullScreen }">
-			<twitter-card ng-show="current.isTwitter()"></twitter-card>
-			<div ng-show="current.isYoutube()">
-				<youtube-video ng-if="!params.fullScreen" id="video-player" video-id="youtube.video" player="youtube.player" player-vars="youtube.params.normal"></youtube-video>
+			<twitter-card ng-if="current.isTwitter()"></twitter-card>
+			<div ng-if="!params.fullScreen" ng-show="current.isYoutube()">
+				<youtube-video id="video-player" video-id="current.get().id" player="youtube.player" player-vars="youtube.params.normal"></youtube-video>
 			</div>
-			<div ng-show="current.isYoutube()" class="big-screen">
-				<youtube-video ng-if="params.fullScreen" id="fullscreen-player" video-id="youtube.video" player="youtube.player" player-vars="youtube.params.full" player-width="'100%'" player-height="'100%'"></youtube-video>
-			</div>
+			<!--<div ng-if="params.fullScreen" ng-show="current.isYoutube()" class="big-screen">
+				<youtube-video id="fullscreen-player" video-id="current.get().id" player="youtube.player" player-vars="youtube.params.full" player-width="'100%'" player-height="'100%'"></youtube-video>
+			</div>-->
 		</div>
 		<footer ng-class="{ fullscreen: params.fullScreen }">
 			<!--<img src="img/prev-video.png" width="100" height="100" ng-click="prevVideo()" title="Previous video"/>-->
