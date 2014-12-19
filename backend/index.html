@@ -1,0 +1,30 @@
+<html>
+<head>
+<style>
+    .bouton {
+        border: 1px solid black;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <div class="bouton" id="update">UPDATE</div>
+    <textarea id="json"></textarea>
+
+    <script src="jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $("#update").click(function() {
+            $.ajax({
+                url: "update.php",
+                type: "POST",
+                statusCode: {
+                    200: function() {
+                        
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

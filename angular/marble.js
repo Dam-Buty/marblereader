@@ -37,6 +37,7 @@ function($window, $scope, $http, $timeout, $animate) {
 	    season: 0,
 	    day: 0,
 	    chapter: 0,
+	    progress: 0,
 	    
 	    // Helpers
 	    get: function() {
@@ -58,12 +59,21 @@ function($window, $scope, $http, $timeout, $animate) {
 	        var currentChapter = this.get();
 		
 	        if (currentChapter.category != "media" && $scope.params.autoPlay) {
-	            $scope.params.handle = $timeout(function() {
-	                if ($scope.params.autoPlay) {
-		                $scope.current.next();
-	                }
-	            }, $scope.params.tick);
-	        } 
+                $scope.params.handle = $timeout(function() {
+                    if ($scope.params.autoPlay) {
+	                    $scope.current.next();
+                    }
+                }, $scope.params.tick);
+	        }
+	    },
+	    goVideo: function() {
+            if (this.get().category == "media") {
+                $scope.youtube.video = this.get().id;
+            } else {
+	            if ($scope.youtube.player !== undefined) {
+			        $scope.youtube.player.stopVideo();
+			    }
+            }
 	    },
 	    is: function(day, chapter) {
 	        return (this.day == day && this.chapter == chapter);
@@ -121,6 +131,7 @@ function($window, $scope, $http, $timeout, $animate) {
 	// Paramètres du player Youtube
 	$scope.youtube = {
 	    player: undefined,
+	    video: undefined,
 	    
 	    params: {
 	        normal: {
@@ -173,6 +184,10 @@ function($window, $scope, $http, $timeout, $animate) {
 	    }).success(function(data) {
 		    $scope.story = data;
 		    $scope.params.loaded = true;
+		    
+		    if ($scope.current.get().category == "media") {
+		        $scope.current.goVideo();
+		    }
 	    });
 	};
 	
@@ -347,14 +362,20 @@ function($window, $scope, $http, $timeout, $animate) {
 		restrict: "E",
 		templateUrl: "twitter-card.html"
 	};
-}).animation(".chapter", function() {
+}).animation(".chapter", function() {   
+    var getScope = function(e) {
+        return angular.element(e).scope();
+    }; 
+    
 	return {
 		addClass: function(element, classname) {
 			var litterature = document.getElementById("litterature");
 			var middle = litterature.offsetHeight / 2;
 			var litterature = angular.element(litterature);
 			
-			litterature.scrollToElementAnimated(element, middle);
+			litterature.scrollToElementAnimated(element, middle).then(function() {
+			    getScope(element).current.goVideo();
+			});
 			
 			//$scope.current.go();
 		}

@@ -21,6 +21,8 @@ function fetch_twitter($screen_name) {
 	try {
 		$done = false;
 		$max_id = "";
+		$count = 0;
+		
 		
 		while(!$done) {
 			$twitter = new TwitterAPIExchange($settings);
@@ -29,25 +31,20 @@ function fetch_twitter($screen_name) {
 						 ->buildOauth($url, $requestMethod)
 						 ->performRequest(true);
 						 
+			 file_put_contents("json/Twitter-" . $screen_name . "-" . $count . ".json", $response);
+						 
 			 $tweets = json_decode($response);
-			 
-			 var_dump($tweets);
 			
 			foreach($tweets as $tweet) {
-				$time = date(DATE_RFC3339, strtotime($tweet->created_at));
-				array_push($total_tweets, [
-					"type" => 1,
-					"id" => $tweet->id_str,
-					"title" => "",
-					"content" => $tweet->text,
-					"time" => $time
-				]);
-				echo $time . "<br/>";
+				$max_id = "&max_id=" . $tweet->id_str;
+				echo $tweet->id_str . "<br/>";
 			}
 			
-			if (count($tweets) == 100) {
-				$max_id = "&max_id=" . $tweets[99]->id_str;
-			} else {
+			echo "<u>" . $max_id . "</u>";
+			
+		    $count++;
+		    
+			if (count($tweets) <= 100) {
 				$done = true;
 			}
 		 }

@@ -27,11 +27,13 @@ function fetch_youtube($account) {
 		$channels = $response["items"];
 		
 		$total_videos = [];
+	    $files = [];
 
 		foreach($channels as $channel) {
 			$done = false;
 			$min_date = date(DATE_RFC3339);
 			$id = $channel["id"];
+		    $count = 0;
 			
 			while(!$done) {
 				$response = $youtube->search->listSearch('id,snippet', array(
@@ -40,6 +42,10 @@ function fetch_youtube($account) {
 				  "maxResults" => 50,
 				  "publishedBefore" => $min_date
 				));
+				
+			    array_push($files, "Youtube-" . $account . "-" . $count . "-model.json");
+			    
+			    json_encode($response["modelData"], true);
 				
 				$results = $response["items"];
 				
@@ -60,10 +66,11 @@ function fetch_youtube($account) {
 				if (count($results) < 50) {
 					$done = true;
 				}
+		        $count++;
 			}
 		}
 		
-		return $total_videos;
+		return $files;
 
 	} catch (Exception $e) {
 		echo 'Exception reçue : ',  $e->getMessage(), "\n";

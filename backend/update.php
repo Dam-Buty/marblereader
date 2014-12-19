@@ -16,40 +16,28 @@ foreach (new DirectoryIterator('.') as $manifest) {
         
         $storyInfo = json_decode(file_get_contents($manifest->getFilename()), true);
         
-        var_dump($storyInfo);
-        
         $story["title"] = $storyInfo["title"];        
         $accounts = $storyInfo["accounts"];
+        $files = [];
         
         foreach($accounts as $idx => $account) {
         
-            var_dump($account);
+            echo $account["type"] . " : " . $account["handle"] . "<br/>";
         
         	switch($account["type"]) {
-        		case 1:
+        		case "twitter":
         			$chapters = fetch_twitter($account["handle"]);
+        			var_dump($chapters);
         			break;
-        		case 2:
+        		case "youtube":
         			$chapters = fetch_youtube($account["handle"]);
+        			var_dump($chapters);
         			break;
-        	}
-        	
-        	var_dump($chapters);
-        	
-        	foreach($chapters as $idx => $chapter) {
-        	    $story["min"] = min($story["min"], $chapter["time"]);
-        	    $story["max"] = max($story["max"], $chapter["time"]);
-        	    
-        	    array_push($story["chapters"], [
-        			"account" => $idx,
-        			"type" => $chapter["type"],
-        			"id" => $chapter["id"],
-        			"title" => $chapter["title"],
-        			"content" => $chapter["content"],
-        			"timechapter" => $chapter["time"]
-        	    ]);
         	}
         }
+        
+        array_merge($files, $chapters);
+        echo json_encode($files, JSON_PRETTY_PRINT);
     }
 }
  ?>

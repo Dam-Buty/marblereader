@@ -1,4 +1,8 @@
 
+* {
+    box-sizing: border-box;
+}
+
 body {
 	background-color: black;
 	margin: 1%;
@@ -190,26 +194,44 @@ body {
 }
 
 footer {
-	position: absolute;
-	bottom: 0;
-	width: 640px;
+    position: absolute;
+    
+    bottom: 0;
+    left: 0;
+    
+    width: 100%;
+    padding: 15px;
+    
     text-align: center;
-	height: 104px;
 }
 
-footer.fullscreen {
+#controls {
+	height: 20px;
+	
 	opacity: 0.1;
-	height: 40px;
-	width: 100%;
-	transition: opacity 800ms ease-in 0;
+	transition: all 800ms ease-in 0;
 }
 
-footer.fullscreen:hover{
+#controls:hover{
+    height: 40px;
 	opacity: 1;
 }
 
-footer.fullscreen img {
+#controls img {
 	height: 36px;
 	width: 36px;
 }
 
+#jauge {
+    width: 100%;    
+    height: 25px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#jauge div {
+    height: 100%;
+    
+    background-size: auto 100%;
+    background-image: url(../img/jauge.png);
+}
