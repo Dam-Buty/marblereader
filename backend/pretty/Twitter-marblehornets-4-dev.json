@@ -1,0 +1,3602 @@
+[
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "10082157222",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Not sure what to think about it. Definitely considering getting out of here though.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Mar 06 17:29:20 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 10082157222,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "10081951979",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "I did not post Entry ######. http://www.youtube.com/watch?v=N7QXQZjp5XM",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 14,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Mar 06 17:23:47 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 10081951979,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 10,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "9874733678",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Checked the latest surveillance footage again last night. Nothing unusual. Maybe Entry #24 was a camera glitch?",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 4,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Mar 02 13:48:21 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 9874733678,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "9643792938",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Feeling like I'm being watched constantly",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 7,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Feb 25 21:19:15 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 9643792938,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 11,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "9225081097",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #24: http://www.youtube.com/watch?v=B_rA7gQl95w",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 18,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Feb 17 07:53:01 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 9225081097,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 9,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "9194126517",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #24 will be posted later tonight.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 37,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Feb 16 17:41:03 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 9194126517,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "9070683197",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Typo earlier. Still looking through the footage.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Feb 13 21:22:22 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 9070683197,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "9059882744",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Looking through some surveillance footage. Not sure what I'll find. I feel like I just have know one more time what's been going on.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 5,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Feb 13 15:51:50 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 9059882744,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "8919140839",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Considering boarding up my windows. Still feeling incredibly unsafe here.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 3,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Feb 10 21:12:48 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 8919140839,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 9,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "8837101523",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "I know that totheark responded. I just don't want to acknowledge it anymore.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 5,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Feb 09 02:45:39 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 8837101523,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "8594152765",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "I have felt completely functionless since quitting.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 10,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Feb 03 16:39:37 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 8594152765,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 9,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "8357938843",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #23: http://www.youtube.com/watch?v=SzdZyZgCY58",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 11,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Jan 29 06:33:26 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 8357938843,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 9,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "8357155480",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Fixed the problem. 17 minutes to go.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Jan 29 06:03:21 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 8357155480,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "8354671874",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #23 will be uploaded in about 20 minutes.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 5,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Jan 29 04:41:49 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 8354671874,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 9,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "8331092978",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Trying to get the footage off the camera. Entry #23 later tonight I hope. Head feels liquefied.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 11,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Jan 28 17:34:57 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 8331092978,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 9,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "8330862198",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "How did I get here",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 6,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Jan 28 17:28:28 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 8330862198,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 11,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "8207497105",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Beginning to lose track of days now. Decided to return to the house Wednesday.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 9,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Jan 25 21:24:21 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 8207497105,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "7953697919",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Going back this week.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 11,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Jan 19 17:55:51 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 7953697919,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 10,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "7836293225",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Returning to the house yet again seems to be the only option. Going in the daytime no matter what.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 6,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Jan 16 19:29:16 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 7836293225,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 10,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "7836227899",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "totheark responds twice: http://www.youtube.com/watch?v=rIe-a6-TNHI",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 5,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Jan 16 19:26:56 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 7836227899,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "7820333673",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Have been trying to sleep for a while. No luck.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 4,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Jan 16 08:03:01 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 7820333673,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "7675543959",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "I don't like the fact that it says \"us\" in the video.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Jan 12 17:11:56 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 7675543959,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 9,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "7675532077",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "totheark responds: http://www.youtube.com/watch?v=6PdSebzNinc",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 5,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Jan 12 17:11:33 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 7675532077,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "7470886166",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Beginning to think the only choice I have is going back to the house.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Jan 07 06:58:14 +0000 2010",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 7470886166,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 9,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "7206802583",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Not sure why totheark has been so quiet. I may be on my own for a while.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Dec 30 19:57:28 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 7206802583,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "7098384895",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Still waiting to see if totheark does anything.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Sun Dec 27 19:42:14 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 7098384895,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6983158143",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Quick reminder to please refrain from contacting me via AIM. It's too hectic. Trying to keep everyone as updated as I can with twitter.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Dec 24 01:16:40 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6983158143,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6954568577",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #22: http://www.youtube.com/watch?v=-Y7_WP9HOME",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 15,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Dec 23 04:59:12 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6954568577,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6949504339",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Don't want to upload the footage. But it needs to be somewhere in case something happens to the tape. Or me.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 3,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Dec 23 01:55:23 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6949504339,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6945343004",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "I'll be posting the tape, in its entirety, later tonight.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 4,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Dec 22 23:20:53 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6945343004,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6923309455",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "The footage on this tape is too much for me right now. I have to go to bed.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Dec 22 08:19:00 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6923309455,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6917524434",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Just noticed the \"jBdzj!zö&&+555n?21\" update. It originally said \"found something\". No idea what happened to it.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Dec 22 04:04:42 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6917524434,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6915731267",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Something important has to be on this tape. I just have the feeling I won't like it.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Dec 22 03:05:23 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6915731267,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6915230279",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #21: http://www.youtube.com/watch?v=N-TCS5_yQj0",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 5,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Dec 22 02:49:36 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6915230279,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6913787934",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Uploading video now.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Dec 22 02:03:00 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6913787934,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6910833757",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Will be posting Entry #21 tonight.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 9,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Dec 22 00:25:21 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6910833757,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6908261693",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Back to the car. Couldn't remember the way back for a moment.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 22:57:45 +0000 2009",
+        "source": "\u003ca href=\"http://www.cloudhopper.com/\" rel=\"nofollow\"\u003eCloudhopper\u003c/a\u003e",
+        "geo": null,
+        "id": 6908261693,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6907953913",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Have a good signal again. Almost back to my car I think.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 22:46:20 +0000 2009",
+        "source": "\u003ca href=\"http://www.cloudhopper.com/\" rel=\"nofollow\"\u003eCloudhopper\u003c/a\u003e",
+        "geo": null,
+        "id": 6907953913,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6907433826",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Walking back to my car. Getting dark fast.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 22:27:03 +0000 2009",
+        "source": "\u003ca href=\"http://www.cloudhopper.com/\" rel=\"nofollow\"\u003eCloudhopper\u003c/a\u003e",
+        "geo": null,
+        "id": 6907433826,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6906308047",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "jBdzj!zö&&+555n?21",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "hu",
+        "retweet_count": 27,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 21:44:24 +0000 2009",
+        "source": "\u003ca href=\"http://www.cloudhopper.com/\" rel=\"nofollow\"\u003eCloudhopper\u003c/a\u003e",
+        "geo": null,
+        "id": 6906308047,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 14,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6905852567",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "http://twitpic.com/ujrii -",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "und",
+        "retweet_count": 3,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 21:26:10 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6905852567,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6905422936",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Phone signal almost gone. Have to cross a small creek and I'm at the tower. Filming when I get across.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 21:09:05 +0000 2009",
+        "source": "\u003ca href=\"http://www.cloudhopper.com/\" rel=\"nofollow\"\u003eCloudhopper\u003c/a\u003e",
+        "geo": null,
+        "id": 6905422936,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6905213163",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Cell phone camera is getting interference. Video camera is alright for now.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 21:01:02 +0000 2009",
+        "source": "\u003ca href=\"http://www.cloudhopper.com/\" rel=\"nofollow\"\u003eCloudhopper\u003c/a\u003e",
+        "geo": null,
+        "id": 6905213163,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6905122320",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "http://twitpic.com/ujmmz -",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "und",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 20:57:40 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6905122320,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6904822244",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "At the beginning of the trail. Getting my camera ready.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 20:46:01 +0000 2009",
+        "source": "\u003ca href=\"http://www.cloudhopper.com/\" rel=\"nofollow\"\u003eCloudhopper\u003c/a\u003e",
+        "geo": null,
+        "id": 6904822244,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6904681673",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Cell phone signal is coming and going. Still walking on the road to the trail.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 20:40:33 +0000 2009",
+        "source": "\u003ca href=\"http://www.cloudhopper.com/\" rel=\"nofollow\"\u003eCloudhopper\u003c/a\u003e",
+        "geo": null,
+        "id": 6904681673,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6904424559",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "http://twitpic.com/ujhzk - Road to the trail is fenced off. Guess I'm walking.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 20:30:38 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6904424559,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6904186637",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "http://twitpic.com/ujga9 - Almost there.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 20:21:21 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6904186637,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6903514433",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "http://twitpic.com/ujbyj - Kind of strange seeing other people.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 19:55:07 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6903514433,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6902770014",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "http://twitpic.com/uj79u -",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "und",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 19:26:06 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6902770014,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6901726040",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Leaving now.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 21 18:46:18 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6901726040,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6872270596",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Going to the red tower tomorrow.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 5,
+        "in_reply_to_user_id": null,
+        "created_at": "Sun Dec 20 21:53:48 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6872270596,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6791677564",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Caused some confusion with the last update. Not going to the red tower NOW. Probably in a couple of days.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Dec 18 09:35:43 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6791677564,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6789858810",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Going to the red tower asap.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Dec 18 07:44:59 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6789858810,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6789848730",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Most have probably already noticed, but totheark responds: http://www.youtube.com/watch?v=1VKridtP5FQ",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 2,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Dec 18 07:44:23 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6789848730,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6739118045",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "It's very difficult to tell who's operating the camera in #20. Alex would probably make do with whoever he had, so it could be anyone.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Dec 16 19:14:19 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6739118045,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6717184584",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #20: http://www.youtube.com/watch?v=1VKridtP5FQ",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 4,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Dec 16 02:41:21 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6717184584,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6705066093",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Found what may be the last of the clips from the tapes. Will post Entry #20 later today.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 7,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Dec 15 19:21:12 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6705066093,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6654941313",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "I've decided to go to that red tower. In the daytime, of course. Not sure when, though. I'm running out of food here.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 6,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 14 06:58:32 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6654941313,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6553710958",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "http://twitpic.com/t05zw - Found it.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 3,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Dec 11 02:51:33 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6553710958,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6546510983",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "I think I remember where the tower is located. Going to try and find it on a satellite map soon.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Dec 10 22:52:13 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6546510983,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6545947253",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "A lot of people are thinking \"the tower\" could be the red tower both Alex and I saw during Entry #5. That's the most solid lead so far.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Dec 10 22:32:27 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6545947253,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6505097745",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #19.5 will be posted sometime today.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 13,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Dec 09 18:58:41 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6505097745,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6438552002",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Found something. So tired though.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 3,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Dec 07 18:50:50 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6438552002,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6291549072",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Still haven't left the house. Running out of tapes to look through.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Dec 03 03:11:56 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6291549072,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6291358226",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "No, that was the first time I was at the house when totheark made that response. All of my memories are getting completely mixed up now.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Dec 03 03:05:11 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6291358226,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6290968162",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "The response has to be during entry 19. I wasn't wearing those clothes the last time I was at the house: http://bit.ly/3r9CBy",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Dec 03 02:51:50 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6290968162,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6284353887",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "It's getting so much more difficult to take all this in. Feel like I'm being driven insane.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Dec 02 23:04:55 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6284353887,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6284332446",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "totheark responds: http://www.youtube.com/watch?v=sUI-3lU6bek",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 17,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Dec 02 23:04:09 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6284332446,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6154454396",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Also, for some reason I keep getting asked my real name. It's Jay. You've all been right from the beginning.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Nov 28 23:44:56 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6154454396,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 9,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6154371694",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Still holed up here.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Nov 28 23:41:17 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6154371694,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 4,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6070238462",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #19: http://www.youtube.com/watch?v=x-qZUgxShlM",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 17,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Nov 26 03:07:32 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6070238462,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "6020374368",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "I have Entry #19. It should be on youtube tomorrow unless something happens. Which it could. I don't really know anymore.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 6,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Nov 24 21:51:14 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 6020374368,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5914593373",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "This past week has been bad.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 3,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Nov 21 08:35:30 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5914593373,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5689339078",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "totheark usually responds by now.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Nov 13 20:05:22 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5689339078,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5610561435",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #18: http://bit.ly/1gDrnh",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 3,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Nov 11 04:48:01 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5610561435,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5608949236",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Next entry will be up in about 30 minutes.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Nov 11 03:31:30 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5608949236,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 4,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5593016586",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Just got back. Going to try and get some sleep then I'll put the video on youtube.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Nov 10 16:45:09 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5593016586,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5552425942",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Going back to the house tomorrow.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Nov 09 06:00:59 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5552425942,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5482870770",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "The general consensus is that I should go back to the house. So I'm trying to work out a day to go. Another doctor appointment soon.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Nov 06 16:46:49 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5482870770,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5455372450",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Starting to reconsider going back to that house.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Nov 05 17:53:35 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5455372450,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5455366781",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "totheark responds: http://bit.ly/s5VYt",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Nov 05 17:53:21 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5455366781,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5358808931",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Going to try and get some sleep now. But I doubt that will happen after all I've seen today.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Nov 02 08:10:10 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5358808931,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 4,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5358804227",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #17: http://bit.ly/4aq30f",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Nov 02 08:09:44 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5358804227,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5349912924",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Found something very disturbing for me in the tapes today. Posting it to youtube as soon as I can.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Nov 02 00:08:07 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5349912924,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 8,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5270043912",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Been out of it all week. Trying to look through more videos.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Oct 29 21:43:26 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5270043912,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "5048521820",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Totheark is MOCKING me: http://bit.ly/iULxs",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Oct 21 17:45:41 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 5048521820,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4910888401",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #16: http://bit.ly/7g019",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Oct 16 07:36:22 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4910888401,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4909743590",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Youtube apparently having uploading problems. Entry #16 will be up as soon as it's fixed.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Oct 16 06:01:16 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4909743590,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 4,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4909456694",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #16 posted soon.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Oct 16 05:40:21 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4909456694,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4801352491",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Still around. Still looking for some kind of lead.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Mon Oct 12 04:18:04 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4801352491,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4581444497",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #15- http://bit.ly/huzOe",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Oct 03 16:05:18 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4581444497,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4574043406",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Sorry for the delay. #15 will be up soon.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Oct 03 06:35:12 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4574043406,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4561146895",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #15 should be up by the end of the day.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Oct 02 19:31:29 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4561146895,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 4,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4547140255",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Managed to arrange a meeting with one of the MH actors tomorrow.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Fri Oct 02 06:39:05 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4547140255,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 7,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4464693186",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Getting swarmed. If you want to contact me, please do not do so through AIM.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Tue Sep 29 06:43:36 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4464693186,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 4,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4405106998",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "totheark responds: http://bit.ly/2Mn5Mg",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 1,
+        "in_reply_to_user_id": null,
+        "created_at": "Sat Sep 26 23:57:58 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4405106998,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4334046779",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Getting the same question a lot. Nothing of interest happened in the 32 minutes. Just the camera pointed at the door.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Thu Sep 24 03:59:18 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4334046779,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 6,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4327477898",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry #14: http://bit.ly/3ZP8Wk",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Sep 23 22:54:49 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4327477898,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 5,
+        "contributors": null,
+        "place": null
+    },
+    {
+        "in_reply_to_status_id": null,
+        "id_str": "4320227693",
+        "truncated": false,
+        "in_reply_to_screen_name": null,
+        "entities": {
+            "symbols": [],
+            "urls": [],
+            "user_mentions": [],
+            "hashtags": []
+        },
+        "text": "Entry 14 found. Will post it by the end of the day.",
+        "in_reply_to_user_id_str": null,
+        "favorited": false,
+        "coordinates": null,
+        "account": {
+            "handle": "marblehornets",
+            "type": "twitter"
+        },
+        "retweeted": false,
+        "user": {
+            "id_str": "49247353",
+            "id": 49247353
+        },
+        "lang": "en",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "created_at": "Wed Sep 23 17:19:41 +0000 2009",
+        "source": "\u003ca href=\"http://twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c/a\u003e",
+        "geo": null,
+        "id": 4320227693,
+        "in_reply_to_status_id_str": null,
+        "favorite_count": 4,
+        "contributors": null,
+        "place": null
+    }
+]

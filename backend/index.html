@@ -4,25 +4,147 @@
     .bouton {
         border: 1px solid black;
         cursor: pointer;
+        margin: 20px;
     }
 </style>
 </head>
 <body>
     <div class="bouton" id="update">UPDATE</div>
+    <div class="bouton" id="compute">COMPUTE</div>
     <textarea id="json"></textarea>
 
     <script src="jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
+        var queue = [];
+        
+        var lines = [];
+        var chapters = [];
+        
+        var story = {
+            title: "Marble Hornets",
+            min: undefined,
+            max: undefined,
+            accounts: [],
+            seasons: []
+        };
+        
+        var YTduration = function(duration) {
+            var h, m, s;
+            
+            duration = duration.replace("PT", "");
+            
+            h = parseInt(duration.split("H")[0]);
+            m = parseInt(duration.split("H").pop().split("M")[0]);
+            s = parseInt(duration.split("H").pop().split("M").pop().split("S")[0]);
+           
+            // /!\ bug avec le parseint     
+            if (h != duration) {
+                m += h * 60;
+            }
+            
+            if (m != duration) {
+                s += m*60;
+            }
+            
+            return s;
+        };
+        
+        var load = function() {
+            if (queue.length > 0) {
+                var file = queue.shift();
+                
+                $.ajax({
+                    url: "json/" + file,
+                    type: "GET",
+                    statusCode: {
+                        200: function(data) {
+                            lines = lines.concat(data);
+                            load();
+                        }
+                    }    
+                });
+            } else {                
+                $.each(lines, function(i, line) {
+                    if (line.id.kind !== undefined && line.id.kind == "youtube#video") {
+                        var chapter = {
+                            id: "",
+                            title: "",
+                            content: "",
+                            date: undefined,
+                            time: "",
+                            duration: 0,
+                            type: line.account.type,
+                            account: line.account.handle,
+                            thumb: ""
+                        };
+                        
+                        var date;
+                        
+                        // build the chapter
+                        switch(line.account.type) {
+                            case "twitter":
+                                date = new Date(line.created_at);
+                                
+                                $.extend(chapter, {
+                                    id: line.id,
+                                    content: line.text,
+                                    date: date,
+                                    duration: line.text.split(" ").length / 2.5
+                                });
+                                
+                                if (line.geo !== null) {
+                                    console.log(line.geo);
+                                }
+                                                            
+                                break;
+                            case "youtube":
+                                var date = new Date(line.snippet.publishedAt);
+                                
+                                $.extend(chapter, {
+                                    id: line.id.videoId,
+                                    title: line.snippet.title,
+                                    content: line.snippet.description,
+                                    date: date,
+                                    duration: YTduration(line.duration),
+                                    thumb: line.snippet.thumbnails.high
+                                });
+                                
+                                break;
+                        };
+                        
+                        chapters.push(chapter);      
+                    }  
+                });  
+                console.log(chapters);   
+            }
+        };
+        
         $("#update").click(function() {
             $.ajax({
                 url: "update.php",
                 type: "POST",
                 statusCode: {
-                    200: function() {
-                        
+                    200: function(files) {
+                        queue = files;
+                        load();
                     }
                 }
             });
+        });
+        
+        $("#compute").click(function() {
+            queue = [
+                "Twitter-marblehornets-0.json",
+                "Twitter-marblehornets-1.json",
+                "Twitter-marblehornets-2.json",
+                "Twitter-marblehornets-3.json",
+                "Twitter-marblehornets-4.json",
+                "Twitter-marblehornets-5.json",
+                "Youtube-MarbleHornets-0.json",
+                "Youtube-MarbleHornets-1.json",
+                "Youtube-totheark-0.json"
+            ];
+            load();
         });
     </script>
 </body>

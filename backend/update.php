@@ -19,24 +19,24 @@ foreach (new DirectoryIterator('.') as $manifest) {
         $story["title"] = $storyInfo["title"];        
         $accounts = $storyInfo["accounts"];
         $files = [];
+        $account = 0;
         
         foreach($accounts as $idx => $account) {
         
-            echo $account["type"] . " : " . $account["handle"] . "<br/>";
-        
         	switch($account["type"]) {
         		case "twitter":
-        			$chapters = fetch_twitter($account["handle"]);
-        			var_dump($chapters);
+        			$chapters = fetch_twitter($account["handle"], $account);
         			break;
         		case "youtube":
-        			$chapters = fetch_youtube($account["handle"]);
-        			var_dump($chapters);
+        			$chapters = fetch_youtube($account["handle"], $account);
         			break;
         	}
+        	
+            $files = array_merge($files, $chapters);
+            $account++;
         }
         
-        array_merge($files, $chapters);
+        header('Content-Type: application/json');
         echo json_encode($files, JSON_PRETTY_PRINT);
     }
 }

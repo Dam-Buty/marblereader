@@ -1,11 +1,11 @@
 <?php
-function fetch_twitter($screen_name) {
+function fetch_twitter($screen_name, $account) {
 	/** Set access tokens here - see: https://dev.twitter.com/apps/ **/
 	$settings = array(
-		'oauth_access_token' => "x",
-		'oauth_access_token_secret' => "x",
-		'consumer_key' => "x",
-		'consumer_secret' => "x"
+		'oauth_access_token' => "",
+		'oauth_access_token_secret' => "",
+		'consumer_key' => "",
+		'consumer_secret' => ""
 	);
 
 	/** URL for REST request, see: https://dev.twitter.com/docs/api/1.1/ **/
@@ -22,7 +22,7 @@ function fetch_twitter($screen_name) {
 		$done = false;
 		$max_id = "";
 		$count = 0;
-		
+		$files = [];
 		
 		while(!$done) {
 			$twitter = new TwitterAPIExchange($settings);
@@ -31,25 +31,25 @@ function fetch_twitter($screen_name) {
 						 ->buildOauth($url, $requestMethod)
 						 ->performRequest(true);
 						 
-			 file_put_contents("json/Twitter-" . $screen_name . "-" . $count . ".json", $response);
+			 array_push($files, "Twitter-" . $screen_name . "-" . $count . ".json");
 						 
 			 $tweets = json_decode($response);
 			
-			foreach($tweets as $tweet) {
-				$max_id = "&max_id=" . $tweet->id_str;
-				echo $tweet->id_str . "<br/>";
+			for($i = 0;$i < count($tweets);$i++) {
+			    $tweets[$i]->account = $account;
+				$max_id = "&max_id=" . $tweets[$i]->id_str;
 			}
-			
-			echo "<u>" . $max_id . "</u>";
+			 
+			 file_put_contents("json/Twitter-" . $screen_name . "-" . $count . ".json", json_encode($tweets, true));
 			
 		    $count++;
 		    
-			if (count($tweets) <= 100) {
+			if (count($tweets) < 100) {
 				$done = true;
 			}
 		 }
 		 
-		 return $total_tweets;
+		 return $files;
 	} catch (Exception $e) {
 		echo 'Exception reçue : ',  $e->getMessage(), "\n";
 	}
