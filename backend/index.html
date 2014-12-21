@@ -112,6 +112,7 @@
                                     id: line.id,
                                     content: line.text,
                                     date: date,
+                                    time: ("0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2),
                                     dateday: dateday,
                                     duration: line.text.split(" ").length / 2.5
                                 });
@@ -126,6 +127,7 @@
                                     title: line.snippet.title,
                                     content: line.snippet.description,
                                     date: date,
+                                    time: ("0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2),
                                     dateday: dateday,
                                     duration: YTduration(line.duration),
                                     thumb: line.snippet.thumbnails.high.url

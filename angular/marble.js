@@ -9,7 +9,6 @@ function($window, $scope, $http, $timeout, $animate) {
         story: "marble-hornets",
         tick: 2000,
         handle: undefined,
-        cinema: document.getElementById("player"),
         loaded: false,
         
         autoPlay: false,
@@ -24,25 +23,26 @@ function($window, $scope, $http, $timeout, $animate) {
 	    
 	    setFullScreen: function() {
 	        this.fullScreen = !this.fullScreen;
-	        localStorage.setItem("fullScreen", this.fullScreen);
 	        this._setFullScreen();
 	    },
 	    _setFullScreen: function() {
-	        if(this.cinema.requestFullScreen) {
+	        var cinema = document.body;
+	        
+	        if(cinema.requestFullScreen) {
 			    if (this.fullScreen) {
-				    $scope.cinema.requestFullScreen;
+				    cinema.requestFullScreen;
 			    } else {
 				    document.cancelFullScreen;
 			    }
-            } else if(this.cinema.webkitRequestFullScreen) {
+            } else if(cinema.webkitRequestFullScreen) {
 			    if (this.fullScreen) {
-				    this.cinema.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+				    cinema.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
 			    } else {
                     document.webkitCancelFullScreen();
 			    }
-            } else if(this.cinema.mozRequestFullScreen){
+            } else if(cinema.mozRequestFullScreen){
 			    if (this.fullScreen) {
-				    this.cinema.mozRequestFullScreen();
+				    cinema.mozRequestFullScreen();
 			    } else {
                     document.mozCancelFullScreen();
 			    }
@@ -75,16 +75,20 @@ function($window, $scope, $http, $timeout, $animate) {
 	            return { };
 	        }
 	    },
-	    set: function(season, day, chapter) {
-	        this.season = season;
-	        this.day = day;
-	        this.chapter = chapter;
+	    set: function(season, day, chapter) {   
+	        if (season !== undefined) {
+	            this.season = season;
+	            this.day = day;
+	            this.chapter = chapter;
+	        }
 	        
-	        localStorage.setItem("progress", {
-	            season: season,
-	            day: day,
-	            chapter: chapter
-	        });
+	        var progress = {
+	            season: this.season,
+	            day: this.day,
+	            chapter: this.chapter
+	        };
+	        
+	        localStorage.setItem("progress", JSON.stringify(progress));
 	        
 	        var currentChapter = this.get();
 		
@@ -99,6 +103,8 @@ function($window, $scope, $http, $timeout, $animate) {
 	    goVideo: function() {
             if (this.get().type == "youtube") {
                 $scope.youtube.video = this.get().id;
+                $scope.youtube.description = this.get().content;
+                $scope.youtube.author = this.get().account;
             } else {
 	            if ($scope.youtube.player !== undefined) {
 			        $scope.youtube.player.stopVideo();
@@ -171,6 +177,8 @@ function($window, $scope, $http, $timeout, $animate) {
 	$scope.youtube = {
 	    player: undefined,
 	    video: undefined,
+	    description: "",
+	    author: "",
 	    
 	    params: {
 	        normal: {
@@ -225,23 +233,22 @@ function($window, $scope, $http, $timeout, $animate) {
 		    $scope.params.loaded = true;
 		    
 		    // Récupération des params stockés
-		    // Les bugs sont LA
-		    if (localStorage.getItem("fullScreen") !== null) {
-		        $scope.params.fullScreen = localStorage.getItem("fullScreen");
-		        if ($scope.params.fullScreen) {
-		            $scope.params._setFullScreen();
-		        }
-		    }
 		    
-		    if (localStorage.getItem("progress") !== null) {
-		        $scope.current.season = localStorage.getItem("progress").season;
-		        $scope.current.day = localStorage.getItem("progress").day;
-		        $scope.current.chapter = localStorage.getItem("progress").chapter;
-		    }
+		    $timeout(function() {
+		        if (localStorage.getItem("progress") !== null) {
+		            var progress = JSON.parse(localStorage.getItem("progress"));
+		            
+		            $scope.current.season = progress.season;
+		            $scope.current.day = progress.day;
+		            $scope.current.chapter = progress.chapter;
+		        }
+
+                $scope.current.set();   
+		    }, 1000);
 		        
-		    if ($scope.current.get().type == "youtube") {
-		        $scope.current.goVideo();
-		    }
+//		    if ($scope.current.get().type == "youtube") {
+//		        $scope.current.goVideo();
+//		    }
 	    });
 	};
 	

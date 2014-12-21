@@ -59,6 +59,13 @@ body {
 	left: 0;
 }
 
+#description {
+    font-family: "impact_reversed", courrier;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
 #cinema.fullscreen  {
 	width: 100%;
 	height: calc(100% - 40px);
