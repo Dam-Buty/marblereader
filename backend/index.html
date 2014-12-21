@@ -15,8 +15,12 @@
 
     <script src="jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
-        // 36510 secondes
-        // 10h05m30s
+        // 132 videos, avg 4m16, 9h24m23s total (33863 seconds)
+        // 560 tweets, 6617 words, avg 12 words
+        ////////////////
+        // 36510 seconds total (5 words = 2 seconds)
+        // 10h08m30s
+        
         var queue = [];
         
         var lines = [];
@@ -38,11 +42,13 @@
             "Dec"
         ];
         
+        var seasonBreaks = [
+            "Thu Oct 28 2010 00:00:00 GMT+0200 (CEST)",
+            "Mon Nov 28 2011 00:00:00 GMT+0100 (CET)"
+        ]
+        
         var story = {
             title: "Marble Hornets",
-            min: undefined,
-            max: undefined,
-            accounts: [],
             seasons: []
         };
         
@@ -91,7 +97,8 @@
                             duration: 0,
                             type: line.account.type,
                             account: line.account.handle,
-                            thumb: ""
+                            thumb: "",
+                            seasonProgress: 0
                         };
                         
                         var date, dateday;
@@ -108,10 +115,6 @@
                                     dateday: dateday,
                                     duration: line.text.split(" ").length / 2.5
                                 });
-                                
-                                if (line.geo !== null) {
-                                    console.log(line.geo);
-                                }
                                                             
                                 break;
                             case "youtube":
@@ -125,7 +128,7 @@
                                     date: date,
                                     dateday: dateday,
                                     duration: YTduration(line.duration),
-                                    thumb: line.snippet.thumbnails.high
+                                    thumb: line.snippet.thumbnails.high.url
                                 });
                                 
                                 break;
@@ -139,6 +142,8 @@
                     return a.date - b.date;
                 });
                 
+                var seasonProgress = 0;
+                
                 var lastDay = undefined;
                 var oneDay = 1000 * 60 * 60 * 24;
                 
@@ -148,22 +153,24 @@
                         var delay = "";
                         
                         if (lastDay !== undefined) {
-                            var diff = (chapter.dateday - lastDay) / oneDay;
+                            var diff = Math.floor((chapter.dateday - lastDay) / oneDay);
                             
                             if (diff > 5) {
                                 if (diff < 15) {
                                     delay = diff + " days later";
                                 } else {
+                                    //console.log((days.length - 1) + " : " + chapter.dateday.toString() + " / " + diff);
                                     if (diff < 31) {
                                         delay = Math.floor(diff / 7) + " weeks later";
                                     } else {
                                         if (diff < 40) {
                                             delay = "1 month later";
                                         } else {
+                                            
                                             if (diff < 60) {
                                                 delay = "More than a month later";
                                             } else {
-                                                console.log(i + " : " + chapter.dateday.toString());
+                                                
                                                 if (diff % 30 < 7) {
                                                     delay = Math.floor(diff / 30) + " months later";
                                                 } else {
@@ -176,6 +183,15 @@
                             }
                         }
                         
+                        if (seasonBreaks.indexOf(chapter.dateday.toString()) != -1) {
+                            story.seasons.push({
+                                duration: seasonProgress,
+                                days: days.slice()
+                            });
+                            days.length = 0;
+                            seasonProgress = 0;
+                        }
+                        
                         days.push({
                             date: chapter.dateday.getDate() + " " + months[chapter.dateday.getMonth()] + " " + chapter.dateday.getFullYear(),
                             delay: delay,
@@ -183,11 +199,20 @@
                         })
                     }
                     
+                    chapter.seasonProgress = seasonProgress;
+                    seasonProgress += chapter.duration;
+                    
                     days[days.length - 1].chapters.push(chapter);
                     lastDay = chapter.dateday;
                 });
                 
-                console.log(days);   
+                story.seasons.push({
+                    duration: seasonProgress,
+                    days: days.slice()
+                });
+                console.log(story);
+                
+                $("textarea").val(JSON.stringify(story));  
             }
         };
         

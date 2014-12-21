@@ -20,15 +20,39 @@ function($window, $scope, $http, $timeout, $animate) {
 		    if (this.autoPlay && $scope.current.get().type != 2) {
 		        $scope.current.next();
 		    }
-	    }
+	    },
+	    
+	    setFullScreen: function() {
+	        this.fullScreen = !this.fullScreen;
+	        localStorage.setItem("fullScreen", this.fullScreen);
+	        this._setFullScreen();
+	    },
+	    _setFullScreen: function() {
+	        if(this.cinema.requestFullScreen) {
+			    if (this.fullScreen) {
+				    $scope.cinema.requestFullScreen;
+			    } else {
+				    document.cancelFullScreen;
+			    }
+            } else if(this.cinema.webkitRequestFullScreen) {
+			    if (this.fullScreen) {
+				    this.cinema.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+			    } else {
+                    document.webkitCancelFullScreen();
+			    }
+            } else if(this.cinema.mozRequestFullScreen){
+			    if (this.fullScreen) {
+				    this.cinema.mozRequestFullScreen();
+			    } else {
+                    document.mozCancelFullScreen();
+			    }
+            }
+        }
     };
     
 	// Données de l'histoire
     $scope.story = {
         title: "",
-        min: 0,
-        max: 0,  
-        accounts: [],
         seasons: []
     };
 	
@@ -37,12 +61,11 @@ function($window, $scope, $http, $timeout, $animate) {
 	    season: 0,
 	    day: 0,
 	    chapter: 0,
-	    progress: 0,
 	    
 	    // Helpers
 	    get: function() {
 	        if (this.season != -1) {
-	            var day = $scope.story.seasons[this.season][this.day];
+	            var day = $scope.story.seasons[this.season].days[this.day];
 	            var chapter = day.chapters[this.chapter];
 	            
 	            chapter["date"] = day.date;
@@ -52,13 +75,20 @@ function($window, $scope, $http, $timeout, $animate) {
 	            return { };
 	        }
 	    },
-	    set: function(day, chapter) {
+	    set: function(season, day, chapter) {
+	        this.season = season;
 	        this.day = day;
 	        this.chapter = chapter;
 	        
+	        localStorage.setItem("progress", {
+	            season: season,
+	            day: day,
+	            chapter: chapter
+	        });
+	        
 	        var currentChapter = this.get();
 		
-	        if (currentChapter.category != "media" && $scope.params.autoPlay) {
+	        if (currentChapter.type != "youtube" && $scope.params.autoPlay) {
                 $scope.params.handle = $timeout(function() {
                     if ($scope.params.autoPlay) {
 	                    $scope.current.next();
@@ -67,7 +97,7 @@ function($window, $scope, $http, $timeout, $animate) {
 	        }
 	    },
 	    goVideo: function() {
-            if (this.get().category == "media") {
+            if (this.get().type == "youtube") {
                 $scope.youtube.video = this.get().id;
             } else {
 	            if ($scope.youtube.player !== undefined) {
@@ -83,20 +113,28 @@ function($window, $scope, $http, $timeout, $animate) {
 	        var displayed = [];
 	        
 	        for(var i = first;i < first + 3;i++) {
-	            displayed.push($scope.story.seasons[this.season][i]);
+	            displayed.push($scope.story.seasons[this.season].days[i]);
 	        }
 	        
 	        return displayed;
 	    },	    
 	    isTwitter: function() {
-	        return (this.get().type == 1);
+	        return (this.get().type == "twitter");
 	    },	    
 	    isYoutube: function() {
-	        return (this.get().type == 2);
+	        return (this.get().type == "youtube");
+	    },
+	    getProgress: function() {
+	        var total = $scope.story.seasons[this.season].duration;
+	        var progress = this.get().seasonProgress;
+	        
+	        var percentage = (progress / total) * 100;
+	        return percentage + "%";
 	    },
 	    
 	    // Navigation
 	    prev: function() {
+	        var season = this.season;
 	        var day = this.day;
 	        var chapter = this.chapter;
 	        	        
@@ -105,26 +143,27 @@ function($window, $scope, $http, $timeout, $animate) {
 		    } else {
 			    if (day > 0) {
 				    day--;
-				    chapter = $scope.story.seasons[this.season][day].chapters.length - 1;
+				    chapter = $scope.story.seasons[this.season].days[day].chapters.length - 1;
 			    }		
 		    }
 		    
-		    this.set(day, chapter);	
+		    this.set(season, day, chapter);	
 	    },
 	    next: function() {
+	        var season = this.season;
 	        var day = this.day;
 	        var chapter = this.chapter;
 	        
-		    if (chapter < $scope.story.seasons[this.season][day].chapters.length - 1) {
+		    if (chapter < $scope.story.seasons[this.season].days[day].chapters.length - 1) {
 			    chapter++;	
 		    } else {
-			    if (day <$scope.story.seasons[this.season].length - 1) {
+			    if (day <$scope.story.seasons[this.season].days.length - 1) {
 				    day++;
 				    chapter = 0;	
 			    }		
 		    }		
 		    
-		    this.set(day, chapter);		
+		    this.set(season, day, chapter);		
 	    }
 	};
 	
@@ -185,90 +224,25 @@ function($window, $scope, $http, $timeout, $animate) {
 		    $scope.story = data;
 		    $scope.params.loaded = true;
 		    
-		    if ($scope.current.get().category == "media") {
+		    // Récupération des params stockés
+		    // Les bugs sont LA
+		    if (localStorage.getItem("fullScreen") !== null) {
+		        $scope.params.fullScreen = localStorage.getItem("fullScreen");
+		        if ($scope.params.fullScreen) {
+		            $scope.params._setFullScreen();
+		        }
+		    }
+		    
+		    if (localStorage.getItem("progress") !== null) {
+		        $scope.current.season = localStorage.getItem("progress").season;
+		        $scope.current.day = localStorage.getItem("progress").day;
+		        $scope.current.chapter = localStorage.getItem("progress").chapter;
+		    }
+		        
+		    if ($scope.current.get().type == "youtube") {
 		        $scope.current.goVideo();
 		    }
 	    });
-	};
-	
-//	$scope.prevVideo = function() {
-//	    var searching = true;
-//	    var i = $scope.currentDay;
-//	    var j = $scope.currentChapter;
-//	
-//	    while(searching) {
-//	        if (j == 0) {                       // Si c'est le premier chapitre d'un jour
-//	            if (i == 0) {                   // si c'est le premier jour
-//	                searching = false;             // c'est mort on se barre
-//	            } else {
-//                    i--;                        // sinon on va au jour précédent, chapitre n
-//	                j = $scope.days[i].chapters.length - 1;
-//	            }	          
-//	        } else {
-//	            j--; // sinon on décrémente juste le chapitre
-//	        }
-//	        
-//	        if ($scope.days[i].chapters[j].type == 2) {
-//	            $scope.currentDay = i;
-//	            $scope.currentChapter = j;
-//	            searching = false;
-//	            $scope.go();
-//	        }
-//	    }
-//	};
-	
-//	$scope.nextVideo = function() {
-//	    var searching = true;
-//	    var i = $scope.currentDay;
-//	    var j = $scope.currentChapter;
-//	
-//	    while(searching) {
-//	        if (j == $scope.days[i].chapters.length - 1) { // Si c'est le dernier chapitre d'un jour
-//	            if (i == $scope.days.length - 1) { // si c'est le dernier jour
-//	                searching = false;             // c'est mort on se barre
-//	            } else {
-//	                i++;                            // sinon on va au jour suivant, chapitre 0
-//	                j = 0;
-//	            }	          
-//	        } else {
-//	            j++; // sinon on incrémente juste le chapitre
-//	        }
-//	        
-//	        if ($scope.days[i].chapters[j].type == 2) {
-//	            $scope.currentDay = i;
-//	            $scope.currentChapter = j;
-//	            searching = false;
-//	            $scope.go();
-//	        }
-//	    }
-//	};
-	
-	/*#####################################
-	## Helpers pour le modèle
-	#######################################*/
-	
-	$scope.setFullScreen = function() {
-	    $scope.params.fullScreen = !$scope.params.fullScreen;
-		
-		if($scope.params.cinema.requestFullScreen) {
-			if ($scope.params.fullScreen) {
-				$scope.cinema.requestFullScreen;
-			} else {
-				document.cancelFullScreen;
-			}
-        } else if($scope.params.cinema.webkitRequestFullScreen) {
-			if ($scope.params.fullScreen) {
-				$scope.params.cinema.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-			} else {
-                document.webkitCancelFullScreen();
-			}
-        } else if($scope.params.cinema.mozRequestFullScreen){
-			if ($scope.params.fullScreen) {
-				$scope.params.cinema.mozRequestFullScreen();
-			} else {
-                document.mozCancelFullScreen();
-			}
-        }
 	};
 	
 	/*#####################################
