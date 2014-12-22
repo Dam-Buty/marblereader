@@ -16,14 +16,24 @@ function($window, $scope, $http, $timeout, $animate) {
         
 	    stopPlay: function() {
 		    this.autoPlay = !this.autoPlay;
-		    if (this.autoPlay && $scope.current.get().type != 2) {
-		        $scope.current.next();
+		    
+		    if (this.autoPlay) {
+	            if ($scope.current.get().isTwitter()) {
+		            $scope.current.next();
+		        }
+		    } else {
+		        $scope.youtube.params.normal.autoplay = 0;
 		    }
 	    },
 	    
 	    setFullScreen: function() {
+	        var self = this;
+	    
+	        if ($scope.current.isYoutube()) {
+	            $scope.youtube.time = $scope.youtube.player.getCurrentTime();
+	        }
 	        this.fullScreen = !this.fullScreen;
-	        this._setFullScreen();
+            self._setFullScreen();
 	    },
 	    _setFullScreen: function() {
 	        var cinema = document.body;
@@ -92,16 +102,16 @@ function($window, $scope, $http, $timeout, $animate) {
 	        
 	        var currentChapter = this.get();
 		
-	        if (currentChapter.type != "youtube" && $scope.params.autoPlay) {
+	        if (this.isTwitter() && $scope.params.autoPlay) {
                 $scope.params.handle = $timeout(function() {
                     if ($scope.params.autoPlay) {
 	                    $scope.current.next();
                     }
-                }, $scope.params.tick);
+                }, this.get().duration);
 	        }
 	    },
 	    goVideo: function() {
-            if (this.get().type == "youtube") {
+            if (this.isYoutube()) {
                 $scope.youtube.video = this.get().id;
                 $scope.youtube.description = this.get().content;
                 $scope.youtube.author = this.get().account;
@@ -179,10 +189,11 @@ function($window, $scope, $http, $timeout, $animate) {
 	    video: undefined,
 	    description: "",
 	    author: "",
+	    time: 0,
 	    
 	    params: {
 	        normal: {
-		        /*autoplay: 1,*/
+		        autoplay: 0,
 		        modestbranding: 1,
 		        enablejsapi: 1,
 		        rel: 0
@@ -245,10 +256,6 @@ function($window, $scope, $http, $timeout, $animate) {
 
                 $scope.current.set();   
 		    }, 1000);
-		        
-//		    if ($scope.current.get().type == "youtube") {
-//		        $scope.current.goVideo();
-//		    }
 	    });
 	};
 	
@@ -277,32 +284,34 @@ function($window, $scope, $http, $timeout, $animate) {
 	#######################################*/
     
     window.onkeyup = function(event) {
+        // refaire avec ng-keyup
+        
         switch(event.which) {
             case 38: // UP
             case 37: // LEFT
-                if (event.ctrlKey) {
-                    $scope.prevVideo();
-                } else {
-                    if (event.shiftKey) {
-                        $scope.setCurrent(0, 0);
-                    } else {
+//                if (event.ctrlKey) {
+//                    $scope.prevVideo();
+//                } else {
+//                    if (event.shiftKey) {
+//                        $scope.setCurrent(0, 0);
+//                    } else {
                         $scope.prev();
-                    }
-                }
+//                    }
+//                }
                 break;
             case 39: // RIGHT
             case 40: // DOWN
-                if (event.ctrlKey) {
-                    $scope.nextVideo();
-                } else {
-                    if (event.shiftKey) {
-                        var day = $scope.days.length - 1;
-                        var chapter = $scope.days[day].chapters.length - 1
-                        $scope.setCurrent(day, chapter);
-                    } else {
+//                if (event.ctrlKey) {
+//                    $scope.nextVideo();
+//                } else {
+//                    if (event.shiftKey) {
+//                        var day = $scope.days.length - 1;
+//                        var chapter = $scope.days[day].chapters.length - 1
+//                        $scope.setCurrent(day, chapter);
+//                    } else {
                         $scope.next();
-                    }
-                }
+//                    }
+//                }
                 break;
                 
             case 32 : //SPACE
@@ -322,7 +331,14 @@ function($window, $scope, $http, $timeout, $animate) {
 	        $scope.current.next();
         }
     });
-	
+    
+    $scope.$on('youtube.player.ready', function ($event, player) {
+        if ($scope.youtube.time != 0) {
+            $scope.youtube.player.seekTo($scope.youtube.time);
+            $scope.youtube.time = 0;
+        }
+    });
+    
 	/*#####################################
 	## SHOOT
 	#######################################*/

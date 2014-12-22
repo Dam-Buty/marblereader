@@ -4,7 +4,7 @@
 
 <div class="day">
 	<h3>{{day.date}}</h3>
-	<div class="chapter" ng-class="{ current: current.is($parent.$index, $index) }" ng-repeat="chapter in day.chapters" ng-click="current.set($parent.$index, $index)">
+	<div class="chapter" ng-class="{ current: current.is($parent.$index, $index) }" ng-repeat="chapter in day.chapters" ng-click="current.set(current.season, $parent.$index, $index)">
 		<span class="time"><u>{{chapter.time}}</u> : </span>
 		<span ng-show="chapter.type=='youtube'">
 		    <i class="fa fa-youtube-square marron"></i>
@@ -15,6 +15,6 @@
 		    &nbsp;{{chapter.content}}
 		</span>
 		
-		<span class="author marron">&nbsp;--&nbsp;{{chapter.account}}</span>
+		<span ng-show="chapter.type=='youtube'" class="author marron">&nbsp;--&nbsp;{{chapter.account}}</span>
 	</div>
 </div>
