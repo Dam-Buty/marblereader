@@ -9,10 +9,11 @@ body {
 	overflow: hidden;
 }
 
-h1 {
+header {
+	width: 640px;
 	color: white;
 	font-family: '1942', cursive;
-	text-align: left;
+	text-align: center;
 	font-size: 3em;
 }
 
@@ -22,6 +23,25 @@ h3 {
 
 h4 {
 	margin: 5px;
+}
+
+#seasons {
+	width: 640px;
+    color: white;
+	text-align: center;
+	font-family: ;
+	font-size: 0.7em;
+	font-family: "impact_reversed", courrier;
+	margin-top: 10px;
+}
+
+#seasons span {
+    cursor: pointer;
+}
+
+#seasons span:not(.marron):hover {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
 }
 
 .operator.autoplay {
@@ -57,6 +77,7 @@ body {
 	position: absolute;
 	top: calc(50% - 195px);
 	left: 0;
+	padding-left: 15px;
 }
 
 #description {
@@ -117,22 +138,19 @@ body {
 
 #litterature {
 	position: absolute;
-	right: 0;
+	right: 20px;
 	width: calc(100% - 690px);
 	top: 0;
 	overflow: hidden;
 	height: 100%;
+	
+	background-image: url(../img/frame.png);
+	background-size: cover;
 }
 
 .day {
-	margin-top: 20px;
-	margin-bottom: 20px;
 	padding: 10%;
-	background-color: white;
-	border-image-source: url(../img/frame.jpg);
-	border-image-slice: 109 104 126 104;
-	border-image-width: 10%;
-	border-image-repeat: stretch;
+	border-bottom: 40px solid black;
 }
 
 .delay {
@@ -140,6 +158,8 @@ body {
     font-size: 2em;
     padding: 0;
     font-family: "impact_reversed", courrier;
+    background: black;
+    color: white;
 }
 
 .time {
@@ -163,7 +183,7 @@ body {
     cursor: pointer;
 }
 
-.current {
+.chapter.current {
 	background-color: #FFDFEC;
     box-shadow: 0 0 5px 5px #575757;
 }
@@ -213,22 +233,25 @@ footer {
     bottom: 0;
     left: 0;
     
-    width: 100%;
+    width: 675px;
     padding: 15px;
     
     text-align: center;
 }
 
+footer.fullscreen  {
+    width: 100%;
+}
+
 #controls {
-	height: 20px;
+	height: 40px;
 	
-	opacity: 0.1;
-	transition: all 800ms ease-in 0;
+	opacity: 0.3;
+	transition: all 400ms ease-in 0;
 }
 
 #controls:hover{
-    height: 40px;
-	opacity: 1;
+	opacity: 0.8;
 }
 
 #controls img {
@@ -239,13 +262,12 @@ footer {
 #jauge {
     width: 100%;    
     height: 25px;
-    background-color: white;
     border-radius: 5px;
 }
 
 #jauge div {
     height: 100%;
     
-    background-size: auto 100%;
+    background-size: cover;
     background-image: url(../img/jauge.png);
 }

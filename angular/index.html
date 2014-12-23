@@ -9,7 +9,12 @@
 </head>
 <body ng-controller="PlayerController">
 	<section id="player" ng-if="params.loaded">
-	    <header>{{story.title}}</header>
+	    <header ng-if="!params.fullScreen">
+	        {{story.title}}
+	        <div id="seasons">
+	            Season <span ng-repeat="season in story.seasons" ng-click="current.set($index, 0, 0)" ng-class="{ marron: (current.season == $index)}">- {{$index + 1}} </span>
+	        </div>
+	    </header>
         <div id="litterature" ng-if="!params.fullScreen">
 			<day-card ng-repeat="day in story.seasons[current.season].days"></day-card>
 			<div style='clear: both'></div>
@@ -33,7 +38,7 @@
 			    <!--<img src="img/next-video.png" width="100" height="100" ng-click="nextVideo()" title="Next video"/>-->
 			    <img src="img/fullscreen.png" width="100" height="100" ng-click="params.setFullScreen()" title="Full screen"/>
 		    </div>
-		    <div id="jauge">
+		    <div id="jauge" ng-click="current.seekTo()">
 		        <div ng-style="{ width: current.getProgress() }"></div>
 		    </div>
 		</footer>
