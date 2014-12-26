@@ -1,273 +1,160 @@
-
 * {
-    box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
-	background-color: black;
-	margin: 1%;
-	overflow: hidden;
-}
-
-header {
-	width: 640px;
-	color: white;
-	font-family: '1942', cursive;
-	text-align: center;
-	font-size: 3em;
-}
-
-h3 {
-	font-family: "impact_reversed", courrier;
-}
-
-h4 {
-	margin: 5px;
-}
-
-#seasons {
-	width: 640px;
-    color: white;
-	text-align: center;
-	font-family: ;
-	font-size: 0.7em;
-	font-family: "impact_reversed", courrier;
-	margin-top: 10px;
-}
-
-#seasons span {
-    cursor: pointer;
-}
-
-#seasons span:not(.marron):hover {
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
-}
-
-.operator.autoplay {
-    content: url(../img/operator-true.png);
-}
-
-.operator:hover {
-    -webkit-animation: totheark 5s linear 0 infinite alternate;
-}
+  background-color: black;
+  margin: 1%;
+  overflow: hidden; }
+  body #player {
+    width: 99%;
+    height: 99%;
+    background-color: black; }
+    body #player header {
+      width: 640px;
+      color: white;
+      font-family: "1942", cursive;
+      text-align: center;
+      font-size: 3em; }
+      body #player header #seasons {
+        width: 640px;
+        margin-top: 10px;
+        color: white;
+        text-align: center;
+        font-family: "impact_reversed", courrier;
+        font-size: 0.7em; }
+        body #player header #seasons span {
+          cursor: pointer; }
+          body #player header #seasons span:not(.marron):hover {
+            filter: blur(2px);
+            -webkit-filter: blur(2px); }
+    body #player #litterature {
+      position: absolute;
+      right: 20px;
+      width: calc(100% - 690px);
+      top: 0;
+      overflow: hidden;
+      height: 100%;
+      background-image: url(../img/frame.png);
+      background-size: cover; }
+      body #player #litterature .day {
+        padding: 10%;
+        border-bottom: 40px solid black; }
+        body #player #litterature .day h3, body #player #litterature .day .time {
+          font-family: "impact_reversed", courrier; }
+        body #player #litterature .day .chapter {
+          font-family: "texgyre_regular", courrier;
+          margin: 5px;
+          box-sizing: border-box;
+          border-radius: 5px;
+          padding: 2px;
+          padding-left: 5px;
+          transition: all 400ms ease-in 0; }
+          body #player #litterature .day .chapter:hover {
+            background-color: #F1DFE7;
+            box-shadow: 0 0 2px 2px #575757;
+            cursor: pointer; }
+          body #player #litterature .day .chapter.current {
+            background-color: #FFDFEC;
+            box-shadow: 0 0 5px 5px #575757; }
+          body #player #litterature .day .chapter .author {
+            font-family: "impact_reversed", courrier;
+            white-space: pre;
+            font-weight: bold; }
+        body #player #litterature .day.delay {
+          text-align: center;
+          font-size: 2em;
+          padding: 0;
+          font-family: "impact_reversed", courrier;
+          background: black;
+          color: white; }
+    body #player #cinema {
+      position: absolute;
+      top: calc(50% - 195px);
+      left: 0;
+      padding-left: 15px; }
+      body #player #cinema.fullscreen {
+        width: 100%;
+        height: calc(100% - 40px);
+        top: 0; }
+      body #player #cinema .big-chapter {
+        position: relative;
+        font-size: 1.7em;
+        width: 640px;
+        height: 390px; }
+        body #player #cinema .big-chapter.fullscreen {
+          width: 100%;
+          height: 100%; }
+        body #player #cinema .big-chapter .time {
+          position: absolute;
+          top: 0;
+          text-align: center;
+          color: white; }
+        body #player #cinema .big-chapter .content {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          font-family: "Verdana";
+          font-weight: bold;
+          color: white;
+          text-align: center; }
+      body #player #cinema #description {
+        font-family: "impact_reversed", courrier;
+        font-size: 1.5em;
+        color: white;
+        text-align: center; }
+      body #player #cinema .big-screen {
+        width: 100%;
+        height: 100%; }
+    body #player footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 675px;
+      padding: 15px;
+      text-align: center; }
+      body #player footer.fullscreen {
+        width: 100%; }
+      body #player footer #controls {
+        height: 40px;
+        opacity: 0.3;
+        transition: all 400ms ease-in 0; }
+        body #player footer #controls:hover {
+          opacity: 0.8; }
+        body #player footer #controls img {
+          height: 36px;
+          width: 36px; }
+        body #player footer #controls .operator.autoplay {
+          content: url(../img/operator-true.png); }
+        body #player footer #controls .operator:hover {
+          -webkit-animation: totheark 5s linear 0 infinite alternate; }
+      body #player footer #jauge {
+        width: 100%;
+        height: 25px;
+        border-radius: 5px; }
+        body #player footer #jauge div {
+          height: 100%;
+          background-size: cover;
+          background-image: url(../img/jauge.png); }
 
 @-webkit-keyframes totheark {
-    0%  { transform: rotate(23deg); }
-    25% { transform-origin: 23 23; transform: rotate(-38deg) }
-    47% { transform: rotate(7deg); }
-    48% { transform: rotate(-3deg); }
-    68% { transition: all 800ms linear 0; transform: rotate(-7deg); -webkit-filter: blur(5px); }
-    88% { transform: rotate(4deg); }
-    90% { transition: all 400ms ease-in 0; transform: rotate(18deg); }
-}
+  0% {
+    transform: rotate(23deg); }
+  25% {
+    transform-origin: 23 23;
+    transform: rotate(-38deg); }
+  47% {
+    transform: rotate(7deg); }
+  48% {
+    transform: rotate(-3deg); }
+  68% {
+    transition: all 800ms linear 0;
+    transform: rotate(-7deg);
+    -webkit-filter: blur(5px); }
+  88% {
+    transform: rotate(4deg); }
+  90% {
+    transition: all 400ms ease-in 0;
+    transform: rotate(18deg); } }
 
-body {
-  background: black;
-  font-family: 'Varela', sans-serif;
-}
-
-#player {
-	width: 99%;
-	height: 99%;
-	background-color: black;
-}
-
-#cinema {
-	position: absolute;
-	top: calc(50% - 195px);
-	left: 0;
-	padding-left: 15px;
-}
-
-#description {
-    font-family: "impact_reversed", courrier;
-    font-size: 1.5em;
-    color: white;
-    text-align: center;
-}
-
-#cinema.fullscreen  {
-	width: 100%;
-	height: calc(100% - 40px);
-	top: 0;
-}
-
-.big-screen {
-	width: 100%;
-	height: 100%;
-}
-
-.big-chapter {
-    position: relative;
-	font-size: 1.7em;
-	width: 640px;
-	height: 390px;
-}
-
-.big-chapter.fullscreen {
-	width: 100%;
-	height: 100%;
-}
-
-.big-chapter .time {
-    position: absolute;
-    top: 0;
-    text-align: center;
-	color: white;
-}
-
-.big-chapter .content {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 100%;
-	
-	font-family: "Verdana";
-	font-weight: bold;
-	color: white;
-	text-align: center;
-}
-
-.big-chapter .author {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-	text-align: right;
-}
-
-#litterature {
-	position: absolute;
-	right: 20px;
-	width: calc(100% - 690px);
-	top: 0;
-	overflow: hidden;
-	height: 100%;
-	
-	background-image: url(../img/frame.png);
-	background-size: cover;
-}
-
-.day {
-	padding: 10%;
-	border-bottom: 40px solid black;
-}
-
-.delay {
-    text-align: center;
-    font-size: 2em;
-    padding: 0;
-    font-family: "impact_reversed", courrier;
-    background: black;
-    color: white;
-}
-
-.time {
-	font-family: "impact_reversed", courrier;
-}
-
-.chapter {
-	font-family: "texgyre_regular", courrier;
-	margin: 5px;
-	box-sizing: border-box;
-	border-radius: 5px;
-	padding: 2px;
-	padding-left: 5px;
-	
-	transition: all 400ms ease-in 0;
-}
-
-.chapter:hover {
-    background-color: #F1DFE7;
-    box-shadow: 0 0 2px 2px #575757;
-    cursor: pointer;
-}
-
-.chapter.current {
-	background-color: #FFDFEC;
-    box-shadow: 0 0 5px 5px #575757;
-}
-
-.author {
-	font-family: "impact_reversed", courrier;
-	white-space: pre;
-	font-weight: bold;
-}
-
-.marron {
-	color: #5A4B0A;
-}
-
-#timeline {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 5%;
-	width: 100%;
-	background-color: yellow;
-}
-
-#timeline i {
-	color: black;
-}
-
-.borne {
-	position: absolute;
-	bottom: 0;
-}
-
-#min {
-	left: 0;
-	text-align: left;
-}
-
-#max {
-	right: 0;
-	text-align: right;
-}
-
-footer {
-    position: absolute;
-    
-    bottom: 0;
-    left: 0;
-    
-    width: 675px;
-    padding: 15px;
-    
-    text-align: center;
-}
-
-footer.fullscreen  {
-    width: 100%;
-}
-
-#controls {
-	height: 40px;
-	
-	opacity: 0.3;
-	transition: all 400ms ease-in 0;
-}
-
-#controls:hover{
-	opacity: 0.8;
-}
-
-#controls img {
-	height: 36px;
-	width: 36px;
-}
-
-#jauge {
-    width: 100%;    
-    height: 25px;
-    border-radius: 5px;
-}
-
-#jauge div {
-    height: 100%;
-    
-    background-size: cover;
-    background-image: url(../img/jauge.png);
-}
+/*# sourceMappingURL=marble.css.map */

@@ -1,0 +1,246 @@
+
+$font-1942: '1942', cursive;
+$font-impact: "impact_reversed", courrier;
+$font-texgyre: "texgyre_regular", courrier;
+
+$marron: #5A4B0A;
+
+$youtube-width: 640px;
+
+@mixin blur($radius) {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	background-color: black;
+	margin: 1%;
+	overflow: hidden;
+	
+    
+    
+    #player {
+	    width: 99%;
+	    height: 99%;
+	    background-color: black;
+	    
+        header {
+	        width: $youtube-width;
+	        color: white;
+	        font-family: $font-1942;
+	        text-align: center;
+	        font-size: 3em;
+	        
+            #seasons {
+	            width: $youtube-width;
+	            margin-top: 10px;
+	            
+                color: white;
+	            text-align: center;
+	            font-family: $font-impact;
+	            font-size: 0.7em;
+                
+                span {
+                    cursor: pointer;
+                    
+                    &:not(.marron) {
+                        &:hover {
+                            @include blur(2px);
+                        }
+                    }
+                }
+            }
+        }
+        
+        #litterature {
+	        position: absolute;
+	        right: 20px;
+	        width: calc(100% - 690px);
+	        top: 0;
+	        overflow: hidden;
+	        height: 100%;
+	
+	        background-image: url(../img/frame.png);
+	        background-size: cover;
+	        
+            .day {
+	            padding: 10%;
+	            border-bottom: 40px solid black;
+                
+                h3, .time {
+                    font-family: $font-impact;
+                }
+                
+                .chapter {
+	                font-family: $font-texgyre;
+	                margin: 5px;
+	                box-sizing: border-box;
+	                border-radius: 5px;
+	                padding: 2px;
+	                padding-left: 5px;
+	
+	                transition: all 400ms ease-in 0;
+	                
+	                &:hover {
+                        background-color: #F1DFE7;
+                        box-shadow: 0 0 2px 2px #575757;
+                        cursor: pointer;
+                    }
+                    
+                    &.current {
+	                    background-color: #FFDFEC;
+                        box-shadow: 0 0 5px 5px #575757;
+                    }
+                    
+                    .author {
+                        font-family: $font-impact;
+	                    white-space: pre;
+	                    font-weight: bold;
+                    }
+                }
+                
+                &.delay {
+                    text-align: center;
+                    font-size: 2em;
+                    padding: 0;
+                    font-family: $font-impact;
+                    background: black;
+                    color: white;
+                }
+            }
+            
+        }
+	    
+        #cinema {
+	        position: absolute;
+	        top: calc(50% - 195px);
+	        left: 0;
+	        padding-left: 15px;
+	        
+	        &.fullscreen  {
+	            width: 100%;
+	            height: calc(100% - 40px);
+	            top: 0;
+            }
+	        
+            .big-chapter {
+                position: relative;
+	            font-size: 1.7em;
+	            width: 640px;
+	            height: 390px;
+	            
+	            &.fullscreen {
+	                width: 100%;
+	                height: 100%;
+                }
+                
+                .time {
+                    position: absolute;
+                    top: 0;
+                    text-align: center;
+	                color: white;
+                }
+                
+                .content {
+	                position: absolute;
+	                top: 50%;
+	                transform: translateY(-50%);
+	                width: 100%;
+	
+	                font-family: "Verdana";
+	                font-weight: bold;
+	                color: white;
+	                text-align: center;
+                }
+            }
+            
+            #description {
+                font-family: $font-impact;
+                font-size: 1.5em;
+                color: white;
+                text-align: center;
+            }
+            
+            .big-screen {
+	            width: 100%;
+	            height: 100%;
+            }
+        }
+        
+        footer {
+            position: absolute;
+            
+            bottom: 0;
+            left: 0;
+            
+            width: 675px;
+            padding: 15px;
+            
+            text-align: center;
+            
+            &.fullscreen  {
+                width: 100%;
+            }
+            
+            #controls {
+	            height: 40px;
+	
+	            opacity: 0.3;
+	            transition: all 400ms ease-in 0;
+	            
+	            &:hover{
+	                opacity: 0.8;
+                }
+                
+                img {
+	                height: 36px;
+	                width: 36px;
+                }
+                
+                
+                .operator {
+                    &.autoplay {
+                        content: url(../img/operator-true.png);
+                    }
+
+                    &:hover {
+                        -webkit-animation: totheark 5s linear 0 infinite alternate;
+                    }
+                }
+                
+            }
+            
+            #jauge {
+                width: 100%;    
+                height: 25px;
+                border-radius: 5px;
+                
+                div {
+                    height: 100%;
+                    
+                    background-size: cover;
+                    background-image: url(../img/jauge.png);
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+@-webkit-keyframes totheark {
+    0%  { transform: rotate(23deg); }
+    25% { transform-origin: 23 23; transform: rotate(-38deg) }
+    47% { transform: rotate(7deg); }
+    48% { transform: rotate(-3deg); }
+    68% { transition: all 800ms linear 0; transform: rotate(-7deg); -webkit-filter: blur(5px); }
+    88% { transform: rotate(4deg); }
+    90% { transition: all 400ms ease-in 0; transform: rotate(18deg); }
+}
+
