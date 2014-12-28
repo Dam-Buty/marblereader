@@ -1,9 +1,4 @@
-
-var angular = require("angular");
-
-require("angular-animate");
-require("angular-scroll");
-require("../vendor/angular-youtube-embed.min.js");
+(function () { 
 
 angular.module("player", ['youtube-embed', "ngAnimate", "duScroll"])
 .controller("PlayerController", 
@@ -388,3 +383,4 @@ function($window, $scope, $http, $timeout, $animate) {
 })
 ;
 
+})();

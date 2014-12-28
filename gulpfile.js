@@ -17,6 +17,7 @@ var minifyCSS = require('gulp-minify-css');
 var chmod = require('gulp-chmod');
 var browserify = require('gulp-browserify');
 var bower = require('gulp-bower');
+var ngAnnotate = require('gulp-ng-annotate');
 
 src = "./src/";
 dst = "./www/";
@@ -45,29 +46,32 @@ gulp.task('htmlpage', function() {
 });
 
 // Browserify dependencies
-gulp.task("scripts", function() {
-    gulp.src(src + "js/marble.js")
-    .pipe(browserify({
-        insertGlobals : true,
-        debug: true
-    }))  
-//    .pipe(concat('marble.js'))
-//    .pipe(stripDebug())
-//    .pipe(uglify())
-    .pipe(gulp.dest(dst + "js"));
-});
-
-// JS concat, strip debugging and minify
-//gulp.task('scripts', function() {
-//    gulp.src([
-//        src + "vendor/angular-youtube-embed.min.js", 
-//        src + "js/*.js"
-//    ]).pipe(concat('marble.js'))
-//    .pipe(stripDebug())
-//    .pipe(uglify())
-//    .pipe(chmod(664))
+//gulp.task("scripts", function() {
+//    gulp.src(src + "js/marble.js")
+//    .pipe(browserify({
+//        insertGlobals : true,
+//        debug: true
+//    }))  
+////    .pipe(concat('marble.js'))
+////    .pipe(stripDebug())
+////    .pipe(uglify())
 //    .pipe(gulp.dest(dst + "js"));
 //});
+
+// JS concat, strip debugging and minify
+gulp.task('scripts', function() {
+    gulp.src([
+        src + "vendor/angular-scroll.min.js", 
+        src + "vendor/angular-youtube-embed.min.js", 
+        src + "js/*.js"
+    ])
+    .pipe(concat('marble.js'))
+    .pipe(stripDebug())
+    .pipe(ngAnnotate())
+    .pipe(uglify())
+    .pipe(chmod(664))
+    .pipe(gulp.dest(dst + "js"));
+});
 
 // Preprocess Sass, concat all, autoprefix and minify
 gulp.task('styles', function () {
