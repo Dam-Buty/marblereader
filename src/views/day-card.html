@@ -1,0 +1,20 @@
+<div class="day delay" ng-if="day.delay != ''">
+    {{day.delay}}
+</div>
+
+<div class="day">
+	<h3>{{day.date}}</h3>
+	<div class="chapter" ng-class="{ current: current.is($parent.$index, $index) }" ng-repeat="chapter in day.chapters" ng-click="current.set(current.season, $parent.$index, $index)">
+		<span class="time"><u>{{chapter.time}}</u> : </span>
+		<span ng-show="chapter.type=='youtube'">
+		    <i class="fa fa-youtube-square marron"></i>
+		    &nbsp;{{chapter.title}}
+		</span>
+		<span ng-show="chapter.type=='twitter'">
+		    <i class="fa fa-twitter-square marron"></i>
+		    &nbsp;{{chapter.content}}
+		</span>
+		
+		<span ng-show="chapter.type=='youtube'" class="author">&nbsp;--&nbsp;{{chapter.account}}</span>
+	</div>
+</div>

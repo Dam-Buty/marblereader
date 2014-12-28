@@ -1,0 +1,19 @@
+
+@mixin webfont($name, $file, $font) {    
+    @font-face {
+        font-family: $name;
+        src: url('../fonts/' + $file + '.eot');
+        src: url('../fonts/' + $file + '.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/' + $file + '.woff') format('woff'),
+             url('../fonts/' + $file + '.ttf') format('truetype'),
+             url('../fonts/' + $file + '.svg#' + $font + '') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+
+@include webfont("1942", "1942-webfont", "1942_report1942_report");
+@include webfont("impact_regular", "Impact_Label-webfont", "impact_labelregular");
+@include webfont("impact_reversed", "Impact_Label_Reversed-webfont", "impact_label_reversedregular");
+@include webfont("texgyre_regular", "texgyrecursor-regular-webfont", "texgyrecursorregular");

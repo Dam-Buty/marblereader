@@ -1,0 +1,251 @@
+<html>
+<head>
+<style>
+    .bouton {
+        border: 1px solid black;
+        cursor: pointer;
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="bouton" id="update">UPDATE</div>
+    <div class="bouton" id="compute">COMPUTE</div>
+    <textarea id="json"></textarea>
+
+    <script src="jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        // 132 videos, avg 4m16, 9h24m23s total (33863 seconds)
+        // 560 tweets, 6617 words, avg 12 words
+        ////////////////
+        // 36510 seconds total (5 words = 2 seconds)
+        // 10h08m30s
+        
+        var queue = [];
+        
+        var lines = [];
+        var chapters = [];
+        var days = [];
+        
+        var months = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+        ];
+        
+        var seasonBreaks = [
+            "Thu Oct 28 2010 00:00:00 GMT+0200 (CEST)",
+            "Mon Nov 28 2011 00:00:00 GMT+0100 (CET)"
+        ]
+        
+        var story = {
+            title: "Marble Hornets",
+            seasons: []
+        };
+        
+        var YTduration = function(origduration) {
+            var h, m, s;
+            
+            duration = origduration.replace("PT", "");
+            
+            h = (duration.indexOf("H") != -1) ? parseInt(duration.split("H")[0]) : 0;
+            duration = duration.split("H").pop();
+            
+            m = (duration.indexOf("M") != -1) ? parseInt(duration.split("M")[0]) : 0;
+            duration = duration.split("M").pop();
+            
+            s = (duration.indexOf("S") != -1) ? parseInt(duration.split("S")[0]) : 0;
+            
+            m += h * 60;
+            s += m*60;
+            
+            return s;
+        };
+        
+        var load = function() {
+            if (queue.length > 0) {
+                var file = queue.shift();
+                
+                $.ajax({
+                    url: "json/" + file,
+                    type: "GET",
+                    statusCode: {
+                        200: function(data) {
+                            lines = lines.concat(data);
+                            load();
+                        }
+                    }    
+                });
+            } else {                
+                $.each(lines, function(i, line) {
+                    if (line.id.kind === undefined || line.id.kind == "youtube#video") {
+                        var chapter = {
+                            id: "",
+                            title: "",
+                            content: "",
+                            date: undefined,
+                            time: "",
+                            duration: 0,
+                            type: line.account.type,
+                            account: line.account.handle,
+                            thumb: "",
+                            seasonProgress: 0
+                        };
+                        
+                        var date, dateday;
+                        
+                        // build the chapter
+                        switch(line.account.type) {
+                            case "twitter":
+                                date = new Date(line.created_at);
+                                dateday = new Date(new Date(line.created_at).setHours(0, 0, 0, 0));                            
+                                $.extend(chapter, {
+                                    id: line.id,
+                                    content: line.text,
+                                    date: date,
+                                    time: ("0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2),
+                                    dateday: dateday,
+                                    duration: line.text.split(" ").length / 2.5
+                                });
+                                                            
+                                break;
+                            case "youtube":
+                                date = new Date(line.snippet.publishedAt);
+                                dateday = new Date(new Date(line.snippet.publishedAt).setHours(0, 0, 0, 0));                            
+                                
+                                $.extend(chapter, {
+                                    id: line.id.videoId,
+                                    title: line.snippet.title,
+                                    content: line.snippet.description,
+                                    date: date,
+                                    time: ("0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2),
+                                    dateday: dateday,
+                                    duration: YTduration(line.duration),
+                                    thumb: line.snippet.thumbnails.high.url
+                                });
+                                
+                                break;
+                        };
+                        
+                        chapters.push(chapter);      
+                    }  
+                }); 
+                
+                chapters.sort(function(a, b) {
+                    return a.date - b.date;
+                });
+                
+                var seasonProgress = 0;
+                
+                var lastDay = undefined;
+                var oneDay = 1000 * 60 * 60 * 24;
+                
+                $.each(chapters, function(i, chapter) {
+                    
+                    if (lastDay === undefined || lastDay.toString() != chapter.dateday.toString()) {
+                        var delay = "";
+                        
+                        if (lastDay !== undefined) {
+                            var diff = Math.floor((chapter.dateday - lastDay) / oneDay);
+                            
+                            if (diff > 5) {
+                                if (diff < 15) {
+                                    delay = diff + " days later";
+                                } else {
+                                    //console.log((days.length - 1) + " : " + chapter.dateday.toString() + " / " + diff);
+                                    if (diff < 31) {
+                                        delay = Math.floor(diff / 7) + " weeks later";
+                                    } else {
+                                        if (diff < 40) {
+                                            delay = "1 month later";
+                                        } else {
+                                            
+                                            if (diff < 60) {
+                                                delay = "More than a month later";
+                                            } else {
+                                                
+                                                if (diff % 30 < 7) {
+                                                    delay = Math.floor(diff / 30) + " months later";
+                                                } else {
+                                                    delay = "More than " + Math.floor(diff / 30) + " months later";
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        if (seasonBreaks.indexOf(chapter.dateday.toString()) != -1) {
+                            story.seasons.push({
+                                duration: seasonProgress,
+                                days: days.slice()
+                            });
+                            days.length = 0;
+                            seasonProgress = 0;
+                        }
+                        
+                        days.push({
+                            date: chapter.dateday.getDate() + " " + months[chapter.dateday.getMonth()] + " " + chapter.dateday.getFullYear(),
+                            delay: delay,
+                            chapters: []
+                        })
+                    }
+                    
+                    chapter.seasonProgress = seasonProgress;
+                    seasonProgress += chapter.duration;
+                    
+                    days[days.length - 1].chapters.push(chapter);
+                    lastDay = chapter.dateday;
+                });
+                
+                story.seasons.push({
+                    duration: seasonProgress,
+                    days: days.slice()
+                });
+                console.log(story);
+                
+                $("textarea").val(JSON.stringify(story));  
+            }
+        };
+        
+        $("#update").click(function() {
+            $.ajax({
+                url: "update.php",
+                type: "POST",
+                statusCode: {
+                    200: function(files) {
+                        queue = files;
+                        load();
+                    }
+                }
+            });
+        });
+        
+        $("#compute").click(function() {
+            queue = [
+                "Twitter-marblehornets-0.json",
+                "Twitter-marblehornets-1.json",
+                "Twitter-marblehornets-2.json",
+                "Twitter-marblehornets-3.json",
+                "Twitter-marblehornets-4.json",
+                "Twitter-marblehornets-5.json",
+                "Youtube-MarbleHornets-0.json",
+                "Youtube-MarbleHornets-1.json",
+                "Youtube-totheark-0.json"
+            ];
+            load();
+        });
+    </script>
+</body>
+</html>
+
