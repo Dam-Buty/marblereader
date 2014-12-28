@@ -16,7 +16,7 @@ var autoprefix = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
 var chmod = require('gulp-chmod');
 var browserify = require('gulp-browserify');
-
+var bower = require('gulp-bower');
 
 src = "./src/";
 dst = "./www/";
@@ -51,7 +51,7 @@ gulp.task("scripts", function() {
         insertGlobals : true,
         debug: true
     }))  
-    .pipe(concat('marble.js'))
+//    .pipe(concat('marble.js'))
 //    .pipe(stripDebug())
 //    .pipe(uglify())
     .pipe(gulp.dest(dst + "js"));
@@ -84,6 +84,11 @@ gulp.task('styles', function () {
 gulp.task("assets", function() {
     gulp.src([src + "fonts/*", src + "stories/*.min.json"], {base: src})
         .pipe(gulp.dest(dst));
+});
+
+gulp.task('bower', function() {
+  return bower()
+    .pipe(gulp.dest(dst + "test"))
 });
 
 // default gulp task

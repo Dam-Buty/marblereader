@@ -1,12 +1,10 @@
 
-var angular = require("angular/angular");
-var ngAnimate = require("angular-animate/angular-animate");
-var ngScroll = require("angular-scroll/angular-scroll");
-var ngYoutube = require("../vendor/angular-youtube-embed.min.js");
+var angular = require("angular");
 
-(
+require("angular-animate");
+require("angular-scroll");
+require("../vendor/angular-youtube-embed.min.js");
 
-function () { 
 angular.module("player", ['youtube-embed', "ngAnimate", "duScroll"])
 .controller("PlayerController", 
 [ "$window", "$scope", "$http", "$timeout", "$animate", 
@@ -389,6 +387,4 @@ function($window, $scope, $http, $timeout, $animate) {
 	};
 })
 ;
-	
-	
-})();
+
