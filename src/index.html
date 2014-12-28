@@ -24,7 +24,7 @@
 			<twitter-card ng-if="current.isTwitter()"></twitter-card>
 			<div ng-if="!params.fullScreen" ng-show="current.isYoutube()">
 				<youtube-video id="video-player" video-id="youtube.video" player="youtube.player" player-vars="youtube.params.normal"></youtube-video>
-			    <div id="description">{{youtube.description}} - (<span class="marron">{{youtube.author}}</span>)</div>
+			    <div id="description">{{youtube.description}} - (<span class="author">{{youtube.author}}</span>)</div>
 			</div>
 			<div ng-if="params.fullScreen" ng-show="current.isYoutube()" class="big-screen">
 				<youtube-video id="fullscreen-player" video-id="youtube.video" player="youtube.player" player-vars="youtube.params.full" player-width="'100%'" player-height="'100%'"></youtube-video>

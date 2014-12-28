@@ -15,8 +15,6 @@ var addsrc = require('gulp-add-src');
 var autoprefix = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
 var chmod = require('gulp-chmod');
-var browserify = require('gulp-browserify');
-var bower = require('gulp-bower');
 var ngAnnotate = require('gulp-ng-annotate');
 
 src = "./src/";
