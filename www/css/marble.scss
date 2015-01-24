@@ -22,6 +22,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: black;
+  margin: 10px;
 
   header {
     width: $youtube-width;
@@ -49,65 +50,65 @@ body {
     }
   }
 
-    #litterature {
-      position: absolute;
-      right: 20px;
-      width: calc(100% - 690px);
-      top: 0;
-      overflow: hidden;
-      height: 100%;
+#litterature {
+  position: absolute;
+  right: 20px;
+  width: calc(100% - 690px);
+  top: 0;
+  overflow: hidden;
+  height: 100%;
 
-      background-image: url(../img/frame.png);
-      background-size: cover;
+  background-image: url(../img/frame.png);
+  background-size: cover;
 
-        .day {
-          padding: 10%;
-          border-bottom: 40px solid black;
+  .day {
+    padding: 10%;
+    border-bottom: 40px solid black;
 
-            h3, .time {
-                font-family: $font-impact;
-            }
-
-            .chapter {
-              font-family: $font-texgyre;
-              margin: 5px;
-              box-sizing: border-box;
-              border-radius: 5px;
-              padding: 2px;
-              padding-left: 5px;
-
-              transition: all 400ms ease-in 0;
-
-              &:hover {
-                    background-color: #F1DFE7;
-                    box-shadow: 0 0 2px 2px #575757;
-                    cursor: pointer;
-                }
-
-                &.current {
-                  background-color: #FFDFEC;
-                    box-shadow: 0 0 5px 5px #575757;
-                }
-
-                .author {
-                    font-family: $font-impact;
-                  white-space: pre;
-                  font-weight: bold;
-                  color: $marron;
-                }
-            }
-
-            &.delay {
-                text-align: center;
-                font-size: 2em;
-                padding: 0;
-                font-family: $font-impact;
-                background: black;
-                color: white;
-            }
-        }
-
+    h3, .time {
+      font-family: $font-impact;
     }
+
+    .chapter {
+      font-family: $font-texgyre;
+      margin: 5px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      padding: 2px;
+      padding-left: 5px;
+
+      transition: all 400ms ease-in 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #F1DFE7;
+        box-shadow: 0 0 2px 2px #575757;
+      }
+
+      &.current {
+        background-color: #FFDFEC;
+        box-shadow: 0 0 5px 5px #575757;
+      }
+
+      .author {
+        font-family: $font-impact;
+        white-space: pre;
+        font-weight: bold;
+        color: $marron;
+      }
+    }
+
+    &.delay {
+      text-align: center;
+      font-size: 2em;
+      padding: 0;
+      font-family: $font-impact;
+      background: black;
+      color: white;
+    }
+  }
+
+}
 
     #cinema {
       position: absolute;

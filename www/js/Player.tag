@@ -6,32 +6,7 @@
     </div>
   </header>
   <div id="litterature" if={ !params.fullScreen }>
-    <div each={ day in seasons[current.season].days }>
-
-      <div class={day: true, delay: true} if={ day.delay != "" }>
-        { day.delay }
-      </div>
-
-      <div class="day">
-        <h3>{ day.date }</h3>
-        <div class={ chapter: true } each={ chapter in day.chapters }>
-          // , current: current.is($parent.$index, $index)
-          // ng-click="current.set(current.season, $parent.$index, $index)"
-          <span class="time"><u>{ chapter.time }</u> : </span>
-          <span if={ chapter.type == 'youtube' }>
-            <i class="fa fa-youtube-square marron"></i>
-            &nbsp;{ chapter.title }
-          </span>
-          <span if={ chapter.type=='twitter' }>
-            <i class="fa fa-twitter-square marron"></i>
-            &nbsp;{ chapter.content }
-          </span>
-
-          <span if={ chapter.type=='youtube' } class="author">&nbsp;--&nbsp;{ chapter.account }</span>
-        </div>
-      </div>
-
-    </div>
+    <card each={ day, j in seasons[current.season].days } day={ day } idx={ j }/>
     <div style='clear: both'></div>
   </div>
   // <div id="cinema" ng-class="{ fullscreen: params.fullScreen }">
@@ -44,14 +19,14 @@
   //     <youtube-video id="fullscreen-player" video-id="youtube.video" player="youtube.player" player-vars="youtube.params.full" player-width="'100%'" player-height="'100%'"></youtube-video>
   //   </div>
   // </div>
-  // <footer ng-class="{ fullscreen: params.fullScreen }">
+  // <footer ng-class={ fullscreen: params.fullScreen }>
   //   <div id="controls">
   //     <!--<img src="img/prev-video.png" width="100" height="100" ng-click="prevVideo()" title="Previous video"/>-->
-  //     <!--  <img src="img/prev-grunge.png" width="100" height="100" ng-click="current.prev()" title="Previous"/>
+  //     <img src="img/prev-grunge.png" width="100" height="100" ng-click="current.prev()" title="Previous"/>
   //     <img src="img/operator-false.png" width="100" height="100" ng-click="params.stopPlay()" class="operator" title="Toggle autoplay" ng-class="{ autoplay: params.autoPlay }"/>
   //     <img src="img/next-grunge.png" width="100" height="100" ng-click="current.next()" title="Next"/>
   //     <!--<img src="img/next-video.png" width="100" height="100" ng-click="nextVideo()" title="Next video"/>-->
-  //     <!--  <img src="img/fullscreen.png" width="100" height="100" ng-click="params.setFullScreen()" title="Full screen"/>
+  //     <img src="img/fullscreen.png" width="100" height="100" ng-click="params.setFullScreen()" title="Full screen"/>
   //   </div>
   //   <div id="jauge" ng-click="current.seekTo()">
   //     <div ng-style="{ width: current.getProgress() }"></div>
@@ -64,7 +39,12 @@
   this.current = {
     season: 0,
     day: 0,
-    chapter: 0/*,
+    chapter: 0,
+
+    is: function(e) {
+      console.log(e);
+      return (this.day == day && this.chapter == chapter);
+    }/*,
 
     // Helpers
     get: function() {
@@ -115,9 +95,6 @@
           $scope.youtube.player.stopVideo();
         }
       }
-    },
-    is: function(day, chapter) {
-      return (this.day == day && this.chapter == chapter);
     },
     displayed: function() {
       var first = Math.max(this.day - 3, 0);
@@ -175,5 +152,5 @@
 
       this.set(season, day, chapter);
     }*/
-  };
+  }
 </player>

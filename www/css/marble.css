@@ -7,7 +7,8 @@ body {
   background-color: black;
   width: 100vw;
   height: 100vh;
-  background-color: black; }
+  background-color: black;
+  margin: 10px; }
   body header {
     width: 640px;
     color: white;
@@ -46,11 +47,11 @@ body {
         border-radius: 5px;
         padding: 2px;
         padding-left: 5px;
-        transition: all 400ms ease-in 0; }
+        transition: all 400ms ease-in 0;
+        cursor: pointer; }
         body #litterature .day .chapter:hover {
           background-color: #F1DFE7;
-          box-shadow: 0 0 2px 2px #575757;
-          cursor: pointer; }
+          box-shadow: 0 0 2px 2px #575757; }
         body #litterature .day .chapter.current {
           background-color: #FFDFEC;
           box-shadow: 0 0 5px 5px #575757; }

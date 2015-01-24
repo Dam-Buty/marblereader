@@ -1,11 +1,16 @@
-riot.tag('player', '<header if="{ !params.fullScreen }"> { opts.title } <div id="seasons"> Season <span each="{ season, i in seasons }">- { i + 1} </span> </div> </header> <div id="litterature" if="{ !params.fullScreen }"> <div each="{ day in seasons[current.season].days }"> <div class="{day: true, delay: true}" if="{ day.delay != "" }"> { day.delay } </div> <div class="day"> <h3>{ day.date }</h3> <div class="{ chapter: true }" each="{ chapter in day.chapters }"> <span class="time"><u>{ chapter.time }</u> : </span> <span if="{ chapter.type == \'youtube\' }"> <i class="fa fa-youtube-square marron"></i> &nbsp;{ chapter.title } </span> <span if="{ chapter.type==\'twitter\' }"> <i class="fa fa-twitter-square marron"></i> &nbsp;{ chapter.content } </span> <span if="{ chapter.type==\'youtube\' }" class="author">&nbsp;--&nbsp;{ chapter.account }</span> </div> </div> </div> <div style=\'clear: both\'></div> </div>', function(opts) {
+riot.tag('player', '<header if="{ !params.fullScreen }"> { opts.title } <div id="seasons"> Season <span each="{ season, i in seasons }">- { i + 1} </span> </div> </header> <div id="litterature" if="{ !params.fullScreen }"> <card each="{ day, j in seasons[current.season].days }" day="{ day }" idx="{ j }"></card> <div style=\'clear: both\'></div> </div>', function(opts) {
   this.params = opts.params;
   this.seasons = opts.seasons;
 
   this.current = {
     season: 0,
     day: 0,
-    chapter: 0/*,
+    chapter: 0,
+
+    is: function(e) {
+      console.log(e);
+      return (this.day == day && this.chapter == chapter);
+    }/*,
 
     get: function() {
       if (this.season != -1) {
@@ -55,9 +60,6 @@ riot.tag('player', '<header if="{ !params.fullScreen }"> { opts.title } <div id=
           $scope.youtube.player.stopVideo();
         }
       }
-    },
-    is: function(day, chapter) {
-      return (this.day == day && this.chapter == chapter);
     },
     displayed: function() {
       var first = Math.max(this.day - 3, 0);
@@ -114,5 +116,5 @@ riot.tag('player', '<header if="{ !params.fullScreen }"> { opts.title } <div id=
 
       this.set(season, day, chapter);
     }*/
-  };
+  }
 })
