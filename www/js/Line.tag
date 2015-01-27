@@ -32,7 +32,7 @@
 
     this.isCurrent = true;
 
-    this.player.setCurrent(this);
+    this.player.setCurrent(this, this.j, this.k);
 
     this.litterature.animate({
       scrollTop: newTop

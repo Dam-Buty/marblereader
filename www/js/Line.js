@@ -1,4 +1,5 @@
 riot.tag('line', '<div class="{ chapter: true, current: isCurrent }" onclick="{ setCurrent }"> <span class="time"><u>{ chapter.time }</u> : </span> <span if="{ chapter.type == \'youtube\' }"> <i class="fa fa-youtube-square marron"></i> &nbsp;{ chapter.title } </span> <span if="{ chapter.type==\'twitter\' }"> <i class="fa fa-twitter-square marron"></i> &nbsp;{ chapter.content } </span> <span if="{ chapter.type==\'youtube\' }" class="author">&nbsp;--&nbsp;{ chapter.account }</span> </div>', function(opts) {
+
   this.isCurrent = false;
   this.chapter = opts.chapter;
   this.j = this.parent.parent.j;
@@ -17,23 +18,24 @@ riot.tag('line', '<div class="{ chapter: true, current: isCurrent }" onclick="{ 
 
     this.isCurrent = true;
 
-    this.player.setCurrent(this);
+    this.player.setCurrent(this, this.j, this.k);
 
     this.litterature.animate({
       scrollTop: newTop
     }, 'slow');
-  }.bind(this)
+  }.bind(this);
 
   this.unsetCurrent = function(e) {
     this.isCurrent = false;
     this.update();
-  }.bind(this)
+  }.bind(this);
 
   this.isTwitter = function() {
     return (this.chapter.type == "twitter");
-  }.bind(this)
+  }.bind(this);
 
   this.isYoutube = function() {
     return (this.chapter.type == "youtube");
-  }.bind(this)
-})
+  }.bind(this);
+
+});

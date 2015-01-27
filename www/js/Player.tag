@@ -13,19 +13,17 @@
     <twitter if={ current.line.isTwitter() }/>
     <youtube if={ current.line.isYoutube() }/>
   </div>
-  // <footer ng-class={ fullscreen: params.fullScreen }>
-  //   <div id="controls">
-  //     <!--<img src="img/prev-video.png" width="100" height="100" ng-click="prevVideo()" title="Previous video"/>-->
-  //     <img src="img/prev-grunge.png" width="100" height="100" ng-click="current.prev()" title="Previous"/>
-  //     <img src="img/operator-false.png" width="100" height="100" ng-click="params.stopPlay()" class="operator" title="Toggle autoplay" ng-class="{ autoplay: params.autoPlay }"/>
-  //     <img src="img/next-grunge.png" width="100" height="100" ng-click="current.next()" title="Next"/>
-  //     <!--<img src="img/next-video.png" width="100" height="100" ng-click="nextVideo()" title="Next video"/>-->
-  //     <img src="img/fullscreen.png" width="100" height="100" ng-click="params.setFullScreen()" title="Full screen"/>
-  //   </div>
-  //   <div id="jauge" ng-click="current.seekTo()">
-  //     <div ng-style="{ width: current.getProgress() }"></div>
-  //   </div>
-  // </footer>
+  <footer class={ fullscreen: params.fullScreen }>
+    <div id="controls">
+      <img src="img/prev-grunge.png" width="100" height="100" onclick={ previous } title="Previous"/>
+      <img src="img/operator-false.png" width="100" height="100" class="operator" title="Toggle autoplay"/>
+      <img src="img/next-grunge.png" width="100" height="100" onclick={ next } title="Next"/>
+      <img src="img/fullscreen.png" width="100" height="100" title="Full screen"/>
+    </div>
+    <div id="jauge" ng-click="current.seekTo()">
+      <div ng-style="{ width: current.getProgress() }"></div>
+    </div>
+  </footer>
 
   this.params = opts.params;
   this.seasons = opts.seasons;
@@ -36,7 +34,7 @@
       line: undefined
   };
 
-  setCurrent(line) {
+  setCurrent(line, j, k) {
     if (this.current.line !== undefined) {
       this.current.line.unsetCurrent();
     }
@@ -44,11 +42,38 @@
     this.current.line = line;
 
     if (this.current.line.chapter.type == "youtube") {
-      this.ytPlayer.playVideoAt(this.current.line.chapter.playlistId);
-    } else {
-      this.ytPlayer.pauseVideo();
+      if (this.params.autoPlay) {
+        this.ytPlayer.playVideoById(this.current.line.chapter.id);
+      } else {
+        this.ytPlayer.cueVideoById(this.current.line.chapter.id);
+      }
     }
 
     this.update();
+  }
+
+  previous(e) {
+    var i = this.current.season;
+    var j = this.current.line.j;
+    var k = this.current.line.k;
+
+    var season = this.seasons[i];
+    var day = season.days[j];
+
+    k++;
+
+    if (k >= day.chapters.length) {
+      k = 0;
+    }
+
+    // for (;i < this.seasons.length;i++) {
+    //
+    //   for(;j < season.days.length;j++) {
+    //
+    //     for(;k < day.chapters)
+    //   }
+    // }
+
+    console.log(this.current.line);
   }
 </player>

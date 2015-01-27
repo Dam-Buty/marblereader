@@ -168,9 +168,9 @@ function($window, $scope, $http, $timeout, $animate) {
 		    this.set(season, day, chapter);
 	    },
 	    next: function() {
-	        var season = this.season;
-	        var day = this.day;
-	        var chapter = this.chapter;
+        var season = this.season;
+        var day = this.day;
+        var chapter = this.chapter;
 
 		    if (chapter < $scope.story.seasons[this.season].days[day].chapters.length - 1) {
 			    chapter++;
