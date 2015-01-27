@@ -1,6 +1,5 @@
 <line>
-  <div class="chapter" onclick={ setCurrent }>
-  // ng-click="current.set(current.season, $parent.$index, $index)"
+  <div class={ chapter: true, current: isCurrent } onclick={ setCurrent }>
     <span class="time"><u>{ chapter.time }</u> : </span>
     <span if={ chapter.type == 'youtube' }>
       <i class="fa fa-youtube-square marron"></i>
@@ -15,11 +14,31 @@
     <span if={ chapter.type=='youtube' } class="author">&nbsp;--&nbsp;{ chapter.account }</span>
   </div>
 
-  this.chapter = opts.chapter
+  this.isCurrent = false;
+  this.chapter = opts.chapter;
+  this.j = this.parent.parent.j;
+  this.k = this.parent.k;
+  this.litterature = $(this.parent.parent.parent.root);
+  this.player = this.parent.parent.parent.parent;
 
-  this.idx = opts.idx
+  setCurrent(e) {
+    var screen = document.body.offsetHeight;
 
-  setCurrent() {
-    console.log(this)
+    var top = e.currentTarget.offsetTop;
+    var height = e.currentTarget.offsetHeight;
+
+    var newTop = Math.max(0, top - (height / 2) - (screen / 2));
+
+    this.isCurrent = true;
+
+    this.player.setCurrent(this);
+
+    this.litterature.animate({
+      scrollTop: newTop
+    }, 'slow');
+  }
+
+  unsetCurrent(e) {
+    this.isCurrent = false;
   }
 </line>

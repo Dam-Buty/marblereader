@@ -5,9 +5,9 @@
 
   <div class="day">
     <h3>{ day.date }</h3>
-    <line each={ chapter, k in day.chapters } chapter={ chapter } idx={ k } />
+    <line each={ chapter, k in day.chapters } chapter={ chapter } k={ k } />
   </div>
 
   this.day = opts.day;
-  this.j = opts.idx;
+  this.j = opts.j;
 </card>

@@ -28,13 +28,14 @@ body {
           -webkit-filter: blur(2px); }
   body #litterature {
     position: absolute;
-    right: 20px;
+    right: 0;
     width: calc(100% - 690px);
     top: 0;
     overflow: hidden;
     height: 100%;
     background-image: url(../img/frame.png);
-    background-size: cover; }
+    background-size: cover;
+    -webkit-transition: top 400ms linear; }
     body #litterature .day {
       padding: 10%;
       border-bottom: 40px solid black; }

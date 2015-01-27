@@ -1,5 +1,5 @@
 
-@mixin webfont($name, $file, $font) {    
+@mixin webfont($name, $file, $font) {
     @font-face {
         font-family: $name;
         src: url('../fonts/' + $file + '.eot');

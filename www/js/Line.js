@@ -1,9 +1,29 @@
-riot.tag('line', '<div class="chapter" onclick="{ setCurrent }"> <span class="time"><u>{ chapter.time }</u> : </span> <span if="{ chapter.type == \'youtube\' }"> <i class="fa fa-youtube-square marron"></i> &nbsp;{ chapter.title } </span> <span if="{ chapter.type==\'twitter\' }"> <i class="fa fa-twitter-square marron"></i> &nbsp;{ chapter.content } </span> <span if="{ chapter.type==\'youtube\' }" class="author">&nbsp;--&nbsp;{ chapter.account }</span> </div>', function(opts) {
-  this.chapter = opts.chapter
+riot.tag('line', '<div class="{ chapter: true, current: isCurrent }" onclick="{ setCurrent }"> <span class="time"><u>{ chapter.time }</u> : </span> <span if="{ chapter.type == \'youtube\' }"> <i class="fa fa-youtube-square marron"></i> &nbsp;{ chapter.title } </span> <span if="{ chapter.type==\'twitter\' }"> <i class="fa fa-twitter-square marron"></i> &nbsp;{ chapter.content } </span> <span if="{ chapter.type==\'youtube\' }" class="author">&nbsp;--&nbsp;{ chapter.account }</span> </div>', function(opts) {
+  this.isCurrent = false;
+  this.chapter = opts.chapter;
+  this.j = this.parent.parent.j;
+  this.k = this.parent.k;
+  this.litterature = $(this.parent.parent.parent.root);
+  this.player = this.parent.parent.parent.parent;
 
-  this.idx = opts.idx
+  this.setCurrent = function(e) {
+    var screen = document.body.offsetHeight;
 
-  this.setCurrent = function() {
-    console.log(this)
+    var top = e.currentTarget.offsetTop;
+    var height = e.currentTarget.offsetHeight;
+
+    var newTop = Math.max(0, top - (height / 2) - (screen / 2));
+
+    this.isCurrent = true;
+
+    this.player.setCurrent(this);
+
+    this.litterature.animate({
+      scrollTop: newTop
+    }, 'slow');
+  }.bind(this)
+
+  this.unsetCurrent = function(e) {
+    this.isCurrent = false;
   }.bind(this)
 })
