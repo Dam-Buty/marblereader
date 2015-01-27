@@ -9,16 +9,10 @@
     <card each={ day, j in seasons[current.season].days } day={ day } j={ j }/>
     <div style='clear: both'></div>
   </div>
-  // <div id="cinema" ng-class="{ fullscreen: params.fullScreen }">
-  //   <twitter-card ng-if="current.isTwitter()"></twitter-card>
-  //   <div ng-if="!params.fullScreen" ng-show="current.isYoutube()">
-  //     <youtube-video id="video-player" video-id="youtube.video" player="youtube.player" player-vars="youtube.params.normal"></youtube-video>
-  //     <div id="description">{{youtube.description}} - (<span class="author">{{youtube.author}}</span>)</div>
-  //   </div>
-  //   <div ng-if="params.fullScreen" ng-show="current.isYoutube()" class="big-screen">
-  //     <youtube-video id="fullscreen-player" video-id="youtube.video" player="youtube.player" player-vars="youtube.params.full" player-width="'100%'" player-height="'100%'"></youtube-video>
-  //   </div>
-  // </div>
+  <div id="cinema" class={ fullscreen: params.fullScreen }>
+    <twitter if={ current.line.isTwitter() }/>
+    <youtube if={ current.line.isYoutube() }/>
+  </div>
   // <footer ng-class={ fullscreen: params.fullScreen }>
   //   <div id="controls">
   //     <!--<img src="img/prev-video.png" width="100" height="100" ng-click="prevVideo()" title="Previous video"/>-->
@@ -35,17 +29,26 @@
 
   this.params = opts.params;
   this.seasons = opts.seasons;
+  this.ytPlayer = undefined;
 
   this.current = {
       season: 0,
-      chapter: undefined
+      line: undefined
   };
 
   setCurrent(line) {
-    if (this.current.chapter !== undefined) {
-      this.current.chapter.unsetCurrent();
+    if (this.current.line !== undefined) {
+      this.current.line.unsetCurrent();
     }
 
-    this.current.chapter = line;
+    this.current.line = line;
+
+    if (this.current.line.chapter.type == "youtube") {
+      this.ytPlayer.playVideoAt(this.current.line.chapter.playlistId);
+    } else {
+      this.ytPlayer.pauseVideo();
+    }
+
+    this.update();
   }
 </player>

@@ -20,6 +20,7 @@
   this.k = this.parent.k;
   this.litterature = $(this.parent.parent.parent.root);
   this.player = this.parent.parent.parent.parent;
+  this.playlistId = undefined;
 
   setCurrent(e) {
     var screen = document.body.offsetHeight;
@@ -27,7 +28,7 @@
     var top = e.currentTarget.offsetTop;
     var height = e.currentTarget.offsetHeight;
 
-    var newTop = Math.max(0, top - (height / 2) - (screen / 2));
+    var newTop = Math.max(0, top - (height / 2) - (screen * 0.3));
 
     this.isCurrent = true;
 
@@ -40,5 +41,14 @@
 
   unsetCurrent(e) {
     this.isCurrent = false;
+    this.update();
+  }
+
+  isTwitter() {
+    return (this.chapter.type == "twitter");
+  }
+
+  isYoutube() {
+    return (this.chapter.type == "youtube");
   }
 </line>

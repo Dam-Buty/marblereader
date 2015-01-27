@@ -5,6 +5,7 @@ riot.tag('line', '<div class="{ chapter: true, current: isCurrent }" onclick="{ 
   this.k = this.parent.k;
   this.litterature = $(this.parent.parent.parent.root);
   this.player = this.parent.parent.parent.parent;
+  this.playlistId = undefined;
 
   this.setCurrent = function(e) {
     var screen = document.body.offsetHeight;
@@ -12,7 +13,7 @@ riot.tag('line', '<div class="{ chapter: true, current: isCurrent }" onclick="{ 
     var top = e.currentTarget.offsetTop;
     var height = e.currentTarget.offsetHeight;
 
-    var newTop = Math.max(0, top - (height / 2) - (screen / 2));
+    var newTop = Math.max(0, top - (height / 2) - (screen * 0.3));
 
     this.isCurrent = true;
 
@@ -25,5 +26,14 @@ riot.tag('line', '<div class="{ chapter: true, current: isCurrent }" onclick="{ 
 
   this.unsetCurrent = function(e) {
     this.isCurrent = false;
+    this.update();
+  }.bind(this)
+
+  this.isTwitter = function() {
+    return (this.chapter.type == "twitter");
+  }.bind(this)
+
+  this.isYoutube = function() {
+    return (this.chapter.type == "youtube");
   }.bind(this)
 })
